@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRSO Project - Rubbas.YK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=Allura&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body theme="white" style="background-color: var(--bg-light); color: var(--text-primary-light);">
+    <main class="main w-full">
+
+        <nav
+            class="fixed top-0 left-0 w-full z-[100] px-[5%] py-8 flex justify-between items-center mix-blend-difference pointer-events-none">
+
+            <!-- LOGO -->
+            <a href="index.html"
+                class="logo text-white font-bold text-xl tracking-tighter pointer-events-auto cursor-pointer">
+                RUBBAS .YK
+            </a>
+
+            <!-- CENTER LINKS -->
+            <div id="nav-center" class="hidden md:flex gap-10 pointer-events-auto transition-opacity duration-300">
+
+                <!-- WORK -->
+                <a href="work.html" class="nav-cta group relative overflow-hidden">
+                    <div class="masker h-[1.2rem] overflow-hidden uppercase tracking-[0.2em] text-sm font-medium">
+                        <span class="block text-white">Work</span>
+                        <span class="absolute left-0 top-0 translate-y-full text-white">Work</span>
+                    </div>
+                </a>
+
+                <!-- SKILLS -->
+                <a href="about.html" class="nav-cta group relative overflow-hidden">
+                    <div class="masker h-[1.2rem] overflow-hidden uppercase tracking-[0.2em] text-sm font-medium">
+                        <span class="block text-white">ABOUT ME</span>
+                        <span class="absolute left-0 top-0 translate-y-full text-white">ABOUT ME</span>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- HAMBURGER -->
+            <div id="menu-toggle"
+                class="group flex flex-col gap-1.5 cursor-pointer pointer-events-auto relative w-8 h-5 justify-center">
+                <span class="line-1 w-8 h-[2px] bg-white transition-all"></span>
+                <span class="line-2 w-8 h-[2px] bg-white transition-all"></span>
+                <span
+                    class="line-3 w-8 h-[2px] bg-white transition-all origin-right scale-x-50 group-hover:scale-x-100"></span>
+            </div>
+        </nav>
+
+
+        <div id="full-menu"
+            class="fixed top-0 left-0 w-full h-screen bg-black z-[90] hidden flex flex-col md:flex-row px-[5%] items-center justify-center">
+            <div class="menu-left w-full md:w-2/3">
+                <ul class="space-y-4">
+                    <!-- HOME -->
+                    <li class="overflow-hidden">
+                        <a href="index.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
+                            <div
+                                class="masker relative h-[1em] overflow-hidden text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none">
+                                <span class="btn-text block text-white">HOME</span>
+                                <span class="btn-text absolute left-0 top-0 translate-y-full text-white">HOME</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- WORK -->
+                    <li class="overflow-hidden">
+                        <a href="work.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
+                            <div
+                                class="masker relative h-[1em] overflow-hidden text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none">
+                                <span class="btn-text block text-white">WORK</span>
+                                <span class="btn-text absolute left-0 top-0 translate-y-full text-white">WORK</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- SKILLS -->
+                    <li class="overflow-hidden">
+                        <a href="about.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
+                            <div
+                                class="masker relative h-[1em] overflow-hidden text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none">
+                                <span class="btn-text block text-white">ABOUT ME</span>
+                                <span class="btn-text absolute left-0 top-0 translate-y-full text-white">ABOUT ME</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- CONTACT -->
+                    <li class="overflow-hidden">
+                        <a href="contact.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
+                            <div
+                                class="masker relative h-[1em] overflow-hidden text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none">
+                                <span class="btn-text block text-white">CONTACT</span>
+                                <span class="btn-text absolute left-0 top-0 translate-y-full text-white">CONTACT</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div
+                class="menu-right w-full md:w-1/3 flex flex-col justify-center gap-12 mt-12 md:mt-0 border-t md:border-t-0 md:border-l border-white/10 pt-12 md:pt-0 md:pl-20">
+                <div>
+                    <h4 class="text-xs uppercase tracking-[0.3em] opacity-40 mb-4 text-white">Inquiries</h4>
+                    <p class="text-xl text-white">rubbasyarkhan007@gmail.com</p>
+                </div>
+                <div>
+                    <h4 class="text-xs uppercase tracking-[0.3em] opacity-40 mb-4 text-white">Follow Us</h4>
+                    <div class="flex gap-6 text-2xl text-white">
+                        <a href="https://www.instagram.com/rubbas_yar_khan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank"><i class="ri-instagram-line"></i></a>
+                        <a href="https://www.linkedin.com/in/rubbas-yar-khan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            target="_blank"><i class="ri-linkedin-box-line"></i></a>
+                        <a href="https://www.pinterest.com/rubbasyarkhan" target="_blank"><i
+                                class="ri-pinterest-line"></i></a>
+                        <a href="https://dribbble.com/rubbas" target="_blank"><i class="ri-dribbble-line"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Project Header -->
+        <section class="pt-32 px-6 md:px-12 mb-16 bg-white" style="background-color: var(--bg-light);">
+            <div class="max-w-7xl mx-auto">
+                <!-- Back Button -->
+                <a href="work.html"
+                    class="inline-flex items-center gap-2 mb-12 group transition-all duration-300 text-black hover:text-gray-600">
+                    <i class="ri-arrow-left-line text-xl transition-transform group-hover:-translate-x-2"></i>
+                    <span class="text-sm uppercase tracking-widest font-semibold">Back to Work</span>
+                </a>
+
+                <!-- Project Title -->
+                <div class="mb-12">
+                    <h1 class="text-[clamp(3rem,8vw,7rem)] font-black tracking-tighter leading-[0.9] uppercase mb-6 text-black"
+                        style="font-family: 'Space Grotesk', sans-serif;">
+                        ALBERT<br>EINSTEIN<br>BIOGRAPHY
+                    </h1>
+                    <p class="text-sm uppercase tracking-[0.3em] font-semibold text-gray-600 max-w-4xl"
+                        style="font-family: 'Poppins', sans-serif;">
+                        An interactive digital biography showcasing the life, research, and legacy of the most
+                        influential physicist of the 20th century.
+                    </p>
+                </div>
+
+                <!-- Project Meta -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 py-8 border-t border-b border-gray-200"
+                    style="border-color: var(--border-light);">
+                    <div>
+                        <h3 class="text-xs uppercase tracking-[0.3em] mb-3 font-bold text-gray-400"
+                            style="font-family: 'Poppins', sans-serif;">PROJECT TYPE</h3>
+                        <p class="text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
+                            Biography Website</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xs uppercase tracking-[0.3em] mb-3 font-bold text-gray-400"
+                            style="font-family: 'Poppins', sans-serif;">ROLE</h3>
+                        <p class="text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
+                            Design & Development</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xs uppercase tracking-[0.3em] mb-3 font-bold text-gray-400"
+                            style="font-family: 'Poppins', sans-serif;">LIVE SITE</h3>
+                        <a href="https://biography-albert.netlify.app/" target="_blank"
+                            class="text-lg font-semibold text-[#ef9d71] hover:underline"
+                            style="font-family: 'Space Grotesk', sans-serif;">
+                            View Live →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Image -->
+        <section class="px-6 md:px-12 mb-20 bg-white" style="background-color: var(--bg-light);">
+            <div class="max-w-7xl mx-auto">
+                <div class="aspect-[21/9] overflow-hidden rounded-lg bg-gray-100">
+                    <img src="/assets/images/project1.1.png" alt="Albert Einstein" class="w-full h-full object-contain">
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Description -->
+        <section class="px-6 md:px-12 mb-20 bg-white" style="background-color: var(--bg-light);">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-2xl font-bold mb-6 uppercase tracking-tight text-black"
+                            style="font-family: 'Space Grotesk', sans-serif;">
+                            THE CHALLENGE
+                        </h2>
+                        <p class="text-base leading-relaxed text-gray-700" style="font-family: 'Poppins', sans-serif;">
+                            Create an engaging digital experience that brings Albert Einstein's extraordinary life and
+                            groundbreaking scientific contributions to a modern audience. The challenge was to present
+                            complex scientific concepts in an accessible way while maintaining historical accuracy and
+                            visual appeal.
+                        </p>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold mb-6 uppercase tracking-tight text-black"
+                            style="font-family: 'Space Grotesk', sans-serif;">
+                            THE SOLUTION
+                        </h2>
+                        <p class="text-base leading-relaxed text-gray-700" style="font-family: 'Poppins', sans-serif;">
+                            Developed a comprehensive biography website featuring interactive sections covering
+                            Einstein's childhood, education, scientific research, personal life, and legacy. The site
+                            includes detailed explorations of his theories including General Relativity, Special Theory
+                            of Relativity, and Quantum Theory of Light.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="px-6 md:px-12 mb-20 bg-white" style="background-color: var(--bg-light);">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 uppercase tracking-tight text-black text-center"
+                    style="font-family: 'Space Grotesk', sans-serif;">
+                    Key Features
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-6 border border-gray-200 rounded-lg" style="border-color: var(--border-light);">
+                        <h3 class="text-xl font-bold mb-3 text-black" style="font-family: 'Space Grotesk', sans-serif;">
+                            Life Timeline</h3>
+                        <p class="text-gray-700" style="font-family: 'Poppins', sans-serif;">Interactive timeline
+                            covering childhood, education, and the "miracle year" of 1905 when Einstein published his
+                            groundbreaking papers.</p>
+                    </div>
+                    <div class="p-6 border border-gray-200 rounded-lg" style="border-color: var(--border-light);">
+                        <h3 class="text-xl font-bold mb-3 text-black" style="font-family: 'Space Grotesk', sans-serif;">
+                            Research Archive</h3>
+                        <p class="text-gray-700" style="font-family: 'Poppins', sans-serif;">Detailed sections on
+                            General Relativity, Special Theory of Relativity, Quantum Theory of Light, and the EPR
+                            Paradox.</p>
+                    </div>
+                    <div class="p-6 border border-gray-200 rounded-lg" style="border-color: var(--border-light);">
+                        <h3 class="text-xl font-bold mb-3 text-black" style="font-family: 'Space Grotesk', sans-serif;">
+                            Awards & Recognition</h3>
+                        <p class="text-gray-700" style="font-family: 'Poppins', sans-serif;">Showcase of Nobel Prize
+                            (1921), Royal Society Medal (1925), and recognition as TIME's Person of the Century (1999).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Large Image 1 -->
+        <section class="px-6 md:px-12 mb-20 bg-white" style="background-color: var(--bg-light);">
+            <div class="max-w-7xl mx-auto">
+                <div class="aspect-[21/9] overflow-hidden rounded-lg bg-gray-100">
+                    <img src="assets/images/project1.2.png" alt="Physics and Science"
+                        class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="px-6 md:px-12 mb-20 bg-white" style="background-color: var(--bg-light);">
+            <div class="max-w-4xl mx-auto text-center py-16">
+                <blockquote class="text-[clamp(1.5rem,4vw,3rem)] font-bold leading-tight tracking-tight text-black"
+                    style="font-family: 'Space Grotesk', sans-serif;">
+                    "The <span class="text-[#ef9d71]"
+                        style="font-family: 'Allura', cursive; font-size: 1.2em;">Greatest</span> Living Master of
+                    Theoretical Physics"
+                </blockquote>
+                <p class="mt-6 text-gray-600 text-sm uppercase tracking-widest"
+                    style="font-family: 'Poppins', sans-serif;">— Max Planck, Nobel Prize Winner</p>
+            </div>
+        </section>
+
+        <!-- Large Image 2 -->
+        <section class="px-6 md:px-12 mb-20 bg-white" style="background-color: var(--bg-light);">
+            <div class="max-w-7xl mx-auto">
+                <div class="aspect-[21/9] overflow-hidden rounded-lg bg-gray-100">
+                    <img src="assets/images/project1.3.png" alt="Books and Research" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="px-6 md:px-12 mb-20  py-16">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 uppercase tracking-tight text-black text-center"
+                    style="font-family: 'Space Grotesk', sans-serif;">
+                    Technologies Used
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="p-4">
+                        <p class="text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
+                            HTML5</p>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
+                            CSS3</p>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
+                            JavaScript</p>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
+                            Netlify</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Project -->
+        <section class="px-6 md:px-12 py-20 bg-black">
+            <div class="grid grid-cols-1 md:grid-cols-2 ">
+                <h2 class="text-3xl uppercase tracking-[0.3em] mb-8 font-bold text-gray-400"
+                    style="font-family: 'Allura', sans-serif;">
+                    02
+                </h2>
+                <a href="project2.html" class="group block">
+                    <div class="aspect-[4/3] overflow-hidden mb-6 bg-zinc-900">
+                        <img src="assets/images/project2.1.png"
+                            alt="Project Thumbnail"
+                            class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-4xl md:text-6xl font-black tracking-tighter uppercase text-white group-hover:text-[#ef9d71] transition-colors"
+                            style="font-family: 'Space Grotesk', sans-serif;">
+                            Next Project
+                        </h3>
+                        <i
+                            class="ri-arrow-right-line text-4xl text-[#ef9d71] group-hover:translate-x-2 transition-transform"></i>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer data-color="black"
+        class="footer-section bg-black text-white min-h-screen w-full px-[6%] py-8 flex flex-col justify-between border-t border-white/10 overflow-hidden">
+
+        <!-- CTA -->
+        <div class="cta-area flex flex-col items-end text-right">
+            <div class="overflow-hidden">
+                <h1 class="text-[clamp(2.6rem,7vw,5.5rem)] font-extrabold tracking-tight leading-[0.9]">
+                    LET’S
+                </h1>
+            </div>
+            <div class="overflow-hidden">
+                <h1 class="text-[clamp(2.6rem,7vw,5.5rem)] font-extrabold tracking-tight leading-[0.9]">
+                    BUILD
+                </h1>
+            </div>
+            <div class="overflow-hidden">
+                <h1 class="text-[clamp(2.6rem,7vw,5.5rem)] font-extrabold tracking-tight leading-[0.9] opacity-60">
+                    SOMETHING
+                </h1>
+            </div>
+
+            <div class="flex justify-end mt-4">
+                <div class="magnetic-wrap p-6">
+                    <a href="contact.html"
+                        class="now-btn group relative flex items-center justify-center border border-white/30 rounded-full px-14 py-4 backdrop-blur-md transition-all hover:border-white hover:bg-white hover:text-black">
+
+                        <div class="masker relative h-[2.2rem] overflow-hidden pointer-events-none">
+                            <span class="btn-text block text-2xl font-bold italic tracking-widest uppercase">
+                                START NOW
+                            </span>
+                            <span
+                                class="btn-text absolute left-0 top-0 block translate-y-full text-2xl font-bold italic tracking-widest uppercase">
+                                START NOW
+                            </span>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info -->
+        <div class="footer-grid grid grid-cols-1 md:grid-cols-4 gap-12 pt-8 border-t border-white/10">
+
+            <div class="info-block">
+                <p class="text-base md:text-lg font-medium leading-relaxed opacity-80 max-w-xs">
+                    Let's build something amazing together.
+                </p>
+
+                <div
+                    class="mt-5 w-full max-w-[160px] aspect-video rounded-lg overflow-hidden border border-white/10 relative">
+                    <video src="https://www.pexels.com/download/video/8818311/" autoplay muted loop playsinline
+                        class="w-full h-full object-cover opacity-70 hover:opacity-100 transition-opacity duration-500">
+                    </video>
+                </div>
+            </div>
+
+            <div class="info-block">
+                <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-6 font-semibold">
+                    Social
+                </h4>
+                <ul class="grid grid-cols-2 gap-x-8 gap-y-4">
+                    <li>
+                        <a href="https://www.instagram.com/design_code_journey/"
+                            class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+                            target="_blank">
+                            Instagram
+                            <i
+                                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/rubbasyarkhan"
+                            class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+                            target="_blank">
+                            LinkedIn
+                            <i
+                                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/rubbasyarkhan"
+                            class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+                            target="_blank">
+                            GitHub
+                            <i
+                                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://dribbble.com/rubbas"
+                            class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+                            target="_blank">
+                            Dribbble
+                            <i
+                                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://pinterest.com/rubbasyarkhan"
+                            class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+                            target="_blank">
+                            Pinterest
+                            <i
+                                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="info-block">
+                <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-6 font-semibold">
+                    Contact
+                </h4>
+                <a href="mailto:rubbasyarkhan007@gmail.com"
+                    class="block text-xs tracking-widest opacity-60 hover:opacity-100 transition">
+                    rubbasyarkhan007@gmail.com
+                </a>
+                <p class="mt-3 text-xs tracking-widest opacity-60">
+                    (+92) 371-029-0861
+                </p>
+            </div>
+
+            <div class="info-block">
+                <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-6 font-semibold">
+                    Location
+                </h4>
+                <p class="text-xs tracking-widest opacity-60 leading-relaxed">
+                    Karachi, Pakistan<br>
+                    Available Worldwide
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center pt-2 border-t border-white/10 mt-2">
+            <p class="text-xs opacity-40 tracking-wide">
+                © 2026 Rubbas Yar Khan. All rights reserved.
+            </p>
+        </div>
+
+        <div class="footer-cursor-video pointer-events-none">
+            <video src="https://www.pexels.com/download/video/18069165/
+      " autoplay muted loop playsinline onloadedmetadata="this.playbackRate = 2.0;"></video>
+        </div>
+
+    </footer>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+
+    <script src="script.js"></script>
+    <div class="noise-overlay"></div>
+
+</body>
+
+</html>

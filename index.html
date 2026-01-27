@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RUBBAS.YK</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Allura&family=Space+Grotesk:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body theme="black">
+
+
+  <main class="main w-full">
+
+
+
+    <nav
+      class="fixed top-0 left-0 w-full z-[100] px-[5%] py-8 flex justify-between items-center mix-blend-difference pointer-events-none">
+
+      <!-- LOGO -->
+      <a href="index.html"
+        class="logo text-white font-bold text-xl tracking-tighter pointer-events-auto cursor-pointer">
+        RUBBAS .YK
+      </a>
+
+      <!-- CENTER LINKS -->
+      <div id="nav-center" class="hidden md:flex gap-10 pointer-events-auto transition-opacity duration-300">
+
+        <!-- WORK -->
+        <a href="work.html" class="nav-cta group relative overflow-hidden">
+          <div class="masker h-[1.2rem] overflow-hidden uppercase tracking-[0.2em] text-sm font-medium">
+            <span class="block text-white">Work</span>
+            <span class="absolute left-0 top-0 translate-y-full text-white">Work</span>
+          </div>
+        </a>
+
+        <!-- SKILLS -->
+        <a href="about.html" class="nav-cta group relative overflow-hidden">
+          <div class="masker h-[1.2rem] overflow-hidden uppercase tracking-[0.2em] text-sm font-medium">
+            <span class="block text-white">ABOUT ME</span>
+            <span class="absolute left-0 top-0 translate-y-full text-white">ABOUT ME</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- HAMBURGER -->
+      <div id="menu-toggle"
+        class="group flex flex-col gap-1.5 cursor-pointer pointer-events-auto relative w-8 h-5 justify-center">
+        <span class="line-1 w-8 h-[2px] bg-white transition-all"></span>
+        <span class="line-2 w-8 h-[2px] bg-white transition-all"></span>
+        <span class="line-3 w-8 h-[2px] bg-white transition-all origin-right scale-x-50 group-hover:scale-x-100"></span>
+      </div>
+    </nav>
+
+
+    <div id="full-menu"
+      class="fixed top-0 left-0 w-full h-screen bg-black z-[90] hidden flex flex-col md:flex-row px-[5%] items-center justify-center">
+      <div class="menu-left w-full md:w-2/3">
+        <ul class="space-y-4">
+          <!-- HOME -->
+          <li class="overflow-hidden">
+            <a href="index.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
+              <div
+                class="masker relative h-[1em] overflow-hidden text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none">
+                <span class="btn-text block text-white">HOME</span>
+                <span class="btn-text absolute left-0 top-0 translate-y-full text-white">HOME</span>
+              </div>
+            </a>
+          </li>
+
+          <!-- WORK -->
+          <li class="overflow-hidden">
+            <a href="work.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
+              <div
+                class="masker relative h-[1em] overflow-hidden text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none">
+                <span class="btn-text block text-white">WORK</span>
+                <span class="btn-text absolute left-0 top-0 translate-y-full text-white">WORK</span>
+              </div>
+            </a>
+          </li>
+
+          <!-- SKILLS -->
+          <li class="overflow-hidden">
+            <a href="about.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
+              <div
+                class="masker relative h-[1em] overflow-hidden text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none">
+                <span class="btn-text block text-white">ABOUT ME</span>
+                <span class="btn-text absolute left-0 top-0 translate-y-full text-white">ABOUT ME</span>
+              </div>
+            </a>
+          </li>
+
+          <!-- CONTACT -->
+          <li class="overflow-hidden">
+            <a href="contact.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
+              <div
+                class="masker relative h-[1em] overflow-hidden text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none">
+                <span class="btn-text block text-white">CONTACT</span>
+                <span class="btn-text absolute left-0 top-0 translate-y-full text-white">CONTACT</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div
+        class="menu-right w-full md:w-1/3 flex flex-col justify-center gap-12 mt-12 md:mt-0 border-t md:border-t-0 md:border-l border-white/10 pt-12 md:pt-0 md:pl-20">
+        <div>
+          <h4 class="text-xs uppercase tracking-[0.3em] opacity-40 mb-4 text-white">Inquiries</h4>
+          <p class="text-xl text-white">rubbasyarkhan007@gmail.com</p>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-[0.3em] opacity-40 mb-4 text-white">Follow Us</h4>
+          <div class="flex gap-6 text-2xl text-white">
+            <a href="https://www.instagram.com/rubbas_yar_khan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"><i class="ri-instagram-line"></i></a>
+            <a href="https://www.linkedin.com/in/rubbas-yar-khan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank"><i class="ri-linkedin-box-line"></i></a>
+            <a href="https://www.pinterest.com/rubbasyarkhan" target="_blank"><i class="ri-pinterest-line"></i></a>
+            <a href="https://dribbble.com/rubbas" target="_blank"><i class="ri-dribbble-line"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Home Section -->
+
+    <section data-color="black" class="home w-full h-[200vh] relative font-sans">
+      <div class="w-full sticky left-0 top-0 ">
+
+        <div style="--clip:100%" class="z-[3] vdiv w-full h-screen absolute top-0 left-0 overflow-hidden">
+
+          <!-- Full Background Image -->
+          <div class="w-full h-full absolute top-0 left-0 bg-[#94a3a8]">
+            <img src="assets/images/herobg1.png" alt="rubbas yar khan"
+              class="w-full h-full object-cover grayscale-[0.2] contrast-110" />
+          </div>
+
+          <!-- Text Overlay at Bottom -->
+          <div
+            class="absolute bottom-0 left-0 w-full px-4 md:px-8 py-4 md:py-6 flex flex-col md:flex-row justify-between items-end text-white z-10">
+
+            <div class="flex items-start">
+              <h1 class="text-[clamp(4rem,11vw,9rem)] leading-[0.8] font-black tracking-tighter uppercase">
+                Rubbas<br>Y.khan
+              </h1>
+            </div>
+
+            <div class="mt-6 md:mt-0 md:max-w-xs text-lg text-left md:text-right">
+              <h3 class="font-bold uppercase mb-2 tracking-wider text-white">
+                Creative UI/UX Designer & Developer
+              </h3>
+              <p style="font-family: 'PPNeueMachina_-Light', sans-serif;" class="leading-relaxed opacity-90">
+                I Design. I Build. I <span>Obsess</span> over details most people miss.
+              </p>
+            </div>
+
+          </div>
+        </div>
+        <div class="marqueescontainer w-full h-screen relative overflow-hidden"
+          style="background-color: var(--bg-dark); color: var(--text-primary-dark);">
+          <div class="heading text-center absolute bottom-[12%] left-1/2 -translate-x-1/2 translate-y-1/2 z-[2]">
+            <h1 class="text-[1.6rem] font-medium"
+              style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">
+              I make pixels <span style="font-family: 'Allura', cursive; color: var(--accent-primary);"
+                class="text-[2rem] font-bold">behave</span>.
+            </h1>
+            <h1 class="text-[1.6rem] font-medium"
+              style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">
+              Design-first mindset, developer-level execution. </h1>
+          </div>
+          <div class=" slmm  w-[90%] scale-[1] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div
+              class="row lft w-full  leading-[5rem]  tracking-[-2.92409px] flex items-center gap-5 whitespace-nowrap overflow -translate-x-1/2">
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">
+                  innovative</h1>
+                <div class="w-[2.5rem] h-[2.5rem] rotate-45" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem]"
+                  style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">pixel-perfect</h1>
+                <div class="w-[2.5rem] h-[2.5rem] rounded-full" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem] font-bold"
+                  style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">responsive</h1>
+                <div class="w-[2.5rem] h-[2.5rem]"
+                  style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);">
+                </div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">
+                  creative</h1>
+                <div class="w-[2.5rem] h-[2.5rem] bg-gradient-to-br from-green-400 to-teal-500"
+                  style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);">
+                </div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem]"
+                  style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">modern</h1>
+                <div class="w-[2.5rem] h-[2.5rem]" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem] font-bold"
+                  style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">dynamic</h1>
+                <div class="w-[2.5rem] h-[2.5rem] bg-gradient-to-br from-purple-400 to-pink-500 rotate-45"
+                  style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);">
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="row rgt w-full leading-[5rem]  tracking-[-2.92409px] flex items-center gap-5 whitespace-nowrap overflow -translate-x-[45%]">
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem] font-bold"
+                  style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">visionary</h1>
+                <div class="w-[2.5rem] h-[2.5rem] rounded-full" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">
+                  elegant</h1>
+                <div class="w-[2.5rem] h-[2.5rem] rotate-45"
+                  style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);">
+                </div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem]"
+                  style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">scalable</h1>
+                <div class="w-[2.5rem] h-[2.5rem]"
+                  style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);">
+                </div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem] font-bold"
+                  style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">professional</h1>
+                <div class="w-[2.5rem] h-[2.5rem]" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">
+                  cutting-edge</h1>
+                <div class="w-[2.5rem] h-[2.5rem] bg-gradient-to-br from-violet-400 to-purple-600"
+                  style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);">
+                </div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem]"
+                  style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">seamless</h1>
+                <div class="w-[2.5rem] h-[2.5rem] rounded-full" style="background-color: var(--accent-muted);"></div>
+              </div>
+            </div>
+
+            <div
+              class=" lft row w-full leading-[5rem]  tracking-[-2.92409px] flex items-center gap-5 whitespace-nowrap overflow -translate-x-1/4">
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem]"
+                  style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">bold</h1>
+                <div class="w-[2.5rem] h-[2.5rem] rotate-45" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem] font-bold"
+                  style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">stunning</h1>
+                <div class="w-[2.5rem] h-[2.5rem] bg-gradient-to-br from-sky-400 to-cyan-600"
+                  style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);">
+                </div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">
+                  interactive</h1>
+                <div class="w-[2.5rem] h-[2.5rem]"
+                  style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);">
+                </div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem]"
+                  style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">polished</h1>
+                <div class="w-[2.5rem] h-[2.5rem] rounded-full" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem] font-bold"
+                  style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">refined</h1>
+                <div class="w-[2.5rem] h-[2.5rem]"
+                  style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);">
+                </div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">
+                  immersive</h1>
+                <div class="w-[2.5rem] h-[2.5rem] bg-gradient-to-br from-yellow-400 to-amber-600"
+                  style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);">
+                </div>
+              </div>
+            </div>
+
+            <div
+              class=" rgt row w-full leading-[5rem]  tracking-[-2.92409px] flex items-center gap-5 whitespace-nowrap overflow -translate-x-1/3">
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem] font-bold"
+                  style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">exceptional</h1>
+                <div class="w-[2.5rem] h-[2.5rem]" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">
+                  user-focused</h1>
+                <div class="w-[2.5rem] h-[2.5rem] rounded-full" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem]"
+                  style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">transformative</h1>
+                <div class="w-[2.5rem] h-[2.5rem] rotate-45"
+                  style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);">
+                </div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem] font-bold"
+                  style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">sophisticated</h1>
+                <div class="w-[2.5rem] h-[2.5rem]"
+                  style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">
+                  impactful</h1>
+                <div class="w-[2.5rem] h-[2.5rem] bg-gradient-to-br from-red-400 to-pink-600"
+                  style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);">
+                </div>
+              </div>
+              <div class="elem flex items-center gap-5">
+                <h1 class="text-[4.5rem]"
+                  style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">memorable</h1>
+                <div class="w-[2.5rem] h-[2.5rem] rounded-full" style="background-color: var(--accent-muted);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section data-color="white" class=" py-20 px-6 md:px-12 font-sans">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="flex flex-col md:flex-row justify-between items-start mb-20 gap-8">
+          <h2 class="text-6xl md:text-8xl font-black tracking-tighter leading-[0.85] uppercase">
+            Selected<br>Work
+          </h2>
+          <div class="max-w-xs">
+            <div class="max-w-xs">
+              <p class="text-[10px] md:text-xs uppercase tracking-widest leading-[1.2rem] font-semibold ">
+                We are a digital-first agency specializing in high-end website development,
+                UI/UX design, and custom software solutions tailored to scale your brand
+                in the modern digital landscape.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16">
+
+          <!-- Project 01 -->
+          <a href="project1.html" class="group cursor-pointer block">
+            <div class="aspect-[4/3] overflow-hidden mb-6 bg-zinc-900">
+              <img src="assets/images/project1.1.png" alt="Project Thumbnail"
+                class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
+            </div>
+            <div
+              class="flex justify-between items-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border-t border-zinc-800 pt-5">
+              <span class="hover:text-zinc-400 transition-colors">Albert Einstein Biography</span>
+              <span class="text-zinc-500">Website Development</span>
+              <span>01</span>
+            </div>
+          </a>
+
+          <!-- Project 02 -->
+          <a href="project2.html" class="group cursor-pointer block">
+            <div class="aspect-[4/3] overflow-hidden mb-6 bg-zinc-900">
+              <img src="assets/images/project2.1.png" alt="Project Thumbnail"
+                class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
+            </div>
+            <div
+              class="flex justify-between items-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border-t border-zinc-800 pt-5">
+              <span class="hover:text-zinc-400 transition-colors">Carving Production</span>
+              <span class="text-zinc-500">UI/UX Design</span>
+              <span>02</span>
+            </div>
+          </a>
+
+          <!-- Project 03 -->
+          <a href="project3.html" class="group cursor-pointer block">
+            <div class="aspect-[4/3] overflow-hidden mb-6 bg-zinc-900">
+              <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800" alt="Project Thumbnail"
+                class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
+            </div>
+            <div
+              class="flex justify-between items-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border-t border-zinc-800 pt-5">
+              <span class="hover:text-zinc-400 transition-colors">Coffee Shop App</span>
+              <span class="text-zinc-500">UI/UX Design</span>
+              <span>03</span>
+            </div>
+          </a>
+
+          <!-- Project 04 -->
+          <div class="group cursor-pointer">
+            <a href="project6.html" class="group block">
+              <div class="aspect-[4/3] overflow-hidden mb-6 bg-zinc-900">
+                <img src="assets/images/project6.1.1.png" alt="Smart Home App"
+                  class="w-full h-full object-contain grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
+              </div>
+              <div
+                class="flex justify-between items-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border-t border-zinc-800 pt-5">
+                <span class="hover:text-zinc-400 transition-colors">SMART HOME APP</span>
+                <span class="text-zinc-500">UI/UX Design</span>
+                <span>06</span>
+              </div>
+            </a>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ABOUT ME Section -->
+    <section data-color="white" class="about-section w-full px-6 md:px-12 py-32 relative overflow-hidden"
+      style="background-color: var(--bg-light);">
+      <div class="max-w-6xl mx-auto relative">
+
+        <!-- Top Left Image -->
+        <div
+          class="about-image-top absolute top-0 left-0 w-32 h-48 md:w-48 md:h-72 rounded-2xl overflow-hidden opacity-0 z-10"
+          style="box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+          <img src="assets/images/ryk1.png" alt="Profile"
+            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+        </div>
+
+        <!-- Bottom Right Image -->
+        <div
+          class="about-image-bottom absolute bottom-0 right-0 w-40 h-60 md:w-60 md:h-80 rounded-2xl overflow-hidden opacity-0 z-10"
+          style="box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+          <img src="assets/images/ryk 3.png" alt="Profile"
+            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+        </div>
+
+        <!-- Center Content -->
+        <div class="text-center py-16 md:py-24 px-8 md:px-16">
+          <span class="text-xs uppercase tracking-[0.3em] font-bold mb-8 block"
+            style="color: var(--text-secondary-light);">
+            ABOUT ME
+          </span>
+
+          <h2 class="text-[clamp(2rem,5vw,4.5rem)] font-black tracking-tighter leading-[1.1] mb-8"
+            style="color: var(--text-primary-light); font-family: 'Space Grotesk', sans-serif;">
+            HEY, I'M <span style="color: var(--accent-primary);">RUBBAS</span>.<br>
+            I DESIGN INTERFACES &<br>
+            BUILD DIGITAL PRODUCTS<br>
+            FROM PAKISTAN.
+          </h2>
+
+          <div class="max-w-3xl mx-auto space-y-6 text-base md:text-lg leading-relaxed"
+            style="color: var(--text-secondary-light);">
+            <p>
+              I design and build digital experiences where clarity, precision, and intention matter.
+              Every interface starts with a problem and ends with something people actually enjoy using.
+            </p>
+
+            <p>
+              My work lives at the intersection of UI/UX and development — design systems, motion,
+              performance, and clean code working together as one. I obsess over details most people miss.
+            </p>
+
+            <p class="text-2xl font-bold"
+              style="color: var(--text-primary-light); font-family: 'Space Grotesk', sans-serif;">
+              Less noise. More clarity.
+            </p>
+          </div>
+
+          <!-- CTA Button -->
+          <div class="mt-12">
+            <a href="contact.html"
+              class="inline-block px-8 py-4 text-sm font-bold uppercase tracking-[0.2em] rounded-full transition-all duration-300 hover:scale-105"
+              style="background-color: var(--accent-primary); color: var(--bg-dark);">
+              Let’s Work Together
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Skills Section - Numbered List Layout -->
+    <section data-color="black" class="skills-section w-full px-6 md:px-12 py-32"
+      style="background-color: var(--bg-dark);">
+      <div class="max-w-7xl mx-auto">
+
+        <!-- Section Header -->
+        <div class="mb-10">
+
+          <h2 class="text-[clamp(3rem,8vw,6rem)] font-black tracking-tighter leading-[0.9] uppercase mb-8"
+            style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">
+            What I Do
+          </h2>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+
+          <!-- Skill 01 -->
+          <div class="skill-item group cursor-pointer">
+            <div class="flex items-center justify-between pb-6 border-b transition-all duration-300"
+              style="border-color: var(--border-dark);">
+              <div class="flex items-center gap-6">
+                <span class="text-5xl md:text-6xl font-black opacity-30"
+                  style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">
+                  01.
+                </span>
+                <h3 class="text-xl md:text-2xl font-medium tracking-tight"
+                  style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">
+                  UI / UX Design
+                </h3>
+              </div>
+              <span class="text-lg font-mono opacity-50" style="color: var(--text-secondary-dark);">95%</span>
+            </div>
+          </div>
+
+          <!-- Skill 02 -->
+          <div class="skill-item group cursor-pointer">
+            <div class="flex items-center justify-between pb-6 border-b transition-all duration-300"
+              style="border-color: var(--border-dark);">
+              <div class="flex items-center gap-6">
+                <span class="text-5xl md:text-6xl font-black opacity-30"
+                  style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">
+                  02.
+                </span>
+                <h3 class="text-xl md:text-2xl font-medium tracking-tight"
+                  style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">
+                  Frontend Engineering
+                </h3>
+              </div>
+              <span class="text-lg font-mono opacity-50" style="color: var(--text-secondary-dark);">92%</span>
+            </div>
+          </div>
+
+          <!-- Skill 03 -->
+          <div class="skill-item group cursor-pointer">
+            <div class="flex items-center justify-between pb-6 border-b transition-all duration-300"
+              style="border-color: var(--border-dark);">
+              <div class="flex items-center gap-6">
+                <span class="text-5xl md:text-6xl font-black opacity-30"
+                  style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">
+                  03.
+                </span>
+                <h3 class="text-xl md:text-2xl font-medium tracking-tight"
+                  style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">
+                  Creative Motion & Interaction
+                </h3>
+              </div>
+              <span class="text-lg font-mono opacity-50" style="color: var(--text-secondary-dark);">90%</span>
+            </div>
+          </div>
+
+          <!-- Skill 04 -->
+          <div class="skill-item group cursor-pointer">
+            <div class="flex items-center justify-between pb-6 border-b transition-all duration-300"
+              style="border-color: var(--border-dark);">
+              <div class="flex items-center gap-6">
+                <span class="text-5xl md:text-6xl font-black opacity-30"
+                  style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">
+                  04.
+                </span>
+                <h3 class="text-xl md:text-2xl font-medium tracking-tight"
+                  style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">
+                  Backend & APIs
+                </h3>
+              </div>
+              <span class="text-lg font-mono opacity-50" style="color: var(--text-secondary-dark);">70%</span>
+            </div>
+          </div>
+
+          <!-- Skill 05 -->
+          <div class="skill-item group cursor-pointer">
+            <div class="flex items-center justify-between pb-6 border-b transition-all duration-300"
+              style="border-color: var(--border-dark);">
+              <div class="flex items-center gap-6">
+                <span class="text-5xl md:text-6xl font-black opacity-30"
+                  style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">
+                  05.
+                </span>
+                <h3 class="text-xl md:text-2xl font-medium tracking-tight"
+                  style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">
+                  Mobile App Development
+                </h3>
+              </div>
+              <span class="text-lg font-mono opacity-50" style="color: var(--text-secondary-dark);">85%</span>
+            </div>
+          </div>
+
+          <!-- Skill 06 -->
+          <div class="skill-item group cursor-pointer">
+            <div class="flex items-center justify-between pb-6 border-b transition-all duration-300"
+              style="border-color: var(--border-dark);">
+              <div class="flex items-center gap-6">
+                <span class="text-5xl md:text-6xl font-black opacity-30"
+                  style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">
+                  06.
+                </span>
+                <h3 class="text-xl md:text-2xl font-medium tracking-tight"
+                  style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">
+                  Systems & Product Thinking
+                </h3>
+              </div>
+              <span class="text-lg font-mono opacity-50" style="color: var(--text-secondary-dark);">88%</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="w-full mt-20">
+        <div class="tech-marquee-track flex items-center gap-16 whitespace-nowrap">
+          <!-- HTML -->
+          <div class="tech-item flex items-center gap-4 px-8">
+            <div class="w-16 h-16 flex items-center justify-center rounded-xl"
+              style="background-color: rgba(245, 185, 66, 0.1);"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                <path d="M12 18L9.5 20.5L4 15L9.5 9.5L12 12M12 6L14.5 3.5L20 9L14.5 14.5L12 12"
+                  stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg></div><span class="text-xl font-bold"
+              style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">HTML</span>
+          </div>
+          <!-- CSS -->
+          <div class="tech-item flex items-center gap-4 px-8">
+            <div class="w-16 h-16 flex items-center justify-center rounded-xl"
+              style="background-color: rgba(245, 185, 66, 0.1);"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                <path d="M7 8H17M7 12H17M7 16H13" stroke="var(--accent-primary)" stroke-width="2"
+                  stroke-linecap="round" />
+              </svg></div><span class="text-xl font-bold"
+              style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">CSS</span>
+          </div>
+          <!-- JavaScript -->
+          <div class="tech-item flex items-center gap-4 px-8">
+            <div class="w-16 h-16 flex items-center justify-center rounded-xl"
+              style="background-color: rgba(245, 185, 66, 0.1);"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                <path d="M6.5 8.5L9.5 11.5L6.5 14.5M13 14.5H17" stroke="var(--accent-primary)" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <rect x="3" y="3" width="18" height="18" rx="2" stroke="var(--accent-primary)" stroke-width="2" />
+              </svg></div><span class="text-xl font-bold"
+              style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">JavaScript</span>
+          </div>
+          <!-- React -->
+          <div class="tech-item flex items-center gap-4 px-8">
+            <div class="w-16 h-16 flex items-center justify-center rounded-xl"
+              style="background-color: rgba(245, 185, 66, 0.1);"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="2" fill="var(--accent-primary)" />
+                <ellipse cx="12" cy="12" rx="8" ry="3" stroke="var(--accent-primary)" stroke-width="2" />
+                <ellipse cx="12" cy="12" rx="8" ry="3" transform="rotate(60 12 12)" stroke="var(--accent-primary)"
+                  stroke-width="2" />
+                <ellipse cx="12" cy="12" rx="8" ry="3" transform="rotate(120 12 12)" stroke="var(--accent-primary)"
+                  stroke-width="2" />
+              </svg></div><span class="text-xl font-bold"
+              style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">React</span>
+          </div>
+          <!-- Tailwind -->
+          <div class="tech-item flex items-center gap-4 px-8">
+            <div class="w-16 h-16 flex items-center justify-center rounded-xl"
+              style="background-color: rgba(245, 185, 66, 0.1);"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 6C9.33 6 7.67 7.33 7 10C8 8.67 9.17 8.17 10.5 8.5C11.26 8.67 11.81 9.23 12.41 9.84C13.39 10.84 14.54 12 17 12C19.67 12 21.33 10.67 22 8C21 9.33 19.83 9.83 18.5 9.5C17.74 9.33 17.19 8.77 16.59 8.16C15.61 7.16 14.46 6 12 6ZM7 12C4.33 12 2.67 13.33 2 16C3 14.67 4.17 14.17 5.5 14.5C6.26 14.67 6.81 15.23 7.41 15.84C8.39 16.84 9.54 18 12 18C14.67 18 16.33 16.67 17 14C16 15.33 14.83 15.83 13.5 15.5C12.74 15.33 12.19 14.77 11.59 14.16C10.61 13.16 9.46 12 7 12Z"
+                  fill="var(--accent-primary)" />
+              </svg></div><span class="text-xl font-bold"
+              style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">Tailwind</span>
+          </div>
+          <!-- GSAP -->
+          <div class="tech-item flex items-center gap-4 px-8">
+            <div class="w-16 h-16 flex items-center justify-center rounded-xl"
+              style="background-color: rgba(245, 185, 66, 0.1);"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                <path d="M4 12L8 8L12 12L16 8L20 12M4 16L8 12L12 16L16 12L20 16" stroke="var(--accent-primary)"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg></div><span class="text-xl font-bold"
+              style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">GSAP</span>
+          </div>
+          <!-- Three.js -->
+          <div class="tech-item flex items-center gap-4 px-8">
+            <div class="w-16 h-16 flex items-center justify-center rounded-xl"
+              style="background-color: rgba(245, 185, 66, 0.1);"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="var(--accent-primary)" stroke-width="2"
+                  stroke-linejoin="round" />
+                <path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="var(--accent-primary)" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg></div><span class="text-xl font-bold"
+              style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">Three.js</span>
+          </div>
+          <!-- Node.js -->
+          <div class="tech-item flex items-center gap-4 px-8">
+            <div class="w-16 h-16 flex items-center justify-center rounded-xl"
+              style="background-color: rgba(245, 185, 66, 0.1);"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="var(--accent-primary)" stroke-width="2"
+                  stroke-linejoin="round" />
+                <path d="M12 12V22M3 7L12 12L21 7" stroke="var(--accent-primary)" stroke-width="2" />
+              </svg></div><span class="text-xl font-bold"
+              style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">Node.js</span>
+          </div>
+          <!-- Duplicates for seamless loop -->
+          <div class="tech-item flex items-center gap-4 px-8">
+            <div class="w-16 h-16 flex items-center justify-center rounded-xl"
+              style="background-color: rgba(245, 185, 66, 0.1);"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                <path d="M12 18L9.5 20.5L4 15L9.5 9.5L12 12M12 6L14.5 3.5L20 9L14.5 14.5L12 12"
+                  stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg></div><span class="text-xl font-bold"
+              style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">HTML</span>
+          </div>
+          <div class="tech-item flex items-center gap-4 px-8">
+            <div class="w-16 h-16 flex items-center justify-center rounded-xl"
+              style="background-color: rgba(245, 185, 66, 0.1);"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                <path d="M7 8H17M7 12H17M7 16H13" stroke="var(--accent-primary)" stroke-width="2"
+                  stroke-linecap="round" />
+              </svg></div><span class="text-xl font-bold"
+              style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">CSS</span>
+          </div>
+          <div class="tech-item flex items-center gap-4 px-8">
+            <div class="w-16 h-16 flex items-center justify-center rounded-xl"
+              style="background-color: rgba(245, 185, 66, 0.1);"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                <path d="M6.5 8.5L9.5 11.5L6.5 14.5M13 14.5H17" stroke="var(--accent-primary)" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <rect x="3" y="3" width="18" height="18" rx="2" stroke="var(--accent-primary)" stroke-width="2" />
+              </svg></div><span class="text-xl font-bold"
+              style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">JavaScript</span>
+          </div>
+          <div class="tech-item flex items-center gap-4 px-8">
+            <div class="w-16 h-16 flex items-center justify-center rounded-xl"
+              style="background-color: rgba(245, 185, 66, 0.1);"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="2" fill="var(--accent-primary)" />
+                <ellipse cx="12" cy="12" rx="8" ry="3" stroke="var(--accent-primary)" stroke-width="2" />
+                <ellipse cx="12" cy="12" rx="8" ry="3" transform="rotate(60 12 12)" stroke="var(--accent-primary)"
+                  stroke-width="2" />
+                <ellipse cx="12" cy="12" rx="8" ry="3" transform="rotate(120 12 12)" stroke="var(--accent-primary)"
+                  stroke-width="2" />
+              </svg></div><span class="text-xl font-bold"
+              style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">React</span>
+          </div>
+          <div class="tech-item flex items-center gap-4 px-8">
+            <div class="w-16 h-16 flex items-center justify-center rounded-xl"
+              style="background-color: rgba(245, 185, 66, 0.1);"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 6C9.33 6 7.67 7.33 7 10C8 8.67 9.17 8.17 10.5 8.5C11.26 8.67 11.81 9.23 12.41 9.84C13.39 10.84 14.54 12 17 12C19.67 12 21.33 10.67 22 8C21 9.33 19.83 9.83 18.5 9.5C17.74 9.33 17.19 8.77 16.59 8.16C15.61 7.16 14.46 6 12 6ZM7 12C4.33 12 2.67 13.33 2 16C3 14.67 4.17 14.17 5.5 14.5C6.26 14.67 6.81 15.23 7.41 15.84C8.39 16.84 9.54 18 12 18C14.67 18 16.33 16.67 17 14C16 15.33 14.83 15.83 13.5 15.5C12.74 15.33 12.19 14.77 11.59 14.16C10.61 13.16 9.46 12 7 12Z"
+                  fill="var(--accent-primary)" />
+              </svg></div><span class="text-xl font-bold"
+              style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">Tailwind</span>
+          </div>
+          <div class="tech-item flex items-center gap-4 px-8">
+            <div class="w-16 h-16 flex items-center justify-center rounded-xl"
+              style="background-color: rgba(245, 185, 66, 0.1);"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                <path d="M4 12L8 8L12 12L16 8L20 12M4 16L8 12L12 16L16 12L20 16" stroke="var(--accent-primary)"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg></div><span class="text-xl font-bold"
+              style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">GSAP</span>
+          </div>
+          <div class="tech-item flex items-center gap-4 px-8">
+            <div class="w-16 h-16 flex items-center justify-center rounded-xl"
+              style="background-color: rgba(245, 185, 66, 0.1);"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="var(--accent-primary)" stroke-width="2"
+                  stroke-linejoin="round" />
+                <path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="var(--accent-primary)" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg></div><span class="text-xl font-bold"
+              style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">Three.js</span>
+          </div>
+          <div class="tech-item flex items-center gap-4 px-8">
+            <div class="w-16 h-16 flex items-center justify-center rounded-xl"
+              style="background-color: rgba(245, 185, 66, 0.1);"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="var(--accent-primary)" stroke-width="2"
+                  stroke-linejoin="round" />
+                <path d="M12 12V22M3 7L12 12L21 7" stroke="var(--accent-primary)" stroke-width="2" />
+              </svg></div><span class="text-xl font-bold"
+              style="color: var(--text-primary-dark); font-family: 'Space Grotesk', sans-serif;">Node.js</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+    <script>
+      // 2026 Skills Section GSAP Animations
+      document.addEventListener('DOMContentLoaded', function () {
+
+        // Bento card entrance animations with stagger
+        gsap.from('.skill-bento', {
+          scrollTrigger: {
+            trigger: '.skills-section',
+            start: 'top 70%',
+            end: 'top 30%',
+            toggleActions: 'play none none reverse'
+          },
+          y: 60,
+          opacity: 0,
+          duration: 0.8,
+          stagger: {
+            amount: 0.6,
+            from: 'start',
+            ease: 'power2.out'
+          },
+          ease: 'power3.out'
+        });
+
+        // Hover micro-interactions for bento cards
+        gsap.utils.toArray('.skill-bento').forEach((card) => {
+          card.addEventListener('mouseenter', function () {
+            gsap.to(card, {
+              y: -8,
+              scale: 1.01,
+              duration: 0.4,
+              ease: 'power2.out'
+            });
+          });
+
+          card.addEventListener('mouseleave', function () {
+            gsap.to(card, {
+              y: 0,
+              scale: 1,
+              duration: 0.4,
+              ease: 'power2.out'
+            });
+          });
+        });
+
+        // Animate percentage counters
+        gsap.utils.toArray('.skill-percentage').forEach((element) => {
+          const target = parseInt(element.getAttribute('data-target'));
+
+          gsap.to(element, {
+            scrollTrigger: {
+              trigger: element,
+              start: 'top 80%',
+              toggleActions: 'play none none reverse'
+            },
+            innerHTML: target,
+            duration: 2,
+            snap: { innerHTML: 1 },
+            ease: 'power2.out',
+            onUpdate: function () {
+              element.innerHTML = Math.ceil(element.innerHTML) + '%';
+            }
+          });
+        });
+
+        // Animate stats with counter
+        gsap.utils.toArray('.stat-item').forEach((item, index) => {
+          const numberElement = item.querySelector('.stat-number');
+          const target = parseInt(numberElement.getAttribute('data-target'));
+
+          // Fade in stat card
+          gsap.to(item, {
+            scrollTrigger: {
+              trigger: item,
+              start: 'top 90%',
+              toggleActions: 'play none none reverse'
+            },
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            delay: index * 0.08,
+            ease: 'power3.out'
+          });
+
+          // Count up animation
+          gsap.to(numberElement, {
+            scrollTrigger: {
+              trigger: item,
+              start: 'top 90%',
+              toggleActions: 'play none none reverse'
+            },
+            innerHTML: target,
+            duration: 2,
+            delay: index * 0.08,
+            snap: { innerHTML: 1 },
+            ease: 'power2.out',
+            onUpdate: function () {
+              numberElement.innerHTML = Math.ceil(numberElement.innerHTML) + (target === 100 ? '%' : '+');
+            }
+          });
+        });
+
+        // Parallax effect on large card glow
+        gsap.to('.skill-bento .absolute', {
+          scrollTrigger: {
+            trigger: '.skills-section',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1
+          },
+          y: -50,
+          ease: 'none'
+        });
+
+      });
+    </script>
+
+  </main>
+  <footer data-color="black"
+    class="footer-section bg-black text-white min-h-screen w-full px-[6%] py-8 flex flex-col justify-between border-t border-white/10 overflow-hidden">
+
+    <!-- CTA -->
+    <div class="cta-area flex flex-col items-end text-right">
+      <div class="overflow-hidden">
+        <h1 class="text-[clamp(2.6rem,7vw,5.5rem)] font-extrabold tracking-tight leading-[0.9]">
+          LET’S
+        </h1>
+      </div>
+      <div class="overflow-hidden">
+        <h1 class="text-[clamp(2.6rem,7vw,5.5rem)] font-extrabold tracking-tight leading-[0.9]">
+          BUILD
+        </h1>
+      </div>
+      <div class="overflow-hidden">
+        <h1 class="text-[clamp(2.6rem,7vw,5.5rem)] font-extrabold tracking-tight leading-[0.9] opacity-60">
+          SOMETHING
+        </h1>
+      </div>
+
+      <div class="flex justify-end mt-4">
+        <div class="magnetic-wrap p-6">
+          <a href="contact.html"
+            class="now-btn group relative flex items-center justify-center border border-white/30 rounded-full px-14 py-4 backdrop-blur-md transition-all hover:border-white hover:bg-white hover:text-black">
+
+            <div class="masker relative h-[2.2rem] overflow-hidden pointer-events-none">
+              <span class="btn-text block text-2xl font-bold italic tracking-widest uppercase">
+                START NOW
+              </span>
+              <span
+                class="btn-text absolute left-0 top-0 block translate-y-full text-2xl font-bold italic tracking-widest uppercase">
+                START NOW
+              </span>
+            </div>
+
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="footer-grid grid grid-cols-1 md:grid-cols-4 gap-12 pt-8 border-t border-white/10">
+
+      <div class="info-block">
+        <p class="text-base md:text-lg font-medium leading-relaxed opacity-80 max-w-xs">
+          Let's build something amazing together.
+        </p>
+
+        <div class="mt-5 w-full max-w-[160px] aspect-video rounded-lg overflow-hidden border border-white/10 relative">
+          <video src="https://www.pexels.com/download/video/8818311/" autoplay muted loop playsinline
+            class="w-full h-full object-cover opacity-70 hover:opacity-100 transition-opacity duration-500">
+          </video>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-6 font-semibold">
+          Social
+        </h4>
+        <ul class="grid grid-cols-2 gap-x-8 gap-y-4">
+          <li>
+            <a href="https://www.instagram.com/design_code_journey/"
+              class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+              target="_blank">
+              Instagram
+              <i
+                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/rubbasyarkhan"
+              class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+              target="_blank">
+              LinkedIn
+              <i
+                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/rubbasyarkhan"
+              class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+              target="_blank">
+              GitHub
+              <i
+                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://dribbble.com/rubbas"
+              class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+              target="_blank">
+              Dribbble
+              <i
+                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://pinterest.com/rubbasyarkhan"
+              class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+              target="_blank">
+              Pinterest
+              <i
+                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="info-block">
+        <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-6 font-semibold">
+          Contact
+        </h4>
+        <a href="mailto:rubbasyarkhan007@gmail.com"
+          class="block text-xs tracking-widest opacity-60 hover:opacity-100 transition">
+          rubbasyarkhan007@gmail.com
+        </a>
+        <p class="mt-3 text-xs tracking-widest opacity-60">
+          (+92) 371-029-0861
+        </p>
+      </div>
+
+      <div class="info-block">
+        <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-6 font-semibold">
+          Location
+        </h4>
+        <p class="text-xs tracking-widest opacity-60 leading-relaxed">
+          Karachi, Pakistan<br>
+          Available Worldwide
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center pt-2 border-t border-white/10 mt-2">
+      <p class="text-xs opacity-40 tracking-wide">
+        © 2026 Rubbas Yar Khan. All rights reserved.
+      </p>
+    </div>
+
+    <div class="footer-cursor-video pointer-events-none">
+      <video src="https://www.pexels.com/download/video/18069165/
+      " autoplay muted loop playsinline onloadedmetadata="this.playbackRate = 2.0;"></video>
+    </div>
+
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+
+  <script src="script.js"></script>
+  <div class="noise-overlay"></div>
+
+</body>
+
+</html>

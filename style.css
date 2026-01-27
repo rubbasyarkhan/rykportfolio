@@ -1,0 +1,485 @@
+:root {
+    /* Dark Mode */
+    --bg-dark: #0B0D10;
+    --surface-dark: #13161B;
+    --border-dark: #1F232B;
+    --text-primary-dark: #E6E6E6;
+    --text-secondary-dark: #9CA3AF;
+    --text-disabled-dark: #6B7280;
+
+    /* Light Mode */
+    --bg-light: #F4F1EC;
+    --surface-light: #FFFFFF;
+    --border-light: #E5E2DC;
+    --text-primary-light: #0B0D10;
+    --text-secondary-light: #5E636E;
+    --text-disabled-light: #8A8F99;
+
+    /* Accent */
+    --accent-primary: #F5B942;
+    --accent-muted: #D9A737;
+    --accent-soft: #FFF3D6;
+
+    /* Utilities */
+    --overlay-dark: rgba(0, 0, 0, 0.6);
+    --overlay-light: rgba(255, 255, 255, 0.6);
+    --focus-ring: #F5B942;
+    --shadow-soft: rgba(0, 0, 0, 0.08);
+    --shadow-strong: rgba(0, 0, 0, 0.25);
+}
+
+
+body[theme="black"] {
+    background-color: var(--bg-dark);
+}
+
+body[theme="black"] section {
+    color: var(--text-primary-dark);
+}
+
+body[theme="white"] {
+    background-color: var(--bg-light);
+}
+
+body[theme="white"] section {
+    color: var(--text-primary-light);
+}
+
+@font-face {
+    font-family: "Neue-Machina";
+    src: url(./assets/Neue-Machina.ttf);
+}
+
+@font-face {
+    font-family: "PPNeue-Machina";
+    src: url(./assets/PPNeueMachina_-Light.ttf);
+}
+
+@font-face {
+    font-family: "satoshi";
+    src: url(./assets/Satoshi-Variable.ttf);
+}
+
+*::selection {
+    background-color: var(--accent-primary);
+    color: var(--bg-dark);
+}
+
+.vdiv {
+    clip-path: circle(var(--clip) at 50% 50%);
+}
+
+body {
+    overflow-x: hidden;
+    transition: background-color ease-out .5s;
+}
+
+
+
+
+/* Custom Font & Smoothness */
+.botmtext h1,
+.services-page h1 {
+    font-family: "Neue-Machina", sans-serif;
+    /* Using your existing font */
+    text-transform: uppercase;
+}
+
+/* Glassmorphism effect for the CTA if you want it to feel modern */
+.cta-wrapper a {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.cta-wrapper a:hover {
+    background: #fbbf24;
+    /* Tailwind yellow-500 to match your marquee dots */
+    color: black;
+}
+
+/* Ensure the video mask doesn't hide the text too early */
+.vdiv {
+    will-change: clip-path;
+}
+
+
+.cta-link:hover .arrow {
+    transform: translateX(8px);
+}
+
+/* Custom easing for image transitions */
+.img-wrapper img {
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.gsap-btn .masker {
+    /* Ensures the container is exactly the height of one line of text */
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+}
+
+.gsap-btn .btn-text {
+    white-space: nowrap;
+    will-change: transform;
+}
+
+
+
+#full-menu {
+    color: white;
+    /* Use clip-path for a premium opening effect */
+    clip-path: circle(0% at 100% 0%);
+}
+
+.nav-link {
+    font-family: "Neue-Machina", sans-serif;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+/* Strikethrough hover effect */
+
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+#menu-toggle span {
+    transform-origin: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Optional: Make the text white inside the menu regardless of background */
+#full-menu .nav-link {
+    color: white;
+}
+
+
+
+.footer-section {
+    font-family: 'satoshi', sans-serif;
+}
+
+/* Ensure the cta-area text is tight and impactful */
+.cta-area h1 {
+    font-family: "Neue-Machina", sans-serif;
+    text-transform: uppercase;
+}
+
+/* Smooth transition for the NOW button */
+.now-btn {
+    will-change: padding;
+}
+
+/* Add a very subtle glow to the footer borders to match your 'Services' aesthetic */
+.footer-grid {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+
+
+/* Ensure the images start hidden for the GSAP clip-path reveal */
+.img-reveal-container {
+    clip-path: inset(100% 0% 0% 0%);
+    transition: clip-path 0.1s ease-out;
+}
+
+/* Ensure images fill containers for parallax */
+.parallax-img {
+    will-change: transform;
+    object-fit: cover;
+}
+
+.nav-cta .masker span {
+    transition: transform 0.45s cubic-bezier(.77, 0, .18, 1);
+}
+
+.nav-cta:hover .masker span:first-child {
+    transform: translateY(-100%);
+}
+
+.nav-cta:hover .masker span:last-child {
+    transform: translateY(0%);
+}
+
+/* ========================================
+   EDITORIAL ABOUT PAGE STYLES
+   ======================================== */
+
+/* Editorial Container */
+.editorial-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+    .editorial-container {
+        padding: 0 1.5rem;
+    }
+}
+
+/* Typography */
+.hero-title {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--text-primary-light);
+}
+
+.hero-subtitle {
+    color: var(--text-secondary-light);
+}
+
+.hero-intro {
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    line-height: 1.7;
+    color: var(--text-secondary-light);
+}
+
+.section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--text-primary-light);
+}
+
+/* About Hero */
+.about-hero-image {
+    background-color: var(--surface-light);
+    aspect-ratio: 4/5;
+}
+
+/* About Text */
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-primary-light);
+}
+
+/* Stats */
+.stat-card {
+    background: var(--surface-light);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--accent-primary);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    color: var(--text-secondary-light);
+}
+
+@media (max-width: 768px) {
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+/* Divider */
+.editorial-divider {
+    height: 1px;
+    background-color: var(--border-light);
+    margin: 4rem 0;
+}
+
+/* Service Cards */
+.service-card {
+    background: var(--surface-light);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+}
+
+.service-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: var(--accent-primary);
+}
+
+.service-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--text-primary-light);
+}
+
+.service-description {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary-light);
+}
+
+/* Value Cards */
+.value-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: var(--surface-light);
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    border-color: var(--accent-primary);
+}
+
+.value-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--text-primary-light);
+}
+
+.value-description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--text-secondary-light);
+}
+
+/* CTA Section */
+.cta-text {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-secondary-light);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.btn-editorial {
+    background-color: var(--accent-primary);
+    color: var(--bg-dark);
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.btn-editorial:hover {
+    background-color: var(--accent-muted);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(245, 185, 66, 0.3);
+}
+
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.tech-marquee-track {
+    animation: marquee 30s linear infinite;
+}
+
+.tech-marquee-track:hover {
+    animation-play-state: paused;
+}
+
+.tech-item {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+    transform: scale(1.05);
+}
+
+
+.footer-cursor-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 140px;
+    border-radius: 14px;
+    overflow: hidden;
+    z-index: 999;
+    opacity: 0;
+    transform-style: preserve-3d;
+    pointer-events: none;
+    mix-blend-mode: difference;
+}
+
+.footer-cursor-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+    animation: noiseMove 0.35s steps(2) infinite;
+}
+
+@keyframes noiseMove {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-1px, 1px); }
+    50% { transform: translate(1px, -1px); }
+    75% { transform: translate(-1px, -1px); }
+    100% { transform: translate(0, 0); }
+}
+
+
+@media (max-width: 768px) {
+  .footer-cursor-video,
+  .noise-overlay {
+    display: none;
+  }
+}

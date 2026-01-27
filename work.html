@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+  <main class="main w-full">
+
+   <nav
+      class="fixed top-0 left-0 w-full z-[100] px-[5%] py-8 flex justify-between items-center mix-blend-difference pointer-events-none">
+
+      <!-- LOGO -->
+      <a href="index.html"
+        class="logo text-white font-bold text-xl tracking-tighter pointer-events-auto cursor-pointer">
+        RUBBAS .YK
+      </a>
+
+      <!-- CENTER LINKS -->
+      <div id="nav-center" class="hidden md:flex gap-10 pointer-events-auto transition-opacity duration-300">
+
+        <!-- WORK -->
+        <a href="work.html" class="nav-cta group relative overflow-hidden">
+          <div class="masker h-[1.2rem] overflow-hidden uppercase tracking-[0.2em] text-sm font-medium">
+            <span class="block text-white">Work</span>
+            <span class="absolute left-0 top-0 translate-y-full text-white">Work</span>
+          </div>
+        </a>
+
+        <!-- SKILLS -->
+        <a href="about.html" class="nav-cta group relative overflow-hidden">
+          <div class="masker h-[1.2rem] overflow-hidden uppercase tracking-[0.2em] text-sm font-medium">
+            <span class="block text-white">ABOUT ME</span>
+            <span class="absolute left-0 top-0 translate-y-full text-white">ABOUT ME</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- HAMBURGER -->
+      <div id="menu-toggle"
+        class="group flex flex-col gap-1.5 cursor-pointer pointer-events-auto relative w-8 h-5 justify-center">
+        <span class="line-1 w-8 h-[2px] bg-white transition-all"></span>
+        <span class="line-2 w-8 h-[2px] bg-white transition-all"></span>
+        <span class="line-3 w-8 h-[2px] bg-white transition-all origin-right scale-x-50 group-hover:scale-x-100"></span>
+      </div>
+    </nav>
+
+
+    <div id="full-menu"
+      class="fixed top-0 left-0 w-full h-screen bg-black z-[90] hidden flex flex-col md:flex-row px-[5%] items-center justify-center">
+      <div class="menu-left w-full md:w-2/3">
+        <ul class="space-y-4">
+          <!-- HOME -->
+          <li class="overflow-hidden">
+            <a href="index.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
+              <div
+                class="masker relative h-[1em] overflow-hidden text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none">
+                <span class="btn-text block text-white">HOME</span>
+                <span class="btn-text absolute left-0 top-0 translate-y-full text-white">HOME</span>
+              </div>
+            </a>
+          </li>
+
+          <!-- WORK -->
+          <li class="overflow-hidden">
+            <a href="work.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
+              <div
+                class="masker relative h-[1em] overflow-hidden text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none">
+                <span class="btn-text block text-white">WORK</span>
+                <span class="btn-text absolute left-0 top-0 translate-y-full text-white">WORK</span>
+              </div>
+            </a>
+          </li>
+
+          <!-- SKILLS -->
+          <li class="overflow-hidden">
+            <a href="about.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
+              <div
+                class="masker relative h-[1em] overflow-hidden text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none">
+                <span class="btn-text block text-white">ABOUT ME</span>
+                <span class="btn-text absolute left-0 top-0 translate-y-full text-white">ABOUT ME</span>
+              </div>
+            </a>
+          </li>
+
+          <!-- CONTACT -->
+          <li class="overflow-hidden">
+            <a href="contact.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
+              <div
+                class="masker relative h-[1em] overflow-hidden text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none">
+                <span class="btn-text block text-white">CONTACT</span>
+                <span class="btn-text absolute left-0 top-0 translate-y-full text-white">CONTACT</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div
+        class="menu-right w-full md:w-1/3 flex flex-col justify-center gap-12 mt-12 md:mt-0 border-t md:border-t-0 md:border-l border-white/10 pt-12 md:pt-0 md:pl-20">
+        <div>
+          <h4 class="text-xs uppercase tracking-[0.3em] opacity-40 mb-4 text-white">Inquiries</h4>
+          <p class="text-xl text-white">rubbasyarkhan007@gmail.com</p>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-[0.3em] opacity-40 mb-4 text-white">Follow Us</h4>
+          <div class="flex gap-6 text-2xl text-white">
+            <a href="https://www.instagram.com/rubbas_yar_khan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"><i class="ri-instagram-line"></i></a>
+            <a href="https://www.linkedin.com/in/rubbas-yar-khan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank"><i class="ri-linkedin-box-line"></i></a>
+            <a href="https://www.pinterest.com/rubbasyarkhan" target="_blank"><i class="ri-pinterest-line"></i></a>
+            <a href="https://dribbble.com/rubbas" target="_blank"><i class="ri-dribbble-line"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <section data-color="white" class=" py-20 px-6 md:px-12 font-sans">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="flex flex-col md:flex-row justify-between items-start mb-20 gap-8">
+          <h2 class="text-6xl md:text-8xl font-black tracking-tighter leading-[0.85] uppercase">
+            Selected<br>Work
+          </h2>
+          <div class="max-w-xs">
+            <div class="max-w-xs">
+              <p class="text-[10px] md:text-xs uppercase tracking-widest leading-[1.2rem] font-semibold ">
+                We are a digital-first agency specializing in high-end website development,
+                UI/UX design, and custom software solutions tailored to scale your brand
+                in the modern digital landscape.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16">
+
+          <!-- Project 1 -->
+          <div class="group cursor-pointer">
+            <a href="project1.html" class="group block">
+              <div class="aspect-[4/3] overflow-hidden mb-6 bg-zinc-900">
+                <img src="assets/images/project1.1.png" alt="Albert Einstein Biography"
+                  class="w-full h-full object-contain grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
+              </div>
+              <div
+                class="flex justify-between items-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border-t border-zinc-800 pt-5">
+                <span class="hover:text-zinc-400 transition-colors">ALBERT EINSTEIN BIOGRAPHY</span>
+                <span class="text-zinc-500">Website Development</span>
+                <span>01</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="group cursor-pointer">
+            <a href="project2.html" class="group block">
+              <div class="aspect-[4/3] overflow-hidden mb-6 bg-zinc-900">
+                <img src="assets/images/project2.1.png" alt="Carving Production Agency"
+                  class="w-full h-full object-contain grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
+              </div>
+              <div
+                class="flex justify-between items-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border-t border-zinc-800 pt-5">
+                <span class="hover:text-zinc-400 transition-colors">CARVING PRODUCTION AGENCY</span>
+                <span class="text-zinc-500">UI/UX Design</span>
+                <span>02</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="group cursor-pointer">
+            <a href="project3.html" class="group block">
+              <div class="aspect-[4/3] overflow-hidden mb-6 bg-zinc-900">
+                <img src="assets/images/project3main.jpg" alt="Coffee Shop Mobile App"
+                  class="w-full h-full object-contain grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
+              </div>
+              <div
+                class="flex justify-between items-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border-t border-zinc-800 pt-5">
+                <span class="hover:text-zinc-400 transition-colors">COFFEE SHOP MOBILE APP</span>
+                <span class="text-zinc-500">UI/UX Design</span>
+                <span>03</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="group cursor-pointer">
+            <a href="project4.html" class="group block">
+              <div class="aspect-[4/3] overflow-hidden mb-6 bg-zinc-900">
+                <img src="assets/images/project4.1.png" alt="Significo Website Clone"
+                  class="w-full h-full object-contain grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
+              </div>
+              <div
+                class="flex justify-between items-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border-t border-zinc-800 pt-5">
+                <span class="hover:text-zinc-400 transition-colors">SIGNIFICO WEBSITE CLONE</span>
+                <span class="text-zinc-500">Website Development</span>
+                <span>04</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="group cursor-pointer">
+            <a href="project5.html" class="group block">
+              <div class="aspect-[4/3] overflow-hidden mb-6 bg-zinc-900">
+                <img src="assets/images/project5.3.png" alt="Enzo Portfolio Clone"
+                  class="w-full h-full object-contain grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
+              </div>
+              <div
+                class="flex justify-between items-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border-t border-zinc-800 pt-5">
+                <span class="hover:text-zinc-400 transition-colors">ENZO PORTFOLIO CLONE</span>
+                <span class="text-zinc-500">Website Development</span>
+                <span>05</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="group cursor-pointer">
+            <a href="project6.html" class="group block">
+              <div class="aspect-[4/3] overflow-hidden mb-6 bg-zinc-900">
+                <img src="assets/images/project6.1.1.png" alt="Smart Home App"
+                  class="w-full h-full object-contain grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
+              </div>
+              <div
+                class="flex justify-between items-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border-t border-zinc-800 pt-5">
+                <span class="hover:text-zinc-400 transition-colors">SMART HOME APP</span>
+                <span class="text-zinc-500">UI/UX Design</span>
+                <span>06</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 7 -->
+          <div class="group cursor-pointer md:col-span-2 lg:col-span-2">
+            <a href="project7.html" class="group block">
+              <div class="aspect-[21/9] overflow-hidden mb-6 bg-zinc-900">
+                <img src="assets/images/project7.1.png" alt="Three.js 3D Project"
+                  class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
+              </div>
+              <div
+                class="flex justify-between items-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border-t border-zinc-800 pt-5">
+                <span class="hover:text-zinc-400 transition-colors">THREE.JS 3D PROJECT</span>
+                <span class="text-zinc-500">3D Web Development</span>
+                <span>07</span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer data-color="black"
+    class="footer-section bg-black text-white min-h-screen w-full px-[6%] py-8 flex flex-col justify-between border-t border-white/10 overflow-hidden">
+
+    <!-- CTA -->
+    <div class="cta-area flex flex-col items-end text-right">
+      <div class="overflow-hidden">
+        <h1 class="text-[clamp(2.6rem,7vw,5.5rem)] font-extrabold tracking-tight leading-[0.9]">
+          LET’S
+        </h1>
+      </div>
+      <div class="overflow-hidden">
+        <h1 class="text-[clamp(2.6rem,7vw,5.5rem)] font-extrabold tracking-tight leading-[0.9]">
+          BUILD
+        </h1>
+      </div>
+      <div class="overflow-hidden">
+        <h1 class="text-[clamp(2.6rem,7vw,5.5rem)] font-extrabold tracking-tight leading-[0.9] opacity-60">
+          SOMETHING
+        </h1>
+      </div>
+
+      <div class="flex justify-end mt-4">
+        <div class="magnetic-wrap p-6">
+          <a href="contact.html"
+            class="now-btn group relative flex items-center justify-center border border-white/30 rounded-full px-14 py-4 backdrop-blur-md transition-all hover:border-white hover:bg-white hover:text-black">
+
+            <div class="masker relative h-[2.2rem] overflow-hidden pointer-events-none">
+              <span class="btn-text block text-2xl font-bold italic tracking-widest uppercase">
+                START NOW
+              </span>
+              <span
+                class="btn-text absolute left-0 top-0 block translate-y-full text-2xl font-bold italic tracking-widest uppercase">
+                START NOW
+              </span>
+            </div>
+
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="footer-grid grid grid-cols-1 md:grid-cols-4 gap-12 pt-8 border-t border-white/10">
+
+      <div class="info-block">
+        <p class="text-base md:text-lg font-medium leading-relaxed opacity-80 max-w-xs">
+          Let's build something amazing together.
+        </p>
+
+        <div class="mt-5 w-full max-w-[160px] aspect-video rounded-lg overflow-hidden border border-white/10 relative">
+          <video src="https://www.pexels.com/download/video/8818311/" autoplay muted loop playsinline
+            class="w-full h-full object-cover opacity-70 hover:opacity-100 transition-opacity duration-500">
+          </video>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-6 font-semibold">
+          Social
+        </h4>
+        <ul class="grid grid-cols-2 gap-x-8 gap-y-4">
+          <li>
+            <a href="https://www.instagram.com/design_code_journey/"
+              class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+              target="_blank">
+              Instagram
+              <i
+                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/rubbasyarkhan"
+              class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+              target="_blank">
+              LinkedIn
+              <i
+                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/rubbasyarkhan"
+              class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+              target="_blank">
+              GitHub
+              <i
+                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://dribbble.com/rubbas"
+              class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+              target="_blank">
+              Dribbble
+              <i
+                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://pinterest.com/rubbasyarkhan"
+              class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+              target="_blank">
+              Pinterest
+              <i
+                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="info-block">
+        <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-6 font-semibold">
+          Contact
+        </h4>
+        <a href="mailto:rubbasyarkhan007@gmail.com"
+          class="block text-xs tracking-widest opacity-60 hover:opacity-100 transition">
+          rubbasyarkhan007@gmail.com
+        </a>
+        <p class="mt-3 text-xs tracking-widest opacity-60">
+          (+92) 371-029-0861
+        </p>
+      </div>
+
+      <div class="info-block">
+        <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-6 font-semibold">
+          Location
+        </h4>
+        <p class="text-xs tracking-widest opacity-60 leading-relaxed">
+          Karachi, Pakistan<br>
+          Available Worldwide
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center pt-2 border-t border-white/10 mt-2">
+      <p class="text-xs opacity-40 tracking-wide">
+        © 2026 Rubbas Yar Khan. All rights reserved.
+      </p>
+    </div>
+
+    <div class="footer-cursor-video pointer-events-none">
+      <video src="https://www.pexels.com/download/video/18069165/
+      " autoplay muted loop playsinline onloadedmetadata="this.playbackRate = 2.0;"></video>
+    </div>
+
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+  <script src="script.js"></script>
+  <div class="noise-overlay"></div>
+</body>
+
+</html>
