@@ -47,17 +47,17 @@ body[theme="white"] section {
 
 @font-face {
     font-family: "Neue-Machina";
-    src: url(./assets/Neue-Machina.ttf);
+    src: url(../assets/fonts/Neue-Machina.ttf);
 }
 
 @font-face {
     font-family: "PPNeue-Machina";
-    src: url(./assets/PPNeueMachina_-Light.ttf);
+    src: url(../assets/fonts/PPNeueMachina_-Light.ttf);
 }
 
 @font-face {
     font-family: "satoshi";
-    src: url(./assets/Satoshi-Variable.ttf);
+    src: url(../assets/Satoshi-Variable.ttf);
 }
 
 *::selection {
