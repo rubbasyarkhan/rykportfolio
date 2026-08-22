@@ -5,22 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
+    <title>Services | Rubbas Yar Khan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Space+Grotesk:wght@400;500;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
 
 </head>
 
 <body>
 
-
     <nav
-        class="fixed top-0 left-0 w-full z-[100] px-[5%] py-8 flex justify-between items-center mix-blend-difference pointer-events-none">
-        <div class="logo text-white font-bold text-xl tracking-tighter pointer-events-auto cursor-pointer">
+        class="fixed top-0 left-0 w-full z-[100] px-5 sm:px-8 md:px-[5%] py-6 sm:py-8 flex justify-between items-center mix-blend-difference pointer-events-none">
+        <a href="index.html" class="logo text-white font-bold text-xl tracking-tighter pointer-events-auto cursor-pointer">
             RUBBAS .YK
+        </a>
+
+        <!-- CENTER LINKS -->
+        <div id="nav-center" class="hidden md:flex gap-10 pointer-events-auto transition-opacity duration-300">
+            <a href="work.html" class="nav-cta group relative overflow-hidden">
+                <div class="masker h-[1.2rem] overflow-hidden uppercase tracking-[0.2em] text-sm font-medium">
+                    <span class="block text-white">Work</span>
+                    <span class="absolute left-0 top-0 translate-y-full text-white">Work</span>
+                </div>
+            </a>
+            <a href="about.html" class="nav-cta group relative overflow-hidden">
+                <div class="masker h-[1.2rem] overflow-hidden uppercase tracking-[0.2em] text-sm font-medium">
+                    <span class="block text-white">ABOUT ME</span>
+                    <span class="absolute left-0 top-0 translate-y-full text-white">ABOUT ME</span>
+                </div>
+            </a>
         </div>
 
         <div id="menu-toggle"
@@ -33,68 +47,87 @@
     </nav>
 
     <div id="full-menu"
-        class="fixed top-0 left-0 w-full h-screen bg-black z-[90] hidden flex flex-col md:flex-row px-[5%] items-center justify-center">
+        class="fixed top-0 left-0 w-full h-screen bg-black z-[90] hidden flex flex-col md:flex-row px-6 sm:px-10 md:px-[5%] py-20 md:py-0 items-center justify-center overflow-y-auto">
         <div class="menu-left w-full md:w-2/3">
-            <ul class="space-y-4">
-                <li class="overflow-hidden"><a href="index.html"
-                        class="nav-link inline-block text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none hover:italic">HOME</a>
+            <ul class="space-y-3 sm:space-y-4">
+                <li class="overflow-hidden">
+                    <a href="index.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
+                        <div class="masker relative h-[1em] overflow-hidden text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tighter leading-none">
+                            <span class="btn-text block text-white">HOME</span>
+                            <span class="btn-text absolute left-0 top-0 translate-y-full text-white">HOME</span>
+                        </div>
+                    </a>
                 </li>
-                <li class="overflow-hidden"><a href="work.html"
-                        class="nav-link inline-block text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none hover:italic">WORK</a>
+                <li class="overflow-hidden">
+                    <a href="work.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
+                        <div class="masker relative h-[1em] overflow-hidden text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tighter leading-none">
+                            <span class="btn-text block text-white">WORK</span>
+                            <span class="btn-text absolute left-0 top-0 translate-y-full text-white">WORK</span>
+                        </div>
+                    </a>
                 </li>
-                <li class="overflow-hidden"><a href="services.html"
-                        class="nav-link inline-block text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none hover:italic">SERVICES</a>
+                <li class="overflow-hidden">
+                    <a href="about.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
+                        <div class="masker relative h-[1em] overflow-hidden text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tighter leading-none">
+                            <span class="btn-text block text-white">ABOUT ME</span>
+                            <span class="btn-text absolute left-0 top-0 translate-y-full text-white">ABOUT ME</span>
+                        </div>
+                    </a>
                 </li>
-                <li class="overflow-hidden"><a href="contact.html"
-                        class="nav-link inline-block text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none hover:italic">CONTACT</a>
+                <li class="overflow-hidden">
+                    <a href="contact.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
+                        <div class="masker relative h-[1em] overflow-hidden text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tighter leading-none">
+                            <span class="btn-text block text-white">CONTACT</span>
+                            <span class="btn-text absolute left-0 top-0 translate-y-full text-white">CONTACT</span>
+                        </div>
+                    </a>
                 </li>
             </ul>
         </div>
 
         <div
-            class="menu-right w-full md:w-1/3 flex flex-col justify-center gap-12 mt-12 md:mt-0 border-t md:border-t-0 md:border-l border-white/10 pt-12 md:pt-0 md:pl-20">
+            class="menu-right w-full md:w-1/3 flex flex-col justify-center gap-8 md:gap-12 mt-10 md:mt-0 border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-20">
             <div>
-                <h4 class="text-xs uppercase tracking-[0.3em] opacity-40 mb-4 text-white">Inquiries</h4>
-                <p class="text-xl text-white">rubbasyarkhan007@gmail.com</p>
+                <h4 class="text-xs uppercase tracking-[0.3em] opacity-40 mb-3 text-white">Inquiries</h4>
+                <p class="text-base sm:text-lg md:text-xl text-white break-all">rubbasyarkhan007@gmail.com</p>
             </div>
             <div>
-                <h4 class="text-xs uppercase tracking-[0.3em] opacity-40 mb-4 text-white">Follow Us</h4>
-                <div class="flex gap-6 text-2xl text-white">
-                    <a href="#"><i class="ri-instagram-line"></i></a>
-                    <a href="#"><i class="ri-twitter-x-line"></i></a>
-                    <a href="#"><i class="ri-linkedin-box-line"></i></a>
+                <h4 class="text-xs uppercase tracking-[0.3em] opacity-40 mb-3 text-white">Follow Us</h4>
+                <div class="flex gap-6 text-xl sm:text-2xl text-white">
+                    <a href="https://www.instagram.com/rubbas_yar_khan" target="_blank"><i class="ri-instagram-line"></i></a>
+                    <a href="https://www.linkedin.com/in/rubbas-yar-khan" target="_blank"><i class="ri-linkedin-box-line"></i></a>
+                    <a href="https://www.pinterest.com/rubbasyarkhan" target="_blank"><i class="ri-pinterest-line"></i></a>
+                    <a href="https://dribbble.com/rubbas" target="_blank"><i class="ri-dribbble-line"></i></a>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <section class="services-page bg-white text-black min-h-screen py-24 px-[5%] overflow-hidden">
+    <section class="services-page bg-white text-black min-h-screen py-24 sm:py-28 md:py-32 px-5 sm:px-8 md:px-[5%] overflow-hidden">
 
-        <div class="header-content mb-32">
-            <h1 class="text-[clamp(4rem,12vw,10rem)] font-[Neue-Machina] font-bold tracking-tighter leading-none mb-8">
+        <div class="header-content mb-16 sm:mb-24 pt-6">
+            <h1 class="text-[clamp(3.5rem,10vw,8rem)] font-black tracking-tighter leading-none mb-6">
                 SKILLS</h1>
-            <p class="max-w-xl text-[1rem] uppercase tracking-[0.3em] font-medium leading-relaxed">
+            <p class="max-w-xl text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold leading-relaxed opacity-75">
                 Everything starts with thorough research and iterative experimentation. <br>
-                We make what you deserve.
+                We build what scales with clarity and precision.
             </p>
         </div>
 
-        <div class="services-container">
-
-
+        <div class="services-container space-y-12">
 
             <div
-                class="service-item group border-t border-white/10 py-20 flex flex-col md:flex-row justify-between items-start gap-12">
+                class="service-item group border-t border-black/10 py-12 sm:py-16 flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
 
                 <!-- LEFT COLUMN -->
                 <div class="left-col w-full md:w-1/2">
-                    <div class="flex items-center gap-4 mb-12">
-                        <div class="status-dot w-2.5 h-2.5 bg-[#a3ff12] rounded-full shadow-[0_0_15px_#a3ff12]">
+                    <div class="flex items-center gap-4 mb-6 sm:mb-8">
+                        <div class="status-dot w-2.5 h-2.5 bg-[#ef9d71] rounded-full shadow-[0_0_15px_#ef9d71]">
                         </div>
 
-                        <h2 class="text-2xl font-bold uppercase tracking-wider">
-                            UI/UX Design
+                        <h2 class="text-2xl sm:text-3xl font-bold uppercase tracking-tight">
+                            UI/UX Design & Development
                         </h2>
 
                         <span class="ml-auto font-mono text-sm opacity-30">
@@ -103,32 +136,23 @@
                     </div>
 
                     <div class="content-text">
-                        <p class="text-lg opacity-60 mb-10 max-w-md">
-                            Creating intuitive digital experiences that drive user engagement and business growth.
+                        <p class="text-base sm:text-lg opacity-70 mb-8 max-w-md leading-relaxed">
+                            Creating intuitive, visually striking digital experiences and high-performance web applications that drive user engagement and business growth.
                         </p>
-
-                        <!-- <div class="projects-stat mb-12">
-                            <h3 class="text-xs uppercase opacity-40 tracking-widest mb-2">
-                                Projects Done
-                            </h3>
-                            <p class="text-2xl font-mono">
-                                [ 24 ]
-                            </p>
-                        </div> -->
 
                         <!-- ACTION BUTTON -->
                         <div class="actions">
-                            <a href="#"
-                                class="gsap-btn group relative inline-block px-[2rem] py-[1rem] border border-black/40 overflow-hidden">
+                            <a href="contact.html"
+                                class="now-btn group relative inline-block px-8 py-3.5 border border-black/40 rounded-full overflow-hidden hover:bg-black hover:text-white transition-all">
                                 <div
-                                    class="masker relative h-[1.2rem] overflow-hidden text-[1rem] uppercase font-medium font-[satoshi] tracking-[0.2em]">
+                                    class="masker relative h-[1.2rem] overflow-hidden text-xs sm:text-sm uppercase font-bold tracking-[0.2em]">
 
                                     <span class="btn-text block">
-                                        Get Started <i class="ri-arrow-right-up-line color-white"></i>
+                                        Get Started <i class="ri-arrow-right-up-line"></i>
                                     </span>
 
                                     <span class="btn-text absolute left-0 top-0 block translate-y-full">
-                                        Get Started <i class="ri-arrow-right-up-line color-white"></i>
+                                        Get Started <i class="ri-arrow-right-up-line"></i>
                                     </span>
 
                                 </div>
@@ -139,84 +163,164 @@
 
                 <!-- RIGHT COLUMN -->
                 <div class="right-col w-full md:w-[400px]">
-                    <div class="img-wrapper rounded-3xl overflow-hidden aspect-[4/5] bg-zinc-900">
+                    <div class="img-wrapper rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-[4/5] bg-zinc-900 shadow-xl">
                         <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1964"
-                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-110 group-hover:scale-100 transition-all duration-700"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100 transition-all duration-700"
                             alt="Service">
                     </div>
                 </div>
 
             </div>
 
-
-
         </div>
     </section>
 
-
-
-
     <footer data-color="black"
-        class="footer-section bg-black text-white h-screen w-full px-[5%] py-12 flex flex-col justify-between border-t border-white/10 overflow-hidden">
+        class="footer-section bg-black text-white min-h-[75vh] md:min-h-screen w-full px-5 sm:px-8 md:px-[6%] py-10 sm:py-12 md:py-16 flex flex-col justify-between border-t border-white/10 overflow-hidden">
 
-        <div class="cta-area flex flex-col items-end ">
+        <!-- CTA -->
+        <div class="cta-area flex flex-col items-end text-right">
             <div class="overflow-hidden">
-                <h1 class="text-[clamp(3rem,10vw,8rem)] font-bold tracking-wider leading-[0.85] text-right">START</h1>
+                <h2 class="text-[clamp(2.5rem,7.5vw,5.5rem)] font-extrabold tracking-tight leading-[0.9]">
+                    LET’S
+                </h2>
             </div>
             <div class="overflow-hidden">
-                <h1 class="text-[clamp(3rem,10vw,8rem)] font-bold tracking-wider leading-[0.85] text-right">YOUR PROJECT
-                </h1>
+                <h2 class="text-[clamp(2.5rem,7.5vw,5.5rem)] font-extrabold tracking-tight leading-[0.9]">
+                    BUILD
+                </h2>
+            </div>
+            <div class="overflow-hidden">
+                <h2 class="text-[clamp(2.5rem,7.5vw,5.5rem)] font-extrabold tracking-tight leading-[0.9] opacity-60">
+                    SOMETHING
+                </h2>
             </div>
 
-            <div class="flex justify-end mt-6">
-                <div class="magnetic-wrap p-10"> <a href="#"
-                        class="now-btn gsap-btn group relative flex items-center justify-center border border-white/40 rounded-full px-12 py-3 transition-colors hover:border-white hover:bg-white hover:text-black">
-                        <div class="masker relative h-[2rem] overflow-hidden pointer-events-none">
-                            <span class="btn-text block text-2xl font-bold italic tracking-wider uppercase">NOW</span>
+            <div class="flex justify-end mt-4 sm:mt-6">
+                <div class="magnetic-wrap p-2 sm:p-4">
+                    <a href="contact.html"
+                        class="now-btn group relative flex items-center justify-center border border-white/30 rounded-full px-8 sm:px-12 md:px-14 py-3 sm:py-4 backdrop-blur-md transition-all hover:border-white hover:bg-white hover:text-black">
+
+                        <div class="masker relative h-[1.8rem] sm:h-[2.2rem] overflow-hidden pointer-events-none">
+                            <span class="btn-text block text-xl sm:text-2xl font-bold italic tracking-widest uppercase">
+                                START NOW
+                            </span>
                             <span
-                                class="btn-text absolute left-0 top-0 block translate-y-full text-2xl font-bold italic tracking-wider uppercase">NOW</span>
+                                class="btn-text absolute left-0 top-0 block translate-y-full text-xl sm:text-2xl font-bold italic tracking-widest uppercase">
+                                START NOW
+                            </span>
                         </div>
+
                     </a>
                 </div>
             </div>
         </div>
 
-        <div class="footer-grid grid grid-cols-2 md:grid-cols-4 gap-8 pb-8 border-t border-white/5 pt-12">
+        <!-- Info Grid -->
+        <div class="footer-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 pt-8 border-t border-white/10">
+
             <div class="info-block">
-                <h4 class="text-[10px] uppercase tracking-[0.4em] opacity-30 mb-6 font-semibold">Follow Us</h4>
-                <ul class="space-y-3">
-                    <li><a href="#"
-                            class="flex items-center gap-2 group text-xs font-medium uppercase tracking-widest opacity-70 hover:opacity-100 transition-all">Instagram
+                <p class="text-sm sm:text-base font-medium leading-relaxed opacity-80 max-w-xs">
+                    Let's build something amazing together.
+                </p>
+
+                <div class="mt-4 w-full max-w-[160px] aspect-video rounded-lg overflow-hidden border border-white/10 relative">
+                    <video src="https://www.pexels.com/download/video/8818311/" autoplay muted loop playsinline
+                        class="w-full h-full object-cover opacity-70 hover:opacity-100 transition-opacity duration-500">
+                    </video>
+                </div>
+            </div>
+
+            <div class="info-block">
+                <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-4 sm:mb-6 font-semibold">
+                    Social
+                </h4>
+                <ul class="grid grid-cols-2 gap-x-6 gap-y-3 sm:gap-y-4">
+                    <li>
+                        <a href="https://www.instagram.com/design_code_journey/"
+                            class="group flex items-center gap-1.5 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+                            target="_blank">
+                            Instagram
                             <i
-                                class="ri-arrow-right-up-line group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i></a>
+                                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
                     </li>
-                    <li><a href="#"
-                            class="flex items-center gap-2 group text-xs font-medium uppercase tracking-widest opacity-70 hover:opacity-100 transition-all">Facebook
+                    <li>
+                        <a href="https://www.linkedin.com/in/rubbasyarkhan"
+                            class="group flex items-center gap-1.5 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+                            target="_blank">
+                            LinkedIn
                             <i
-                                class="ri-arrow-right-up-line group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i></a>
+                                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/rubbasyarkhan"
+                            class="group flex items-center gap-1.5 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+                            target="_blank">
+                            GitHub
+                            <i
+                                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://dribbble.com/rubbas"
+                            class="group flex items-center gap-1.5 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+                            target="_blank">
+                            Dribbble
+                            <i
+                                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://pinterest.com/rubbasyarkhan"
+                            class="group flex items-center gap-1.5 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+                            target="_blank">
+                            Pinterest
+                            <i
+                                class="ri-arrow-right-up-line transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
 
             <div class="info-block">
-                <h4 class="text-[10px] uppercase tracking-[0.4em] opacity-30 mb-6 font-semibold">Location</h4>
-                <p class="text-xs font-medium leading-relaxed opacity-60 uppercase tracking-widest">Business Executive
-                    Center F,<br>Clifton, Karachi</p>
-            </div>
-
-            <div class="info-block">
-                <h4 class="text-[10px] uppercase tracking-[0.4em] opacity-30 mb-6 font-semibold">Email</h4>
+                <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-4 sm:mb-6 font-semibold">
+                    Contact
+                </h4>
                 <a href="mailto:rubbasyarkhan007@gmail.com"
-                    class="text-xs font-medium opacity-60 hover:opacity-100 transition-opacity tracking-widest">rubbasyarkhan007@gmail.com</a>
+                    class="block text-xs tracking-widest opacity-60 hover:opacity-100 transition break-all">
+                    rubbasyarkhan007@gmail.com
+                </a>
+                <p class="mt-3 text-xs tracking-widest opacity-60">
+                    (+92) 371-029-0861
+                </p>
             </div>
 
             <div class="info-block">
-                <h4 class="text-[10px] uppercase tracking-[0.4em] opacity-30 mb-6 font-semibold">Phone</h4>
-                <p class="text-xs font-medium opacity-60 tracking-widest">(+92) 345-2099810</p>
+                <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-4 sm:mb-6 font-semibold">
+                    Location
+                </h4>
+                <p class="text-xs tracking-widest opacity-60 leading-relaxed">
+                    Karachi, Pakistan<br>
+                    Available Worldwide
+                </p>
             </div>
-        </div>
-    </footer>
 
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center pt-6 border-t border-white/10 mt-8">
+            <p class="text-xs opacity-40 tracking-wide">
+                © 2026 Rubbas Yar Khan. All rights reserved.
+            </p>
+        </div>
+
+        <div class="footer-cursor-video pointer-events-none">
+            <video src="https://www.pexels.com/download/video/18069165/" autoplay muted loop playsinline onloadedmetadata="this.playbackRate = 2.0;"></video>
+        </div>
+
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
@@ -225,8 +329,8 @@
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
-
     <script src="js/script.js"></script>
+    <div class="noise-overlay"></div>
 </body>
 
 </html>

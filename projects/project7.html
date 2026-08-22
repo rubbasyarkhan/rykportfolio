@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three.js 3D Project - Rubbas.YK</title>
+    <title>Interactive 3D Experience | Rubbas Yar Khan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=Allura&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800;900&family=Allura&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css" />
 </head>
@@ -17,7 +17,7 @@
     <main class="main w-full">
 
         <nav
-            class="fixed top-0 left-0 w-full z-[100] px-[5%] py-8 flex justify-between items-center mix-blend-difference pointer-events-none">
+            class="fixed top-0 left-0 w-full z-[100] px-5 sm:px-8 md:px-[5%] py-6 sm:py-8 flex justify-between items-center mix-blend-difference pointer-events-none">
 
             <!-- LOGO -->
             <a href="../index.html"
@@ -58,14 +58,14 @@
 
 
         <div id="full-menu"
-            class="fixed top-0 left-0 w-full h-screen bg-black z-[90] hidden flex flex-col md:flex-row px-[5%] items-center justify-center">
+            class="fixed top-0 left-0 w-full h-screen bg-black z-[90] hidden flex flex-col md:flex-row px-6 sm:px-10 md:px-[5%] py-20 md:py-0 items-center justify-center overflow-y-auto">
             <div class="menu-left w-full md:w-2/3">
-                <ul class="space-y-4">
+                <ul class="space-y-3 sm:space-y-4">
                     <!-- HOME -->
                     <li class="overflow-hidden">
                         <a href="../index.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
                             <div
-                                class="masker relative h-[1em] overflow-hidden text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none">
+                                class="masker relative h-[1em] overflow-hidden text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tighter leading-none">
                                 <span class="btn-text block text-white">HOME</span>
                                 <span class="btn-text absolute left-0 top-0 translate-y-full text-white">HOME</span>
                             </div>
@@ -76,7 +76,7 @@
                     <li class="overflow-hidden">
                         <a href="../work.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
                             <div
-                                class="masker relative h-[1em] overflow-hidden text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none">
+                                class="masker relative h-[1em] overflow-hidden text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tighter leading-none">
                                 <span class="btn-text block text-white">WORK</span>
                                 <span class="btn-text absolute left-0 top-0 translate-y-full text-white">WORK</span>
                             </div>
@@ -87,7 +87,7 @@
                     <li class="overflow-hidden">
                         <a href="../about.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
                             <div
-                                class="masker relative h-[1em] overflow-hidden text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none">
+                                class="masker relative h-[1em] overflow-hidden text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tighter leading-none">
                                 <span class="btn-text block text-white">ABOUT ME</span>
                                 <span class="btn-text absolute left-0 top-0 translate-y-full text-white">ABOUT ME</span>
                             </div>
@@ -98,7 +98,7 @@
                     <li class="overflow-hidden">
                         <a href="../contact.html" class="nav-link gsap-btn inline-block relative overflow-hidden">
                             <div
-                                class="masker relative h-[1em] overflow-hidden text-[clamp(3rem,8vw,6rem)] font-bold tracking-tighter leading-none">
+                                class="masker relative h-[1em] overflow-hidden text-[clamp(2.5rem,7vw,6rem)] font-bold tracking-tighter leading-none">
                                 <span class="btn-text block text-white">CONTACT</span>
                                 <span class="btn-text absolute left-0 top-0 translate-y-full text-white">CONTACT</span>
                             </div>
@@ -109,17 +109,17 @@
             </div>
 
             <div
-                class="menu-right w-full md:w-1/3 flex flex-col justify-center gap-12 mt-12 md:mt-0 border-t md:border-t-0 md:border-l border-white/10 pt-12 md:pt-0 md:pl-20">
+                class="menu-right w-full md:w-1/3 flex flex-col justify-center gap-8 md:gap-12 mt-10 md:mt-0 border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-20">
                 <div>
-                    <h4 class="text-xs uppercase tracking-[0.3em] opacity-40 mb-4 text-white">Inquiries</h4>
-                    <p class="text-xl text-white">rubbasyarkhan007@gmail.com</p>
+                    <h4 class="text-xs uppercase tracking-[0.3em] opacity-40 mb-3 text-white">Inquiries</h4>
+                    <p class="text-base sm:text-lg md:text-xl text-white break-all">rubbasyarkhan007@gmail.com</p>
                 </div>
                 <div>
-                    <h4 class="text-xs uppercase tracking-[0.3em] opacity-40 mb-4 text-white">Follow Us</h4>
-                    <div class="flex gap-6 text-2xl text-white">
-                        <a href="https://www.instagram.com/rubbas_yar_khan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    <h4 class="text-xs uppercase tracking-[0.3em] opacity-40 mb-3 text-white">Follow Us</h4>
+                    <div class="flex gap-6 text-xl sm:text-2xl text-white">
+                        <a href="https://www.instagram.com/rubbas_yar_khan"
                             target="_blank"><i class="ri-instagram-line"></i></a>
-                        <a href="https://www.linkedin.com/in/rubbas-yar-khan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        <a href="https://www.linkedin.com/in/rubbas-yar-khan"
                             target="_blank"><i class="ri-linkedin-box-line"></i></a>
                         <a href="https://www.pinterest.com/rubbasyarkhan" target="_blank"><i
                                 class="ri-pinterest-line"></i></a>
@@ -131,47 +131,47 @@
 
 
         <!-- Project Header -->
-        <section class="pt-32 px-6 md:px-12 mb-16 bg-white" style="background-color: var(--bg-light);">
+        <section class="pt-28 sm:pt-32 px-5 sm:px-8 md:px-12 mb-12 sm:mb-16 bg-white" style="background-color: var(--bg-light);">
             <div class="max-w-7xl mx-auto">
                 <!-- Back Button -->
                 <a href="../work.html"
-                    class="inline-flex items-center gap-2 mb-12 group transition-all duration-300 text-black hover:text-gray-600">
+                    class="inline-flex items-center gap-2 mb-8 sm:mb-12 group transition-all duration-300 text-black hover:text-gray-600">
                     <i class="ri-arrow-left-line text-xl transition-transform group-hover:-translate-x-2"></i>
-                    <span class="text-sm uppercase tracking-widest font-semibold">Back to Work</span>
+                    <span class="text-xs sm:text-sm uppercase tracking-widest font-semibold">Back to Work</span>
                 </a>
 
                 <!-- Project Title -->
-                <div class="mb-12">
-                    <h1 class="text-[clamp(3rem,8vw,7rem)] font-black tracking-tighter leading-[0.9] uppercase mb-6 text-black"
+                <div class="mb-10 sm:mb-12">
+                    <h1 class="text-[clamp(2.5rem,7.5vw,6rem)] font-black tracking-tighter leading-[0.9] uppercase mb-6 text-black"
                         style="font-family: 'Space Grotesk', sans-serif;">
                         INTERACTIVE<br>3D<br>EXPERIENCE
                     </h1>
-                    <p class="text-sm uppercase tracking-[0.3em] font-semibold text-gray-600 max-w-4xl"
+                    <p class="text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold text-gray-600 max-w-4xl leading-relaxed"
                         style="font-family: 'Poppins', sans-serif;">
                         A playful exploration of web-based 3D rendering and interaction.
                     </p>
                 </div>
 
                 <!-- Project Meta -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 py-8 border-t border-b border-gray-200"
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 py-6 sm:py-8 border-t border-b border-gray-200"
                     style="border-color: var(--border-light);">
                     <div>
-                        <h3 class="text-xs uppercase tracking-[0.3em] mb-3 font-bold text-gray-400"
+                        <h3 class="text-xs uppercase tracking-[0.3em] mb-2 sm:mb-3 font-bold text-gray-400"
                             style="font-family: 'Poppins', sans-serif;">PROJECT TYPE</h3>
-                        <p class="text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
+                        <p class="text-base sm:text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
                             3D Web Experience</p>
                     </div>
                     <div>
-                        <h3 class="text-xs uppercase tracking-[0.3em] mb-3 font-bold text-gray-400"
+                        <h3 class="text-xs uppercase tracking-[0.3em] mb-2 sm:mb-3 font-bold text-gray-400"
                             style="font-family: 'Poppins', sans-serif;">ROLE</h3>
-                        <p class="text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
+                        <p class="text-base sm:text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
                             Creative Development</p>
                     </div>
                     <div>
-                        <h3 class="text-xs uppercase tracking-[0.3em] mb-3 font-bold text-gray-400"
+                        <h3 class="text-xs uppercase tracking-[0.3em] mb-2 sm:mb-3 font-bold text-gray-400"
                             style="font-family: 'Poppins', sans-serif;">PROJECT LINK</h3>
                         <a href="https://threejsfirstproject.netlify.app/" target="_blank"
-                            class="text-lg font-semibold text-[#ef9d71] hover:underline"
+                            class="text-base sm:text-lg font-semibold text-[#ef9d71] hover:underline"
                             style="font-family: 'Space Grotesk', sans-serif;">
                             View Full Screen →</a>
                     </div>
@@ -180,61 +180,59 @@
         </section>
 
         <!-- Hero Image -->
-        <section class="px-6 md:px-12 mb-20 bg-white" style="background-color: var(--bg-light);">
+        <section class="px-5 sm:px-8 md:px-12 mb-16 sm:mb-20 bg-white" style="background-color: var(--bg-light);">
             <div class="max-w-7xl mx-auto">
-                <div class="aspect-[21/9] overflow-hidden rounded-lg bg-gray-100">
+                <div class="aspect-[16/10] sm:aspect-[21/9] overflow-hidden rounded-lg bg-zinc-900">
                     <img src="../assets/images/project7.1.png" alt="3D Project Hero" class="w-full h-full object-cover">
                 </div>
             </div>
         </section>
 
         <!-- Project Description -->
-        <section class="px-6 md:px-12 mb-20 bg-white" style="background-color: var(--bg-light);">
+        <section class="px-5 sm:px-8 md:px-12 mb-16 sm:mb-20 bg-white" style="background-color: var(--bg-light);">
             <div class="max-w-5xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                     <div>
-                        <h2 class="text-2xl font-bold mb-6 uppercase tracking-tight text-black"
+                        <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 uppercase tracking-tight text-black"
                             style="font-family: 'Space Grotesk', sans-serif;">
                             THE CHALLENGE
                         </h2>
-                        <p class="text-base leading-relaxed text-gray-700" style="font-family: 'Poppins', sans-serif;">
+                        <p class="text-sm sm:text-base leading-relaxed text-gray-700" style="font-family: 'Poppins', sans-serif;">
                             The main objective was to create an engaging and performant 3D environment directly within
-                            the
-                            browser. The challenge lay in optimizing 3D models and lighting for smooth real-time
-                            rendering
-                            without relying on heavy external plugins or sacrificing visual quality.
+                            the browser. The challenge lay in optimizing 3D models and lighting for smooth real-time
+                            rendering without relying on heavy external plugins or sacrificing visual quality.
                         </p>
                     </div>
                     <div>
-                        <h2 class="text-2xl font-bold mb-6 uppercase tracking-tight text-black"
+                        <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 uppercase tracking-tight text-black"
                             style="font-family: 'Space Grotesk', sans-serif;">
                             THE SOLUTION
                         </h2>
-                        <p class="text-base leading-relaxed text-gray-700" style="font-family: 'Poppins', sans-serif;">
+                        <p class="text-sm sm:text-base leading-relaxed text-gray-700" style="font-family: 'Poppins', sans-serif;">
                             I utilized Three.js to build a custom 3D scene that users can interact with. By implementing
                             efficient geometry and optimized textures, I ensured a fluid experience. The result is a
-                            fun,
-                            immersive playground that demonstrates the power of modern web graphics.
+                            fun, immersive playground that demonstrates the power of modern web graphics.
                         </p>
                     </div>
                 </div>
+            </div>
         </section>
 
         <!-- Live Iframe Showcase -->
-        <section class="px-6 md:px-12 mb-20 bg-white" style="background-color: var(--bg-light);">
+        <section class="px-5 sm:px-8 md:px-12 mb-16 sm:mb-20 bg-white" style="background-color: var(--bg-light);">
             <div class="max-w-7xl mx-auto">
-                <h2 class="text-3xl font-bold mb-12 uppercase tracking-tight text-black text-center"
+                <h2 class="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 uppercase tracking-tight text-black text-center"
                     style="font-family: 'Space Grotesk', sans-serif;">
                     Live Interaction
                 </h2>
 
                 <div
-                    class="w-full h-[600px] rounded-2xl overflow-hidden bg-gray-100 border border-gray-200 shadow-lg relative">
+                    class="w-full h-[400px] sm:h-[500px] md:h-[600px] rounded-2xl overflow-hidden bg-gray-100 border border-gray-200 shadow-lg relative">
                     <iframe src="https://threejsfirstproject.netlify.app/" title="Three.js Project"
                         class="w-full h-full border-0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
                     <div
-                        class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md text-white px-4 py-2 rounded-full text-xs font-medium pointer-events-none">
+                        class="absolute bottom-4 right-4 bg-black/70 backdrop-blur-md text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-medium pointer-events-none">
                         Click & Drag to Rotate
                     </div>
                 </div>
@@ -242,27 +240,27 @@
         </section>
 
         <!-- Tech Stack -->
-        <section class="px-6 md:px-12 mb-20  py-16">
+        <section class="px-5 sm:px-8 md:px-12 mb-16 sm:mb-20 py-10 sm:py-16">
             <div class="max-w-5xl mx-auto">
-                <h2 class="text-3xl font-bold mb-12 uppercase tracking-tight text-black text-center"
+                <h2 class="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 uppercase tracking-tight text-black text-center"
                     style="font-family: 'Space Grotesk', sans-serif;">
                     Technologies Used
                 </h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    <div class="p-4">
-                        <p class="text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
+                    <div class="p-4 bg-gray-50 rounded-lg">
+                        <p class="text-base sm:text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
                             Three.js</p>
                     </div>
-                    <div class="p-4">
-                        <p class="text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
+                    <div class="p-4 bg-gray-50 rounded-lg">
+                        <p class="text-base sm:text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
                             WebGL</p>
                     </div>
-                    <div class="p-4">
-                        <p class="text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
+                    <div class="p-4 bg-gray-50 rounded-lg">
+                        <p class="text-base sm:text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
                             JavaScript</p>
                     </div>
-                    <div class="p-4">
-                        <p class="text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
+                    <div class="p-4 bg-gray-50 rounded-lg">
+                        <p class="text-base sm:text-lg font-semibold text-black" style="font-family: 'Space Grotesk', sans-serif;">
                             HTML5</p>
                     </div>
                 </div>
@@ -270,23 +268,23 @@
         </section>
 
         <!-- Next Project -->
-        <section class="px-6 md:px-12 py-20 bg-black">
-            <div class="grid grid-cols-1 md:grid-cols-2 ">
-                <h2 class="text-3xl uppercase tracking-[0.3em] mb-8 font-bold text-gray-400"
-                    style="font-family: 'Allura', sans-serif;">
+        <section class="px-5 sm:px-8 md:px-12 py-16 sm:py-20 bg-black">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl uppercase tracking-[0.3em] font-bold text-gray-400"
+                    style="font-family: 'Space Grotesk', sans-serif;">
                     01
                 </h2>
                 <a href="project1.html" class="group block">
-                    <div class="aspect-[4/3] overflow-hidden mb-6 bg-zinc-900">
-                        <img src="../assets/images/project1.1.png" alt="Project Thumbnail"
-                            class="w-full h-full object-contain grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
+                    <div class="aspect-[16/10] overflow-hidden mb-5 bg-zinc-900 rounded-lg">
+                        <img src="../assets/images/project1.1.png" alt="Albert Einstein Case Study"
+                            class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
                     </div>
                     <div class="flex justify-between items-center">
-                        <h3 class="text-4xl md:text-6xl font-black tracking-tighter uppercase text-white group-hover:text-[#ef9d71] transition-colors"
+                        <h3 class="text-2xl sm:text-4xl md:text-5xl font-black tracking-tighter uppercase text-white group-hover:text-[#ef9d71] transition-colors"
                             style="font-family: 'Space Grotesk', sans-serif;">
                             Next Project </h3>
                         <i
-                            class="ri-arrow-right-line text-4xl text-[#ef9d71] group-hover:translate-x-2 transition-transform"></i>
+                            class="ri-arrow-right-line text-3xl sm:text-4xl text-[#ef9d71] group-hover:translate-x-2 transition-transform"></i>
                     </div>
                 </a>
             </div>
@@ -295,37 +293,37 @@
     </main>
 
     <footer data-color="black"
-        class="footer-section bg-black text-white min-h-screen w-full px-[6%] py-8 flex flex-col justify-between border-t border-white/10 overflow-hidden">
+        class="footer-section bg-black text-white min-h-[75vh] md:min-h-screen w-full px-5 sm:px-8 md:px-[6%] py-10 sm:py-12 md:py-16 flex flex-col justify-between border-t border-white/10 overflow-hidden">
 
         <!-- CTA -->
         <div class="cta-area flex flex-col items-end text-right">
             <div class="overflow-hidden">
-                <h1 class="text-[clamp(2.6rem,7vw,5.5rem)] font-extrabold tracking-tight leading-[0.9]">
+                <h2 class="text-[clamp(2.5rem,7.5vw,5.5rem)] font-extrabold tracking-tight leading-[0.9]">
                     LET’S
-                </h1>
+                </h2>
             </div>
             <div class="overflow-hidden">
-                <h1 class="text-[clamp(2.6rem,7vw,5.5rem)] font-extrabold tracking-tight leading-[0.9]">
+                <h2 class="text-[clamp(2.5rem,7.5vw,5.5rem)] font-extrabold tracking-tight leading-[0.9]">
                     BUILD
-                </h1>
+                </h2>
             </div>
             <div class="overflow-hidden">
-                <h1 class="text-[clamp(2.6rem,7vw,5.5rem)] font-extrabold tracking-tight leading-[0.9] opacity-60">
+                <h2 class="text-[clamp(2.5rem,7.5vw,5.5rem)] font-extrabold tracking-tight leading-[0.9] opacity-60">
                     SOMETHING
-                </h1>
+                </h2>
             </div>
 
-            <div class="flex justify-end mt-4">
-                <div class="magnetic-wrap p-6">
+            <div class="flex justify-end mt-4 sm:mt-6">
+                <div class="magnetic-wrap p-2 sm:p-4">
                     <a href="../contact.html"
-                        class="now-btn group relative flex items-center justify-center border border-white/30 rounded-full px-14 py-4 backdrop-blur-md transition-all hover:border-white hover:bg-white hover:text-black">
+                        class="now-btn group relative flex items-center justify-center border border-white/30 rounded-full px-8 sm:px-12 md:px-14 py-3 sm:py-4 backdrop-blur-md transition-all hover:border-white hover:bg-white hover:text-black">
 
-                        <div class="masker relative h-[2.2rem] overflow-hidden pointer-events-none">
-                            <span class="btn-text block text-2xl font-bold italic tracking-widest uppercase">
+                        <div class="masker relative h-[1.8rem] sm:h-[2.2rem] overflow-hidden pointer-events-none">
+                            <span class="btn-text block text-xl sm:text-2xl font-bold italic tracking-widest uppercase">
                                 START NOW
                             </span>
                             <span
-                                class="btn-text absolute left-0 top-0 block translate-y-full text-2xl font-bold italic tracking-widest uppercase">
+                                class="btn-text absolute left-0 top-0 block translate-y-full text-xl sm:text-2xl font-bold italic tracking-widest uppercase">
                                 START NOW
                             </span>
                         </div>
@@ -335,30 +333,30 @@
             </div>
         </div>
 
-        <!-- Info -->
-        <div class="footer-grid grid grid-cols-1 md:grid-cols-4 gap-12 pt-8 border-t border-white/10">
+        <!-- Info Grid -->
+        <div class="footer-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 pt-8 border-t border-white/10">
 
             <div class="info-block">
-                <p class="text-base md:text-lg font-medium leading-relaxed opacity-80 max-w-xs">
+                <p class="text-sm sm:text-base font-medium leading-relaxed opacity-80 max-w-xs">
                     Let's build something amazing together.
                 </p>
 
                 <div
-                    class="mt-5 w-full max-w-[160px] aspect-video rounded-lg overflow-hidden border border-white/10 relative">
+                    class="mt-4 w-full max-w-[160px] aspect-video rounded-lg overflow-hidden border border-white/10 relative">
                     <video src="https://www.pexels.com/download/video/8818311/" autoplay muted loop playsinline
-                        class="w-full h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-500">
+                        class="w-full h-full object-cover opacity-70 hover:opacity-100 transition-opacity duration-500">
                     </video>
                 </div>
             </div>
 
             <div class="info-block">
-                <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-6 font-semibold">
+                <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-4 sm:mb-6 font-semibold">
                     Social
                 </h4>
-                <ul class="grid grid-cols-2 gap-x-8 gap-y-4">
+                <ul class="grid grid-cols-2 gap-x-6 gap-y-3 sm:gap-y-4">
                     <li>
                         <a href="https://www.instagram.com/design_code_journey/"
-                            class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+                            class="group flex items-center gap-1.5 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
                             target="_blank">
                             Instagram
                             <i
@@ -367,7 +365,7 @@
                     </li>
                     <li>
                         <a href="https://www.linkedin.com/in/rubbasyarkhan"
-                            class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+                            class="group flex items-center gap-1.5 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
                             target="_blank">
                             LinkedIn
                             <i
@@ -376,7 +374,7 @@
                     </li>
                     <li>
                         <a href="https://github.com/rubbasyarkhan"
-                            class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+                            class="group flex items-center gap-1.5 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
                             target="_blank">
                             GitHub
                             <i
@@ -385,7 +383,7 @@
                     </li>
                     <li>
                         <a href="https://dribbble.com/rubbas"
-                            class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+                            class="group flex items-center gap-1.5 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
                             target="_blank">
                             Dribbble
                             <i
@@ -394,7 +392,7 @@
                     </li>
                     <li>
                         <a href="https://pinterest.com/rubbasyarkhan"
-                            class="group flex items-center gap-2 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
+                            class="group flex items-center gap-1.5 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
                             target="_blank">
                             Pinterest
                             <i
@@ -405,11 +403,11 @@
             </div>
 
             <div class="info-block">
-                <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-6 font-semibold">
+                <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-4 sm:mb-6 font-semibold">
                     Contact
                 </h4>
                 <a href="mailto:rubbasyarkhan007@gmail.com"
-                    class="block text-xs tracking-widest opacity-60 hover:opacity-100 transition">
+                    class="block text-xs tracking-widest opacity-60 hover:opacity-100 transition break-all">
                     rubbasyarkhan007@gmail.com
                 </a>
                 <p class="mt-3 text-xs tracking-widest opacity-60">
@@ -418,7 +416,7 @@
             </div>
 
             <div class="info-block">
-                <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-6 font-semibold">
+                <h4 class="text-[11px] uppercase tracking-[0.4em] opacity-40 mb-4 sm:mb-6 font-semibold">
                     Location
                 </h4>
                 <p class="text-xs tracking-widest opacity-60 leading-relaxed">
@@ -430,15 +428,14 @@
         </div>
 
         <!-- Copyright -->
-        <div class="text-center pt-2 border-t border-white/10 mt-2">
+        <div class="text-center pt-6 border-t border-white/10 mt-8">
             <p class="text-xs opacity-40 tracking-wide">
                 © 2026 Rubbas Yar Khan. All rights reserved.
             </p>
         </div>
 
         <div class="footer-cursor-video pointer-events-none">
-            <video src="https://www.pexels.com/download/video/18069165/
-      " autoplay muted loop playsinline onloadedmetadata="this.playbackRate = 2.0;"></video>
+            <video src="https://www.pexels.com/download/video/18069165/" autoplay muted loop playsinline onloadedmetadata="this.playbackRate = 2.0;"></video>
         </div>
 
     </footer>
