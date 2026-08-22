@@ -69,15 +69,8 @@ body[theme="white"] section {
     clip-path: circle(var(--clip) at 50% 50%);
 }
 
-html {
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-
 body {
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
+    overflow-x: clip;
     transition: background-color ease-out .5s;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -103,63 +96,8 @@ body {
     pointer-events: none;
 }
 
-.slmm .row-wrapper {
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    position: relative;
-}
-
-.marquee-track {
-    display: flex;
-    align-items: center;
-    width: max-content;
-    white-space: nowrap;
+.slmm .row {
     will-change: transform;
-}
-
-@keyframes marqueeLeft {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-    100% {
-        transform: translate3d(-50%, 0, 0);
-    }
-}
-
-@keyframes marqueeRight {
-    0% {
-        transform: translate3d(-50%, 0, 0);
-    }
-    100% {
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-.animate-marquee-left {
-    animation: marqueeLeft 40s linear infinite;
-}
-
-.animate-marquee-right {
-    animation: marqueeRight 40s linear infinite;
-}
-
-@media (max-width: 768px) {
-    .animate-marquee-left {
-        animation-duration: 25s;
-    }
-    .animate-marquee-right {
-        animation-duration: 25s;
-    }
-}
-
-@media (min-width: 2000px) {
-    .animate-marquee-left {
-        animation-duration: 55s;
-    }
-    .animate-marquee-right {
-        animation-duration: 55s;
-    }
 }
 
 /* Glassmorphism effect for the CTA if you want it to feel modern */

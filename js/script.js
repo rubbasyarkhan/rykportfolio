@@ -1,4 +1,3 @@
-
 let isMenuOpen = false;
 let menuTl;
 
@@ -25,36 +24,40 @@ function initMenu() {
     /* ----------------------------------
        1. Hide center nav links
     ---------------------------------- */
-    menuTl.to(navCenter, {
-        opacity: 0,
-        pointerEvents: "none",
-        duration: 0.2,
-        ease: "power2.out"
-    }, "sync");
+    if (navCenter) {
+        menuTl.to(navCenter, {
+            opacity: 0,
+            pointerEvents: "none",
+            duration: 0.2,
+            ease: "power2.out"
+        }, "sync");
+    }
 
     /* ----------------------------------
        2. Morph hamburger → X
     ---------------------------------- */
-    menuTl
-        .to(line2, {
-            opacity: 0,
-            x: 20,
-            duration: 0.3,
-            ease: "power2.out"
-        }, "sync")
-        .to(line1, {
-            rotate: 45,
-            y: 8,
-            duration: 0.3,
-            ease: "power2.out"
-        }, "sync")
-        .to(line3, {
-            rotate: -45,
-            y: -8,
-            scaleX: 1,
-            duration: 0.3,
-            ease: "power2.out"
-        }, "sync");
+    if (line1 && line2 && line3) {
+        menuTl
+            .to(line2, {
+                opacity: 0,
+                x: 20,
+                duration: 0.3,
+                ease: "power2.out"
+            }, "sync")
+            .to(line1, {
+                rotate: 45,
+                y: 8,
+                duration: 0.3,
+                ease: "power2.out"
+            }, "sync")
+            .to(line3, {
+                rotate: -45,
+                y: -8,
+                scaleX: 1,
+                duration: 0.3,
+                ease: "power2.out"
+            }, "sync");
+    }
 
     /* ----------------------------------
        3. Reveal full screen menu
@@ -69,21 +72,27 @@ function initMenu() {
     /* ----------------------------------
        4. Animate menu links
     ---------------------------------- */
-    menuTl.from(".nav-link", {
-        y: 100,
-        opacity: 0,
-        stagger: 0.1,
-        duration: 0.5,
-        ease: "power4.out"
-    }, "-=0.4");
+    const navLinks = document.querySelectorAll(".nav-link");
+    if (navLinks.length) {
+        menuTl.from(".nav-link", {
+            y: 60,
+            opacity: 0,
+            stagger: 0.08,
+            duration: 0.4,
+            ease: "power4.out"
+        }, "-=0.4");
+    }
 
-    menuTl.from(".menu-right > div", {
-        y: 20,
-        opacity: 0,
-        stagger: 0.1,
-        duration: 0.5,
-        ease: "power3.out"
-    }, "-=0.3");
+    const menuRight = document.querySelectorAll(".menu-right > div");
+    if (menuRight.length) {
+        menuTl.from(menuRight, {
+            y: 20,
+            opacity: 0,
+            stagger: 0.08,
+            duration: 0.4,
+            ease: "power3.out"
+        }, "-=0.3");
+    }
 
     /* ----------------------------------
        Toggle Logic
@@ -101,16 +110,20 @@ function initMenu() {
     /* ----------------------------------
        Close menu when clicking links
     ---------------------------------- */
-    document.querySelectorAll(".nav-link").forEach(link => {
+    navLinks.forEach(link => {
         link.addEventListener("click", () => {
-            menuTl.reverse();
-            isMenuOpen = false;
+            if (isMenuOpen) {
+                menuTl.reverse();
+                isMenuOpen = false;
+            }
         });
     });
 }
 
-
 function initButtons() {
+    // Only attach hover listeners on pointer/hover devices to avoid stuck states on mobile taps
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
     const buttons = document.querySelectorAll('.gsap-btn');
     if (!buttons.length) return;
 
@@ -129,7 +142,6 @@ function initButtons() {
         btn.addEventListener('mouseleave', () => tl.reverse());
     });
 }
-
 
 function initFooterAnimations() {
     const nowBtn = document.querySelector(".now-btn");
@@ -166,25 +178,25 @@ function initFooterAnimations() {
         }
     })
         .from(".cta-area h1", {
-            y: 120,
+            y: 80,
             opacity: 0,
             stagger: 0.08,
-            duration: 1.0,
+            duration: 0.9,
             ease: "power4.out"
         })
         .from(".now-btn", {
-            y: 30,
-            scale: 0.85,
+            y: 25,
+            scale: 0.9,
             opacity: 0,
-            duration: 0.8,
+            duration: 0.7,
             ease: "expo.out",
             clearProps: "all"
         }, "-=0.5")
         .from(".footer-grid .info-block", {
-            y: 30,
+            y: 25,
             opacity: 0,
             stagger: 0.1,
-            duration: 0.7,
+            duration: 0.6,
             ease: "power3.out"
         }, "-=0.4");
 }
@@ -267,14 +279,6 @@ function initFooterCursorVideo() {
     });
 }
 
-
-
-
-// Ensure this is called in your main init block
-
-
-
-
 function homepageanimation() {
     const home = document.querySelector(".home");
     const slmm = document.querySelector(".slmm");
@@ -282,47 +286,56 @@ function homepageanimation() {
     if (!home || !slmm || !vdiv) return;
 
     const isMobile = window.innerWidth < 768;
-    gsap.set(".slmm", {
-        scale: isMobile ? 3.0 : 4.5
-    });
+    const initialScale = isMobile ? 2.5 : 3.5;
+    const lftShift = isMobile ? -8 : -15;
+    const rgtShift = isMobile ? 8 : 15;
+
+    // Establish deterministic initial properties
+    gsap.set(".vdiv", { '--clip': "100%" });
+    gsap.set(".slmm", { scale: initialScale });
+    gsap.set(".lft", { xPercent: 0 });
+    gsap.set(".rgt", { xPercent: 0 });
+    gsap.set(".botmtext", { opacity: 1, y: 0 });
 
     var tl = gsap.timeline({
         scrollTrigger: {
             trigger: ".home",
             start: "top top",
             end: "bottom bottom",
-            scrub: 1,
-            invalidateOnRefresh: true,
+            scrub: isMobile ? 0.3 : 0.6,
         },
     });
 
-    tl.to(".vdiv", {
-        '--clip': "0%",
-        ease: "none",
-    }, 'a');
+    // Explicit fromTo ensures perfect 2-way scrubbing without getting stuck when scrolling back up
+    tl.fromTo(".vdiv", 
+        { '--clip': "100%" }, 
+        { '--clip': "0%", ease: "none" }, 
+        'a'
+    );
 
-    tl.to(".slmm", {
-        scale: 1,
-        ease: "none",
-    }, 'a');
+    tl.fromTo(".slmm", 
+        { scale: initialScale }, 
+        { scale: 1, ease: "none" }, 
+        'a'
+    );
 
-    tl.to(".lft", {
-        xPercent: -8,
-        stagger: .02,
-        ease: "none"
-    }, 'b');
+    tl.fromTo(".botmtext", 
+        { opacity: 1, y: 0 }, 
+        { opacity: 0, y: isMobile ? -25 : -50, ease: "none" }, 
+        'a'
+    );
 
-    tl.to(".rgt", {
-        xPercent: 8,
-        stagger: .02,
-        ease: "none"
-    }, 'b');
+    tl.fromTo(".lft", 
+        { xPercent: 0 }, 
+        { xPercent: lftShift, stagger: 0.03, ease: "none" }, 
+        'b'
+    );
 
-    tl.to(".botmtext", {
-        opacity: 0,
-        y: -40,
-        ease: "none",
-    }, 'a');
+    tl.fromTo(".rgt", 
+        { xPercent: 0 }, 
+        { xPercent: rgtShift, stagger: 0.03, ease: "none" }, 
+        'b'
+    );
 }
 
 function servicesAnimation() {
@@ -337,7 +350,7 @@ function servicesAnimation() {
             end: "top 30%",
             scrub: 1
         },
-        y: 100,
+        y: 80,
         opacity: 0,
         ease: "power4.out"
     });
@@ -350,7 +363,7 @@ function servicesAnimation() {
             end: "top 40%",
             scrub: 1
         },
-        y: 50,
+        y: 40,
         opacity: 0,
         ease: "power4.out"
     });
@@ -363,7 +376,7 @@ function servicesAnimation() {
             end: "bottom bottom",
             scrub: 1
         },
-        y: 80,
+        y: 60,
         opacity: 0,
         stagger: 0.15,
         ease: "power4.out"
@@ -372,6 +385,10 @@ function servicesAnimation() {
 
 function loco() {
     if (typeof LocomotiveScroll === 'undefined') return;
+    // On touch/mobile devices, allow native momentum scrolling to prevent jitter and ScrollTrigger breakage
+    if (!window.matchMedia("(min-width: 1025px) and (hover: hover) and (pointer: fine)").matches) {
+        return;
+    }
     try {
         new LocomotiveScroll();
     } catch (e) {
@@ -428,10 +445,10 @@ function servicesPageAnimation() {
     // 1. Reveal Header on Load
     if (header) {
         gsap.from(".header-content h1, .header-content p", {
-            y: 100,
+            y: 80,
             opacity: 0,
-            duration: 1,
-            stagger: 0.2,
+            duration: 0.9,
+            stagger: 0.15,
             ease: "power4.out"
         });
     }
@@ -441,7 +458,7 @@ function servicesPageAnimation() {
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: item,
-                start: "top 80%", // Starts when item is 80% down the screen
+                start: "top 85%",
                 toggleActions: "play none none reverse"
             }
         });
@@ -452,171 +469,102 @@ function servicesPageAnimation() {
 
         if (leftCol) {
             tl.from(leftCol, {
-                x: -50,
+                x: -30,
                 opacity: 0,
-                duration: 1,
+                duration: 0.8,
                 ease: "power3.out"
             }, "start");
         }
         if (rightCol) {
             tl.from(rightCol, {
-                scale: 0.8,
+                scale: 0.9,
                 opacity: 0,
-                duration: 1.2,
+                duration: 0.9,
                 ease: "expo.out"
             }, "start");
         }
         if (borderT) {
             tl.from(borderT, {
                 width: 0,
-                duration: 1.5,
+                duration: 1.2,
                 ease: "power4.inOut"
             }, "start");
         }
     });
 
     // 3. Hover Effect: Magnetic Arrow for Links
-    const links = document.querySelectorAll(".actions a");
-    links.forEach(link => {
-        const arrow = link.querySelector(".arrow");
-        if (arrow) {
-            link.addEventListener("mouseenter", () => {
-                gsap.to(arrow, { x: 5, repeat: -1, yoyo: true, duration: 0.3 });
-            });
-            link.addEventListener("mouseleave", () => {
-                gsap.to(arrow, { x: 0, overwrite: true });
-            });
-        }
-    });
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        const links = document.querySelectorAll(".actions a");
+        links.forEach(link => {
+            const arrow = link.querySelector(".arrow");
+            if (arrow) {
+                link.addEventListener("mouseenter", () => {
+                    gsap.to(arrow, { x: 5, repeat: -1, yoyo: true, duration: 0.3 });
+                });
+                link.addEventListener("mouseleave", () => {
+                    gsap.to(arrow, { x: 0, overwrite: true });
+                });
+            }
+        });
+    }
 }
-
-
-// Clean DOMContentLoaded registration and initialization block
-window.addEventListener("DOMContentLoaded", () => {
-    // Only call essential init functions once
-    initMenu();
-    initButtons();
-    initFooterAnimations();
-    initFooterCursorVideo();
-
-    // Call your existing animations
-    loco();
-    homepageanimation();
-    servicesPageAnimation();
-    colorchange();
-
-    capsule();
-    skillsAnimations();
-    aboutAnimations();
-});
-
-
-
 
 // Skills Section Animations
 function skillsAnimations() {
     const skillItems = document.querySelectorAll('.skill-item');
     if (!skillItems.length) return;
 
+    const isMobile = window.innerWidth < 768;
+
     // Fade in skill items on scroll
     skillItems.forEach((item, index) => {
         gsap.from(item, {
             scrollTrigger: {
                 trigger: item,
-                start: 'top 85%',
+                start: 'top 90%',
                 toggleActions: 'play none none reverse'
             },
-            y: 30,
+            y: 25,
             opacity: 0,
-            duration: 0.8,
-            delay: index * 0.1,
+            duration: 0.6,
+            delay: isMobile ? 0 : index * 0.08,
             ease: 'power3.out'
         });
     });
 
-    // Micro-interactions on hover
-    skillItems.forEach((item) => {
-        const border = item.querySelector('.border-b');
-        const number = item.querySelector('.skill-number');
-        const title = item.querySelector('.skill-title');
-        const percent = item.querySelector('.skill-percent');
+    // Micro-interactions on hover (only on hover/pointer devices)
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        skillItems.forEach((item) => {
+            const border = item.querySelector('.border-b');
+            const number = item.querySelector('.skill-number');
+            const title = item.querySelector('.skill-title');
+            const percent = item.querySelector('.skill-percent');
 
-        item.addEventListener('mouseenter', function () {
-            if (border) {
-                gsap.to(border, {
-                    borderColor: 'var(--accent-primary)',
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            }
-            if (number) {
-                gsap.to(number, {
-                    opacity: 0.6,
-                    scale: 1.05,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            }
-            if (title) {
-                gsap.to(title, {
-                    x: 8,
-                    color: 'var(--accent-primary)',
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            }
-            if (percent) {
-                gsap.to(percent, {
-                    opacity: 1,
-                    scale: 1.1,
-                    color: 'var(--accent-primary)',
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            }
-        });
+            item.addEventListener('mouseenter', function () {
+                if (border) gsap.to(border, { borderColor: 'var(--accent-primary)', duration: 0.3, ease: 'power2.out' });
+                if (number) gsap.to(number, { opacity: 0.6, scale: 1.05, duration: 0.3, ease: 'power2.out' });
+                if (title) gsap.to(title, { x: 8, color: 'var(--accent-primary)', duration: 0.3, ease: 'power2.out' });
+                if (percent) gsap.to(percent, { opacity: 1, scale: 1.1, color: 'var(--accent-primary)', duration: 0.3, ease: 'power2.out' });
+            });
 
-        item.addEventListener('mouseleave', function () {
-            if (border) {
-                gsap.to(border, {
-                    borderColor: 'var(--border-dark)',
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            }
-            if (number) {
-                gsap.to(number, {
-                    opacity: 0.3,
-                    scale: 1,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            }
-            if (title) {
-                gsap.to(title, {
-                    x: 0,
-                    color: 'var(--text-primary-dark)',
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            }
-            if (percent) {
-                gsap.to(percent, {
-                    opacity: 0.5,
-                    scale: 1,
-                    color: 'var(--text-secondary-dark)',
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            }
+            item.addEventListener('mouseleave', function () {
+                if (border) gsap.to(border, { borderColor: 'var(--border-dark)', duration: 0.3, ease: 'power2.out' });
+                if (number) gsap.to(number, { opacity: 0.3, scale: 1, duration: 0.3, ease: 'power2.out' });
+                if (title) gsap.to(title, { x: 0, color: 'var(--text-primary-dark)', duration: 0.3, ease: 'power2.out' });
+                if (percent) gsap.to(percent, { opacity: 0.5, scale: 1, color: 'var(--text-secondary-dark)', duration: 0.3, ease: 'power2.out' });
+            });
         });
-    });
+    }
 }
 
 // ABOUT ME Section Animations
 function aboutAnimations() {
     const aboutSection = document.querySelector('.about-section');
     if (!aboutSection) return;
+
+    // Check if desktop (images are hidden on mobile: hidden md:block)
+    const isDesktop = window.innerWidth >= 768;
+    if (!isDesktop) return;
 
     // Fade in images on scroll
     gsap.to('.about-image-top', {
@@ -670,13 +618,34 @@ function aboutAnimations() {
     });
 }
 
-// Window resize handler to maintain responsiveness
+// Window resize handler: only refresh on width changes (ignore mobile address bar height toggles)
+let lastWidth = window.innerWidth;
 let resizeTimeout;
 window.addEventListener("resize", () => {
+    if (window.innerWidth === lastWidth) return;
+    lastWidth = window.innerWidth;
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
         if (typeof ScrollTrigger !== 'undefined') {
             ScrollTrigger.refresh();
         }
     }, 200);
+});
+
+// Clean DOMContentLoaded registration and initialization block
+window.addEventListener("DOMContentLoaded", () => {
+    initMenu();
+    initButtons();
+    initFooterAnimations();
+    initFooterCursorVideo();
+
+    loco();
+    homepageanimation();
+    servicesAnimation();
+    servicesPageAnimation();
+    colorchange();
+
+    capsule();
+    skillsAnimations();
+    aboutAnimations();
 });

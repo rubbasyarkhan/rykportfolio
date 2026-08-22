@@ -134,7 +134,7 @@
     </div>
     <!-- Home Section -->
 
-    <section data-color="black" class="home w-full h-[200vh] relative font-sans">
+    <section data-color="black" class="home w-full h-[140vh] relative font-sans">
       <div class="w-full sticky left-0 top-0 h-screen overflow-hidden">
 
         <div style="--clip:100%" class="z-[3] vdiv w-full h-screen absolute top-0 left-0 overflow-hidden">
@@ -171,671 +171,424 @@
         <div class="marqueescontainer w-full h-screen relative overflow-hidden flex items-center justify-center"
           style="background-color: var(--bg-dark); color: var(--text-primary-dark);">
 
-          <!-- Floating Headline -->
-          <div class="heading text-center absolute bottom-[6%] sm:bottom-[8%] md:bottom-[10%] left-1/2 -translate-x-1/2 z-[2] w-full px-4 pointer-events-none">
-            <h1 class="text-lg sm:text-2xl md:text-3xl font-medium tracking-tight"
+                    <!-- Floating Headline (Clean spacing at bottom) -->
+          <div class="heading text-center absolute bottom-6 sm:bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 z-[2] w-full px-4 pointer-events-none">
+            <h1 class="text-base sm:text-xl md:text-2xl font-medium tracking-tight"
               style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">
               I make pixels <span style="font-family: 'Allura', cursive; color: var(--accent-primary);"
-                class="text-2xl sm:text-3xl md:text-4xl font-bold">behave</span>.
+                class="text-xl sm:text-2xl md:text-3xl font-bold">behave</span>.
             </h1>
-            <h2 class="text-xs sm:text-sm md:text-base font-normal opacity-80 mt-1"
+            <h2 class="text-[11px] sm:text-xs md:text-sm font-normal opacity-70 mt-1"
               style="font-family: 'Space Grotesk', sans-serif; color: var(--text-secondary-dark);">
               Design-first mindset, developer-level execution.
             </h2>
           </div>
 
-          <!-- Marquee Rows Container -->
-          <div class="slmm w-full scale-[1] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-[2.5vw] md:gap-[2.2vw] overflow-hidden pointer-events-none">
+          <!-- Marquee Rows Container (Positioned in top-middle with plenty of breathing room above headline) -->
+          <div class="slmm w-full scale-[1] absolute top-[44%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2.5 sm:gap-3.5 md:gap-4 overflow-hidden pointer-events-none">
 
             <!-- ROW 1 (Left Scrolling) -->
-            <div class="row-wrapper w-full overflow-hidden">
-              <div class="marquee-track animate-marquee-left lft flex items-center gap-[0.4em] sm:gap-[0.5em] whitespace-nowrap text-[clamp(1.6rem,4.2vw,5.5rem)] tracking-tighter leading-none">
-                <!-- 1st Half -->
-                <div class="flex items-center gap-[0.4em] sm:gap-[0.5em] flex-shrink-0">
-                  <!-- Set 1 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">innovative</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">pixel-perfect</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">responsive</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">creative</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-green-400 to-teal-500 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">modern</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">dynamic</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-purple-400 to-pink-500 rotate-45 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                  <!-- Set 2 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">innovative</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">pixel-perfect</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">responsive</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">creative</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-green-400 to-teal-500 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">modern</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">dynamic</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-purple-400 to-pink-500 rotate-45 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                  <!-- Set 3 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">innovative</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">pixel-perfect</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">responsive</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">creative</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-green-400 to-teal-500 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">modern</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">dynamic</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-purple-400 to-pink-500 rotate-45 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                </div>
-                <!-- 2nd Half (Seamless Loop Duplicate) -->
-                <div class="flex items-center gap-[0.4em] sm:gap-[0.5em] flex-shrink-0" aria-hidden="true">
-                  <!-- Set 1 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">innovative</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">pixel-perfect</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">responsive</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">creative</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-green-400 to-teal-500 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">modern</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">dynamic</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-purple-400 to-pink-500 rotate-45 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                  <!-- Set 2 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">innovative</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">pixel-perfect</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">responsive</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">creative</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-green-400 to-teal-500 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">modern</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">dynamic</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-purple-400 to-pink-500 rotate-45 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                  <!-- Set 3 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">innovative</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">pixel-perfect</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">responsive</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">creative</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-green-400 to-teal-500 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">modern</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">dynamic</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-purple-400 to-pink-500 rotate-45 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                </div>
+            <div class="row lft w-full leading-none tracking-tight flex items-center gap-4 sm:gap-6 whitespace-nowrap min-w-max -translate-x-[25%]">
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">innovative</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">pixel-perfect</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">responsive</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">creative</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-green-400 to-teal-500 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">modern</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">dynamic</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-purple-400 to-pink-500 rotate-45 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">innovative</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">pixel-perfect</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">responsive</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">creative</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-green-400 to-teal-500 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">modern</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">dynamic</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-purple-400 to-pink-500 rotate-45 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">innovative</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">pixel-perfect</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">responsive</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">creative</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-green-400 to-teal-500 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">modern</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">dynamic</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-purple-400 to-pink-500 rotate-45 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">innovative</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">pixel-perfect</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">responsive</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">creative</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-green-400 to-teal-500 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">modern</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">dynamic</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-purple-400 to-pink-500 rotate-45 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
               </div>
             </div>
 
             <!-- ROW 2 (Right Scrolling) -->
-            <div class="row-wrapper w-full overflow-hidden">
-              <div class="marquee-track animate-marquee-right rgt flex items-center gap-[0.4em] sm:gap-[0.5em] whitespace-nowrap text-[clamp(1.6rem,4.2vw,5.5rem)] tracking-tighter leading-none">
-                <!-- 1st Half -->
-                <div class="flex items-center gap-[0.4em] sm:gap-[0.5em] flex-shrink-0">
-                  <!-- Set 1 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">visionary</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">elegant</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">scalable</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">professional</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">cutting-edge</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-violet-400 to-purple-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">seamless</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <!-- Set 2 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">visionary</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">elegant</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">scalable</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">professional</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">cutting-edge</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-violet-400 to-purple-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">seamless</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <!-- Set 3 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">visionary</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">elegant</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">scalable</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">professional</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">cutting-edge</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-violet-400 to-purple-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">seamless</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                </div>
-                <!-- 2nd Half (Seamless Loop Duplicate) -->
-                <div class="flex items-center gap-[0.4em] sm:gap-[0.5em] flex-shrink-0" aria-hidden="true">
-                  <!-- Set 1 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">visionary</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">elegant</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">scalable</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">professional</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">cutting-edge</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-violet-400 to-purple-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">seamless</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <!-- Set 2 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">visionary</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">elegant</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">scalable</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">professional</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">cutting-edge</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-violet-400 to-purple-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">seamless</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <!-- Set 3 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">visionary</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">elegant</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">scalable</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">professional</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">cutting-edge</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-violet-400 to-purple-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">seamless</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                </div>
+            <div class="row rgt w-full leading-none tracking-tight flex items-center gap-4 sm:gap-6 whitespace-nowrap min-w-max -translate-x-[40%]">
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">visionary</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">elegant</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rotate-45 flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">scalable</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">professional</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">cutting-edge</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-violet-400 to-purple-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">seamless</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">visionary</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">elegant</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rotate-45 flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">scalable</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">professional</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">cutting-edge</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-violet-400 to-purple-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">seamless</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">visionary</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">elegant</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rotate-45 flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">scalable</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">professional</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">cutting-edge</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-violet-400 to-purple-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">seamless</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">visionary</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">elegant</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rotate-45 flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">scalable</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">professional</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">cutting-edge</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-violet-400 to-purple-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">seamless</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
               </div>
             </div>
 
             <!-- ROW 3 (Left Scrolling) -->
-            <div class="row-wrapper w-full overflow-hidden">
-              <div class="marquee-track animate-marquee-left lft flex items-center gap-[0.4em] sm:gap-[0.5em] whitespace-nowrap text-[clamp(1.6rem,4.2vw,5.5rem)] tracking-tighter leading-none">
-                <!-- 1st Half -->
-                <div class="flex items-center gap-[0.4em] sm:gap-[0.5em] flex-shrink-0">
-                  <!-- Set 1 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">bold</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">stunning</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-sky-400 to-cyan-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">interactive</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">polished</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">refined</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">immersive</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-yellow-400 to-amber-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                  <!-- Set 2 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">bold</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">stunning</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-sky-400 to-cyan-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">interactive</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">polished</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">refined</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">immersive</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-yellow-400 to-amber-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                  <!-- Set 3 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">bold</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">stunning</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-sky-400 to-cyan-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">interactive</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">polished</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">refined</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">immersive</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-yellow-400 to-amber-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                </div>
-                <!-- 2nd Half (Seamless Loop Duplicate) -->
-                <div class="flex items-center gap-[0.4em] sm:gap-[0.5em] flex-shrink-0" aria-hidden="true">
-                  <!-- Set 1 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">bold</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">stunning</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-sky-400 to-cyan-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">interactive</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">polished</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">refined</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">immersive</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-yellow-400 to-amber-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                  <!-- Set 2 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">bold</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">stunning</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-sky-400 to-cyan-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">interactive</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">polished</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">refined</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">immersive</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-yellow-400 to-amber-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                  <!-- Set 3 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">bold</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">stunning</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-sky-400 to-cyan-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">interactive</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">polished</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">refined</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">immersive</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-yellow-400 to-amber-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-                  </div>
-                </div>
+            <div class="row lft w-full leading-none tracking-tight flex items-center gap-4 sm:gap-6 whitespace-nowrap min-w-max -translate-x-[30%]">
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">bold</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">stunning</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-sky-400 to-cyan-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">interactive</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">polished</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">refined</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">immersive</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-yellow-400 to-amber-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">bold</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">stunning</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-sky-400 to-cyan-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">interactive</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">polished</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">refined</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">immersive</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-yellow-400 to-amber-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">bold</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">stunning</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-sky-400 to-cyan-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">interactive</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">polished</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">refined</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">immersive</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-yellow-400 to-amber-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">bold</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">stunning</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-sky-400 to-cyan-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">interactive</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">polished</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">refined</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">immersive</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-yellow-400 to-amber-600 flex-shrink-0" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
               </div>
             </div>
 
             <!-- ROW 4 (Right Scrolling) -->
-            <div class="row-wrapper w-full overflow-hidden">
-              <div class="marquee-track animate-marquee-right rgt flex items-center gap-[0.4em] sm:gap-[0.5em] whitespace-nowrap text-[clamp(1.6rem,4.2vw,5.5rem)] tracking-tighter leading-none">
-                <!-- 1st Half -->
-                <div class="flex items-center gap-[0.4em] sm:gap-[0.5em] flex-shrink-0">
-                  <!-- Set 1 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">exceptional</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">user-focused</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">transformative</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">sophisticated</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">impactful</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-red-400 to-pink-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">memorable</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <!-- Set 2 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">exceptional</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">user-focused</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">transformative</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">sophisticated</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">impactful</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-red-400 to-pink-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">memorable</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <!-- Set 3 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">exceptional</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">user-focused</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">transformative</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">sophisticated</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">impactful</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-red-400 to-pink-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">memorable</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                </div>
-                <!-- 2nd Half (Seamless Loop Duplicate) -->
-                <div class="flex items-center gap-[0.4em] sm:gap-[0.5em] flex-shrink-0" aria-hidden="true">
-                  <!-- Set 1 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">exceptional</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">user-focused</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">transformative</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">sophisticated</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">impactful</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-red-400 to-pink-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">memorable</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <!-- Set 2 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">exceptional</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">user-focused</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">transformative</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">sophisticated</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">impactful</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-red-400 to-pink-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">memorable</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <!-- Set 3 -->
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">exceptional</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">user-focused</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">transformative</span>
-                    <div class="w-[0.35em] h-[0.35em] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span class="font-bold" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark);">sophisticated</span>
-                    <div class="w-[0.35em] h-[0.35em] flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">impactful</span>
-                    <div class="w-[0.35em] h-[0.35em] bg-gradient-to-br from-red-400 to-pink-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                  </div>
-                  <div class="elem flex items-center gap-[0.3em] flex-shrink-0">
-                    <span style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">memorable</span>
-                    <div class="w-[0.35em] h-[0.35em] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
-                  </div>
-                </div>
+            <div class="row rgt w-full leading-none tracking-tight flex items-center gap-4 sm:gap-6 whitespace-nowrap min-w-max -translate-x-[35%]">
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">exceptional</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">user-focused</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">transformative</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">sophisticated</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">impactful</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-red-400 to-pink-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">memorable</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">exceptional</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">user-focused</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">transformative</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">sophisticated</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">impactful</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-red-400 to-pink-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">memorable</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">exceptional</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">user-focused</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">transformative</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">sophisticated</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">impactful</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-red-400 to-pink-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">memorable</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">exceptional</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-primary);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">user-focused</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">transformative</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rotate-45 flex-shrink-0" style="background-color: var(--accent-primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-dark); font-weight: bold;">sophisticated</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] flex-shrink-0" style="background-color: var(--accent-muted); clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Allura', cursive; color: var(--text-primary-dark);">impactful</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] bg-gradient-to-br from-red-400 to-pink-600 flex-shrink-0" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
+              </div>
+              <div class="elem flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <h1 class="text-[clamp(1.8rem,3.8vw,3.4rem)]" style="font-family: 'Playfair Display', serif; color: var(--text-primary-dark);">memorable</h1>
+                <div class="w-[clamp(1.1rem,2vw,1.8rem)] h-[clamp(1.1rem,2vw,1.8rem)] rounded-full flex-shrink-0" style="background-color: var(--accent-muted);"></div>
               </div>
             </div>
 
           </div>
+        </div>
         </div>
 
       </div>
