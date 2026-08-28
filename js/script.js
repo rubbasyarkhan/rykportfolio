@@ -202,81 +202,71 @@ function initFooterAnimations() {
 }
 
 function initFooterCursorVideo() {
+    const cursorVideo = document.querySelector(".footer-cursor-video");
+    if (cursorVideo) {
+        cursorVideo.remove();
+    }
+}
+
+function initCustomCursor() {
     // Only run on desktop devices that support fine hover
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
-    const footer = document.querySelector(".footer-section");
-    const cursorVideo = document.querySelector(".footer-cursor-video");
-    if (!footer || !cursorVideo) return;
-    const links = footer.querySelectorAll("a");
+    // Inject cursor elements
+    const dot = document.createElement("div");
+    dot.className = "custom-cursor-dot";
+    const ring = document.createElement("div");
+    ring.className = "custom-cursor-ring";
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
 
-    let lastX = 0;
-    let lastY = 0;
+    let mouse = { x: -100, y: -100 };
+    let dotPos = { x: -100, y: -100 };
+    let ringPos = { x: -100, y: -100 };
 
-    footer.addEventListener("mouseenter", () => {
-        gsap.to(cursorVideo, {
-            opacity: 1,
-            scale: 1,
-            duration: 0.4,
-            ease: "expo.out"
-        });
+    window.addEventListener("mousemove", (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
     });
 
-    footer.addEventListener("mouseleave", () => {
-        gsap.to(cursorVideo, {
-            opacity: 0,
-            scale: 0.8,
-            rotateX: 0,
-            rotateY: 0,
-            duration: 0.4,
-            ease: "expo.out"
-        });
+    // Animate using GSAP ticker
+    gsap.ticker.add(() => {
+        // Lerp for smooth delay
+        dotPos.x += (mouse.x - dotPos.x) * 0.3;
+        dotPos.y += (mouse.y - dotPos.y) * 0.3;
+        ringPos.x += (mouse.x - ringPos.x) * 0.15;
+        ringPos.y += (mouse.y - ringPos.y) * 0.15;
+
+        gsap.set(dot, { x: dotPos.x, y: dotPos.y });
+        gsap.set(ring, { x: ringPos.x, y: ringPos.y });
     });
 
-    footer.addEventListener("mousemove", (e) => {
-        const x = e.clientX;
-        const y = e.clientY;
+    // Listeners for active hover elements
+    const updateHoverElements = () => {
+        const hoverTargets = document.querySelectorAll("a, button, [role='button'], .skill-item, #menu-toggle");
+        hoverTargets.forEach(target => {
+            target.removeEventListener("mouseenter", addHoverClass);
+            target.removeEventListener("mouseleave", removeHoverClass);
 
-        const dx = x - lastX;
-        const dy = y - lastY;
-
-        lastX = x;
-        lastY = y;
-
-        const tiltX = gsap.utils.clamp(-12, 12, dy * -0.6);
-        const tiltY = gsap.utils.clamp(-12, 12, dx * 0.6);
-
-        gsap.to(cursorVideo, {
-            x,
-            y,
-            rotateX: tiltX,
-            rotateY: tiltY,
-            transformPerspective: 800,
-            duration: 0.35,
-            ease: "power3.out"
+            target.addEventListener("mouseenter", addHoverClass);
+            target.addEventListener("mouseleave", removeHoverClass);
         });
-    });
+    };
 
-    // Disable over links
-    links.forEach(link => {
-        link.addEventListener("mouseenter", () => {
-            gsap.to(cursorVideo, {
-                opacity: 0,
-                scale: 0.7,
-                duration: 0.25,
-                ease: "power2.out"
-            });
-        });
+    function addHoverClass() {
+        ring.classList.add("hover");
+        dot.classList.add("hover");
+    }
 
-        link.addEventListener("mouseleave", () => {
-            gsap.to(cursorVideo, {
-                opacity: 1,
-                scale: 1,
-                duration: 0.25,
-                ease: "power2.out"
-            });
-        });
-    });
+    function removeHoverClass() {
+        ring.classList.remove("hover");
+        dot.classList.remove("hover");
+    }
+
+    updateHoverElements();
+
+    // Re-check elements periodically
+    setInterval(updateHoverElements, 2000);
 }
 
 function homepageanimation() {
@@ -642,6 +632,7 @@ window.addEventListener("DOMContentLoaded", () => {
     initButtons();
     initFooterAnimations();
     initFooterCursorVideo();
+    initCustomCursor();
 
     loco();
     homepageanimation();
