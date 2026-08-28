@@ -562,60 +562,64 @@ function aboutAnimations() {
     const aboutSection = document.querySelector('.about-section');
     if (!aboutSection) return;
 
-    // Check if desktop (images are hidden on mobile: hidden md:block)
-    const isDesktop = window.innerWidth >= 768;
-    if (!isDesktop) return;
+    const imgTop = document.querySelector('.about-image-top');
+    const imgBottom = document.querySelector('.about-image-bottom');
 
     // Fade in images on scroll
-    gsap.to('.about-image-top', {
-        scrollTrigger: {
-            trigger: '.about-section',
-            start: 'top 70%',
-            toggleActions: 'play none none reverse'
-        },
-        opacity: 1,
-        x: 20,
-        y: 20,
-        duration: 1,
-        ease: 'power3.out'
-    });
+    if (imgTop) {
+        gsap.to(imgTop, {
+            scrollTrigger: {
+                trigger: '.about-section',
+                start: 'top 70%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 1,
+            x: 20,
+            y: 20,
+            duration: 1,
+            ease: 'power3.out'
+        });
 
-    gsap.to('.about-image-bottom', {
-        scrollTrigger: {
-            trigger: '.about-section',
-            start: 'top 70%',
-            toggleActions: 'play none none reverse'
-        },
-        opacity: 1,
-        x: -20,
-        y: -20,
-        duration: 1,
-        delay: 0.2,
-        ease: 'power3.out'
-    });
+        // Parallax effect on images
+        gsap.to(imgTop, {
+            scrollTrigger: {
+                trigger: '.about-section',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1
+            },
+            y: -30,
+            ease: 'none'
+        });
+    }
 
-    // Parallax effect on images
-    gsap.to('.about-image-top', {
-        scrollTrigger: {
-            trigger: '.about-section',
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1
-        },
-        y: -30,
-        ease: 'none'
-    });
+    if (imgBottom) {
+        gsap.to(imgBottom, {
+            scrollTrigger: {
+                trigger: '.about-section',
+                start: 'top 70%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 1,
+            x: -20,
+            y: -20,
+            duration: 1,
+            delay: 0.2,
+            ease: 'power3.out'
+        });
 
-    gsap.to('.about-image-bottom', {
-        scrollTrigger: {
-            trigger: '.about-section',
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1
-        },
-        y: 30,
-        ease: 'none'
-    });
+        // Parallax effect on images
+        gsap.to(imgBottom, {
+            scrollTrigger: {
+                trigger: '.about-section',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1
+            },
+            y: 30,
+            ease: 'none'
+        });
+    }
 }
 
 // Window resize handler: only refresh on width changes (ignore mobile address bar height toggles)
