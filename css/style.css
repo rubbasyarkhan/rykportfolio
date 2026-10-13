@@ -57,7 +57,7 @@ body[theme="white"] section {
 
 @font-face {
     font-family: "satoshi";
-    src: url(../assets/Satoshi-Variable.ttf);
+    src: url(../assets/fonts/Satoshi-Variable.ttf);
 }
 
 *::selection {
@@ -77,8 +77,7 @@ body {
 }
 
 /* Custom Font & Smoothness */
-.botmtext h1,
-.services-page h1 {
+.botmtext h1 {
     font-family: "Neue-Machina", sans-serif;
     text-transform: uppercase;
 }

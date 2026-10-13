@@ -1,0 +1,13 @@
+{
+  "name": "rykportfolio",
+  "version": "1.0.0",
+  "description": "Rubbas Yar Khan Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "node ./node_modules/tailwindcss/lib/cli.js -i ./css/tailwind-input.css -o ./css/tailwind.css --minify",
+    "watch:css": "node ./node_modules/tailwindcss/lib/cli.js -i ./css/tailwind-input.css -o ./css/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

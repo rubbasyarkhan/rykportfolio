@@ -6,7 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Contact | Rubbas Yar Khan</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="Get in touch with Rubbas Yar Khan to start a new project, collaboration, or design consultation." />
+    <meta property="og:title" content="Contact | Rubbas Yar Khan" />
+    <meta property="og:description" content="Get in touch with Rubbas Yar Khan to start a new project, collaboration, or design consultation." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/herobg1.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact | Rubbas Yar Khan" />
+    <meta name="twitter:description" content="Get in touch with Rubbas Yar Khan to start a new project, collaboration, or design consultation." />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="css/tailwind.css" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Space+Grotesk:wght@400;500;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
@@ -142,44 +151,47 @@
                     </div>
                 </div>
 
-                <form class="space-y-8 sm:space-y-12" action="https://formsubmit.co/rubbasyarkhan007@gmail.com" method="POST">
+                <form id="contact-form" class="space-y-8 sm:space-y-12" action="https://formsubmit.co/rubbasyarkhan007@gmail.com" method="POST">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_subject" value="New Contact Form Message">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_next" value="https://rubbasyarkhan.netlify.app/">
+                    
+                    <div id="form-feedback" class="hidden rounded-sm p-4 text-sm font-medium transition-all" role="alert" aria-live="polite"></div>
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 sm:gap-y-8">
 
                         <div class="space-y-3">
-                            <label class="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider">
+                            <label for="first_name" class="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider cursor-pointer">
                                 <span class="w-2 h-2 bg-[#ef9d71] rounded-full"></span> First Name
                             </label>
-                            <input type="text" name="first_name" placeholder="RUBBAS" required
+                            <input id="first_name" type="text" name="first_name" placeholder="RUBBAS" required
                                 class="w-full bg-[#1A1A1A] border-none rounded-sm p-3.5 sm:p-4 text-sm sm:text-base text-gray-300 placeholder:text-gray-600 focus:ring-2 focus:ring-[#ef9d71] outline-none transition-all">
                         </div>
 
                         <div class="space-y-3">
-                            <label class="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider">
+                            <label for="last_name" class="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider cursor-pointer">
                                 <span class="w-2 h-2 bg-[#ef9d71] rounded-full"></span> Last Name
                             </label>
-                            <input type="text" name="last_name" placeholder="YAR KHAN" required
+                            <input id="last_name" type="text" name="last_name" placeholder="YAR KHAN" required
                                 class="w-full bg-[#1A1A1A] border-none rounded-sm p-3.5 sm:p-4 text-sm sm:text-base text-gray-300 placeholder:text-gray-600 focus:ring-2 focus:ring-[#ef9d71] outline-none transition-all">
                         </div>
 
                         <div class="space-y-3 md:col-span-2">
-                            <label class="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider">
+                            <label for="email" class="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider cursor-pointer">
                                 <span class="w-2 h-2 bg-[#ef9d71] rounded-full"></span> How can we reach you
                             </label>
-                            <input type="email" name="email" placeholder="rubbasyarkhan007@gmail.com" required
+                            <input id="email" type="email" name="email" placeholder="rubbasyarkhan007@gmail.com" required
                                 class="w-full bg-[#1A1A1A] border-none rounded-sm p-3.5 sm:p-4 text-sm sm:text-base text-gray-300 placeholder:text-gray-600 focus:ring-2 focus:ring-[#ef9d71] outline-none transition-all">
                         </div>
 
                         <div class="space-y-3 md:col-span-2">
-                            <label class="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider">
+                            <label for="service" class="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider cursor-pointer">
                                 <span class="w-2 h-2 bg-[#ef9d71] rounded-full"></span> Service Required
                             </label>
 
                             <div class="relative group">
-                                <select name="service" required
+                                <select id="service" name="service" required
                                     class="w-full bg-[#1A1A1A] border-none rounded-sm p-3.5 sm:p-4 text-sm sm:text-base text-gray-300 focus:ring-2 focus:ring-[#ef9d71] outline-none appearance-none cursor-pointer pr-12 transition-all">
                                     <option value="" disabled selected>Select a service</option>
                                     <option value="web-design">Web & App Designing</option>
@@ -202,16 +214,16 @@
                         </div>
 
                         <div class="space-y-3 md:col-span-2">
-                            <label class="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider">
+                            <label for="message" class="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider cursor-pointer">
                                 <span class="w-2 h-2 bg-[#ef9d71] rounded-full"></span> Message
                             </label>
-                            <textarea name="message" rows="5" placeholder="Give us an idea of what you need." required
+                            <textarea id="message" name="message" rows="5" placeholder="Give us an idea of what you need." required
                                 class="w-full bg-[#1A1A1A] border-none rounded-sm p-3.5 sm:p-4 text-sm sm:text-base text-gray-300 placeholder:text-gray-600 focus:ring-2 focus:ring-[#ef9d71] outline-none transition-all resize-none"></textarea>
                         </div>
                     </div>
 
-                    <button type="submit"
-                        class="w-full bg-[#E5E5E5] text-black font-bold uppercase py-4 mt-6 hover:bg-[#ef9d71] transition-colors duration-300 tracking-wider text-base sm:text-lg rounded-sm">
+                    <button id="submit-btn" type="submit"
+                        class="w-full bg-[#E5E5E5] text-black font-bold uppercase py-4 mt-6 hover:bg-[#ef9d71] transition-colors duration-300 tracking-wider text-base sm:text-lg rounded-sm disabled:opacity-50 disabled:cursor-not-allowed">
                         Submit Now
                     </button>
                 </form>
@@ -360,10 +372,6 @@
             </p>
         </div>
 
-        <div class="footer-cursor-video pointer-events-none">
-            <video src="https://www.pexels.com/download/video/18069165/" autoplay muted loop playsinline onloadedmetadata="this.playbackRate = 2.0;"></video>
-        </div>
-
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
@@ -372,9 +380,67 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 
     <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contact-form');
+            if (!form) return;
+            const feedback = document.getElementById('form-feedback');
+            const submitBtn = document.getElementById('submit-btn');
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+
+                const originalText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+
+                if (feedback) {
+                    feedback.className = 'hidden';
+                    feedback.textContent = '';
+                }
+
+                try {
+                    const formData = new FormData(form);
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        form.reset();
+                        if (feedback) {
+                            feedback.className = 'block p-4 rounded-sm text-sm font-semibold bg-emerald-950/80 border border-emerald-500/80 text-emerald-200 text-center';
+                            feedback.innerHTML = '<span class="text-base mr-1">✓</span> Message sent successfully! Thank you for reaching out, I will be in touch shortly.';
+                        }
+                        submitBtn.textContent = 'Message Sent';
+                        setTimeout(() => {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = originalText;
+                        }, 4000);
+                    } else {
+                        throw new Error('Server returned an error');
+                    }
+                } catch (err) {
+                    if (feedback) {
+                        feedback.className = 'block p-4 rounded-sm text-sm font-semibold bg-red-950/80 border border-red-500/80 text-red-200 text-center';
+                        feedback.textContent = 'Could not send message automatically. Please reach out directly at rubbasyarkhan007@gmail.com.';
+                    }
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
+            });
+        });
+    </script>
     <div class="noise-overlay"></div>
 
 </body>

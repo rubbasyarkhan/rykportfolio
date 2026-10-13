@@ -10,7 +10,7 @@ function initMenu() {
     const navCenter = document.querySelector("#nav-center");
 
     // Safety check
-    if (!menuToggle || !fullMenu) return;
+    if (!menuToggle || !fullMenu || typeof gsap === 'undefined') return;
 
     // Initial states
     gsap.set(fullMenu, {
@@ -74,7 +74,7 @@ function initMenu() {
     ---------------------------------- */
     const navLinks = document.querySelectorAll(".nav-link");
     if (navLinks.length) {
-        menuTl.from(".nav-link", {
+        menuTl.from(navLinks, {
             y: 60,
             opacity: 0,
             stagger: 0.08,
@@ -121,6 +121,7 @@ function initMenu() {
 }
 
 function initButtons() {
+    if (typeof gsap === 'undefined') return;
     // Only attach hover listeners on pointer/hover devices to avoid stuck states on mobile taps
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
@@ -144,13 +145,14 @@ function initButtons() {
 }
 
 function initFooterAnimations() {
-    const nowBtn = document.querySelector(".now-btn");
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
     const footer = document.querySelector(".footer-section");
+    if (!footer) return;
 
-    if (!nowBtn || !footer) return;
+    const nowBtn = footer.querySelector(".now-btn");
 
     // CTA hover expansion (only for devices with hover/pointer)
-    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    if (nowBtn && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
         nowBtn.addEventListener("mouseenter", () => {
             gsap.to(nowBtn, {
                 paddingLeft: 80,
@@ -171,102 +173,159 @@ function initFooterAnimations() {
     }
 
     // Footer reveal
-    gsap.timeline({
+    const footerTl = gsap.timeline({
         scrollTrigger: {
-            trigger: ".footer-section",
+            trigger: footer,
             start: "top 85%"
         }
-    })
-        .from(".cta-area h1", {
+    });
+
+    const ctaHeadings = footer.querySelectorAll(".cta-area h1");
+    if (ctaHeadings.length) {
+        footerTl.from(ctaHeadings, {
             y: 80,
             opacity: 0,
             stagger: 0.08,
             duration: 0.9,
             ease: "power4.out"
-        })
-        .from(".now-btn", {
+        });
+    }
+
+    if (nowBtn) {
+        footerTl.from(nowBtn, {
             y: 25,
             scale: 0.9,
             opacity: 0,
             duration: 0.7,
             ease: "expo.out",
             clearProps: "all"
-        }, "-=0.5")
-        .from(".footer-grid .info-block", {
+        }, "-=0.5");
+    }
+
+    const infoBlocks = footer.querySelectorAll(".footer-grid .info-block");
+    if (infoBlocks.length) {
+        footerTl.from(infoBlocks, {
             y: 25,
             opacity: 0,
             stagger: 0.1,
             duration: 0.6,
             ease: "power3.out"
         }, "-=0.4");
-}
-
-function initFooterCursorVideo() {
-    const cursorVideo = document.querySelector(".footer-cursor-video");
-    if (cursorVideo) {
-        cursorVideo.remove();
     }
 }
 
 function initCustomCursor() {
     // Only run on desktop devices that support fine hover
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    if (typeof gsap === 'undefined') return;
 
-    // Inject cursor elements
-    const dot = document.createElement("div");
-    dot.className = "custom-cursor-dot";
-    const ring = document.createElement("div");
-    ring.className = "custom-cursor-ring";
-    document.body.appendChild(dot);
-    document.body.appendChild(ring);
+    // Avoid duplicate injection
+    let dot = document.querySelector(".custom-cursor-dot");
+    let ring = document.querySelector(".custom-cursor-ring");
 
-    let mouse = { x: -100, y: -100 };
-    let dotPos = { x: -100, y: -100 };
-    let ringPos = { x: -100, y: -100 };
+    if (!dot) {
+        dot = document.createElement("div");
+        dot.className = "custom-cursor-dot";
+        document.body.appendChild(dot);
+    }
+    if (!ring) {
+        ring = document.createElement("div");
+        ring.className = "custom-cursor-ring";
+        document.body.appendChild(ring);
+    }
+
+    gsap.set([dot, ring], {
+        xPercent: -50,
+        yPercent: -50,
+        opacity: 0,
+        pointerEvents: "none"
+    });
+
+    const mouse = { x: -100, y: -100 };
+    const dotPos = { x: -100, y: -100 };
+    const ringPos = { x: -100, y: -100 };
+    let isVisible = false;
+
+    const setDotX = gsap.quickSetter(dot, "x", "px");
+    const setDotY = gsap.quickSetter(dot, "y", "px");
+    const setRingX = gsap.quickSetter(ring, "x", "px");
+    const setRingY = gsap.quickSetter(ring, "y", "px");
 
     window.addEventListener("mousemove", (e) => {
+        if (!isVisible) {
+            isVisible = true;
+            gsap.to([dot, ring], { opacity: 1, duration: 0.2 });
+        }
         mouse.x = e.clientX;
         mouse.y = e.clientY;
     });
 
-    // Animate using GSAP ticker
-    gsap.ticker.add(() => {
-        // Lerp for smooth delay
+    document.addEventListener("mouseleave", () => {
+        isVisible = false;
+        gsap.to([dot, ring], { opacity: 0, duration: 0.2 });
+    });
+
+    document.addEventListener("mouseenter", () => {
+        isVisible = true;
+        gsap.to([dot, ring], { opacity: 1, duration: 0.2 });
+    });
+
+    // Animate smoothly using GSAP ticker
+    const cursorTicker = () => {
         dotPos.x += (mouse.x - dotPos.x) * 0.3;
         dotPos.y += (mouse.y - dotPos.y) * 0.3;
         ringPos.x += (mouse.x - ringPos.x) * 0.15;
         ringPos.y += (mouse.y - ringPos.y) * 0.15;
 
-        gsap.set(dot, { x: dotPos.x, y: dotPos.y });
-        gsap.set(ring, { x: ringPos.x, y: ringPos.y });
+        setDotX(dotPos.x);
+        setDotY(dotPos.y);
+        setRingX(ringPos.x);
+        setRingY(ringPos.y);
+    };
+    gsap.ticker.add(cursorTicker);
+
+    // Performant event delegation for hover states
+    const hoverSelector = "a, button, [role='button'], .skill-item, #menu-toggle, .gsap-btn, input, textarea, select";
+
+    document.addEventListener("mouseover", (e) => {
+        const target = e.target.closest(hoverSelector);
+        const related = e.relatedTarget ? e.relatedTarget.closest(hoverSelector) : null;
+        if (target && target !== related) {
+            ring.classList.add("hover");
+            dot.classList.add("hover");
+            gsap.to(dot, { scale: 0, duration: 0.2 });
+        }
     });
 
-    // Listeners for active hover elements
-    const updateHoverElements = () => {
-        const hoverTargets = document.querySelectorAll("a, button, [role='button'], .skill-item, #menu-toggle");
-        hoverTargets.forEach(target => {
-            target.removeEventListener("mouseenter", addHoverClass);
-            target.removeEventListener("mouseleave", removeHoverClass);
+    document.addEventListener("mouseout", (e) => {
+        const target = e.target.closest(hoverSelector);
+        const related = e.relatedTarget ? e.relatedTarget.closest(hoverSelector) : null;
+        if (target && target !== related) {
+            ring.classList.remove("hover");
+            dot.classList.remove("hover");
+            gsap.to(dot, { scale: 1, duration: 0.2 });
+        }
+    });
+}
 
-            target.addEventListener("mouseenter", addHoverClass);
-            target.addEventListener("mouseleave", removeHoverClass);
+function initSmoothScroll() {
+    if (typeof Lenis === 'undefined') return;
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        touchMultiplier: 1.5,
+    });
+    if (typeof ScrollTrigger !== 'undefined') {
+        lenis.on('scroll', ScrollTrigger.update);
+    }
+    if (typeof gsap !== 'undefined') {
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
         });
-    };
-
-    function addHoverClass() {
-        ring.classList.add("hover");
-        dot.classList.add("hover");
+        gsap.ticker.lagSmoothing(0);
     }
-
-    function removeHoverClass() {
-        ring.classList.remove("hover");
-        dot.classList.remove("hover");
-    }
-
-    updateHoverElements();
-
-    // Re-check elements periodically
-    setInterval(updateHoverElements, 2000);
+    window.lenis = lenis;
 }
 
 function homepageanimation() {
@@ -274,6 +333,7 @@ function homepageanimation() {
     const slmm = document.querySelector(".slmm");
     const vdiv = document.querySelector(".vdiv");
     if (!home || !slmm || !vdiv) return;
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
     const isMobile = window.innerWidth < 768;
     const initialScale = isMobile ? 2.5 : 3.5;
@@ -281,15 +341,21 @@ function homepageanimation() {
     const rgtShift = isMobile ? 8 : 15;
 
     // Establish deterministic initial properties
-    gsap.set(".vdiv", { '--clip': "100%" });
-    gsap.set(".slmm", { scale: initialScale });
-    gsap.set(".lft", { xPercent: 0 });
-    gsap.set(".rgt", { xPercent: 0 });
-    gsap.set(".botmtext", { opacity: 1, y: 0 });
+    gsap.set(vdiv, { '--clip': "100%" });
+    gsap.set(slmm, { scale: initialScale });
 
-    var tl = gsap.timeline({
+    const lft = document.querySelectorAll(".lft");
+    if (lft.length) gsap.set(lft, { xPercent: 0 });
+
+    const rgt = document.querySelectorAll(".rgt");
+    if (rgt.length) gsap.set(rgt, { xPercent: 0 });
+
+    const botmtext = document.querySelector(".botmtext");
+    if (botmtext) gsap.set(botmtext, { opacity: 1, y: 0 });
+
+    const tl = gsap.timeline({
         scrollTrigger: {
-            trigger: ".home",
+            trigger: home,
             start: "top top",
             end: "bottom bottom",
             scrub: isMobile ? 0.3 : 0.6,
@@ -297,102 +363,107 @@ function homepageanimation() {
     });
 
     // Explicit fromTo ensures perfect 2-way scrubbing without getting stuck when scrolling back up
-    tl.fromTo(".vdiv", 
+    tl.fromTo(vdiv, 
         { '--clip': "100%" }, 
         { '--clip': "0%", ease: "none" }, 
         'a'
     );
 
-    tl.fromTo(".slmm", 
+    tl.fromTo(slmm, 
         { scale: initialScale }, 
         { scale: 1, ease: "none" }, 
         'a'
     );
 
-    tl.fromTo(".botmtext", 
-        { opacity: 1, y: 0 }, 
-        { opacity: 0, y: isMobile ? -25 : -50, ease: "none" }, 
-        'a'
-    );
+    if (botmtext) {
+        tl.fromTo(botmtext, 
+            { opacity: 1, y: 0 }, 
+            { opacity: 0, y: isMobile ? -25 : -50, ease: "none" }, 
+            'a'
+        );
+    }
 
-    tl.fromTo(".lft", 
-        { xPercent: 0 }, 
-        { xPercent: lftShift, stagger: 0.03, ease: "none" }, 
-        'b'
-    );
+    if (lft.length) {
+        tl.fromTo(lft, 
+            { xPercent: 0 }, 
+            { xPercent: lftShift, stagger: 0.03, ease: "none" }, 
+            'b'
+        );
+    }
 
-    tl.fromTo(".rgt", 
-        { xPercent: 0 }, 
-        { xPercent: rgtShift, stagger: 0.03, ease: "none" }, 
-        'b'
-    );
+    if (rgt.length) {
+        tl.fromTo(rgt, 
+            { xPercent: 0 }, 
+            { xPercent: rgtShift, stagger: 0.03, ease: "none" }, 
+            'b'
+        );
+    }
 }
 
 function servicesAnimation() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
     const servicesSection = document.querySelector(".services-section");
     if (!servicesSection) return;
 
     // Heading animation
-    gsap.from(".services-section h1", {
-        scrollTrigger: {
-            trigger: ".services-section",
-            start: "top 75%",
-            end: "top 30%",
-            scrub: 1
-        },
-        y: 80,
-        opacity: 0,
-        ease: "power4.out"
-    });
+    const heading = servicesSection.querySelector("h1");
+    if (heading) {
+        gsap.from(heading, {
+            scrollTrigger: {
+                trigger: servicesSection,
+                start: "top 75%",
+                end: "top 30%",
+                scrub: 1
+            },
+            y: 80,
+            opacity: 0,
+            ease: "power4.out"
+        });
+    }
 
     // Subheading text
-    gsap.from(".services-section p", {
-        scrollTrigger: {
-            trigger: ".services-section",
-            start: "top 70%",
-            end: "top 40%",
-            scrub: 1
-        },
-        y: 40,
-        opacity: 0,
-        ease: "power4.out"
-    });
+    const paragraph = servicesSection.querySelector("p");
+    if (paragraph) {
+        gsap.from(paragraph, {
+            scrollTrigger: {
+                trigger: servicesSection,
+                start: "top 70%",
+                end: "top 40%",
+                scrub: 1
+            },
+            y: 40,
+            opacity: 0,
+            ease: "power4.out"
+        });
+    }
 
     // Service cards animation
-    gsap.from(".service-box", {
-        scrollTrigger: {
-            trigger: ".services-section",
-            start: "top 65%",
-            end: "bottom bottom",
-            scrub: 1
-        },
-        y: 60,
-        opacity: 0,
-        stagger: 0.15,
-        ease: "power4.out"
-    });
-}
-
-function loco() {
-    if (typeof LocomotiveScroll === 'undefined') return;
-    // On touch/mobile devices, allow native momentum scrolling to prevent jitter and ScrollTrigger breakage
-    if (!window.matchMedia("(min-width: 1025px) and (hover: hover) and (pointer: fine)").matches) {
-        return;
-    }
-    try {
-        new LocomotiveScroll();
-    } catch (e) {
-        console.warn("LocomotiveScroll init error:", e);
+    const serviceBoxes = servicesSection.querySelectorAll(".service-box");
+    if (serviceBoxes.length) {
+        gsap.from(serviceBoxes, {
+            scrollTrigger: {
+                trigger: servicesSection,
+                start: "top 65%",
+                end: "bottom bottom",
+                scrub: 1
+            },
+            y: 60,
+            opacity: 0,
+            stagger: 0.15,
+            ease: "power4.out"
+        });
     }
 }
 
 function capsule() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
     const capsules = document.querySelector(".capsules");
-    if (!capsules) return;
+    const secondCapsule = document.querySelector(".capsule:nth-child(2)");
+    if (!capsules || !secondCapsule) return;
 
-    gsap.to(".capsule:nth-child(2)", {
+    gsap.to(secondCapsule, {
         scrollTrigger: {
-            trigger: ".capsules",
+            trigger: capsules,
             start: "top 70%",
             end: "bottom bottom",
             scrub: 1
@@ -403,6 +474,7 @@ function capsule() {
 }
 
 function colorchange() {
+    if (typeof ScrollTrigger === 'undefined') return;
     const sections = document.querySelectorAll("section[data-color]");
     if (!sections.length) return;
 
@@ -427,80 +499,9 @@ function colorchange() {
     });
 }
 
-function servicesPageAnimation() {
-    const header = document.querySelector(".header-content");
-    const serviceItems = document.querySelectorAll(".service-item");
-    if (!header && !serviceItems.length) return;
-
-    // 1. Reveal Header on Load
-    if (header) {
-        gsap.from(".header-content h1, .header-content p", {
-            y: 80,
-            opacity: 0,
-            duration: 0.9,
-            stagger: 0.15,
-            ease: "power4.out"
-        });
-    }
-
-    // 2. Scroll-triggered reveal for each service item
-    serviceItems.forEach((item) => {
-        let tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: item,
-                start: "top 85%",
-                toggleActions: "play none none reverse"
-            }
-        });
-
-        const leftCol = item.querySelector(".left-col");
-        const rightCol = item.querySelector(".right-col");
-        const borderT = item.querySelector(".border-t");
-
-        if (leftCol) {
-            tl.from(leftCol, {
-                x: -30,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power3.out"
-            }, "start");
-        }
-        if (rightCol) {
-            tl.from(rightCol, {
-                scale: 0.9,
-                opacity: 0,
-                duration: 0.9,
-                ease: "expo.out"
-            }, "start");
-        }
-        if (borderT) {
-            tl.from(borderT, {
-                width: 0,
-                duration: 1.2,
-                ease: "power4.inOut"
-            }, "start");
-        }
-    });
-
-    // 3. Hover Effect: Magnetic Arrow for Links
-    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-        const links = document.querySelectorAll(".actions a");
-        links.forEach(link => {
-            const arrow = link.querySelector(".arrow");
-            if (arrow) {
-                link.addEventListener("mouseenter", () => {
-                    gsap.to(arrow, { x: 5, repeat: -1, yoyo: true, duration: 0.3 });
-                });
-                link.addEventListener("mouseleave", () => {
-                    gsap.to(arrow, { x: 0, overwrite: true });
-                });
-            }
-        });
-    }
-}
-
 // Skills Section Animations
 function skillsAnimations() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
     const skillItems = document.querySelectorAll('.skill-item');
     if (!skillItems.length) return;
 
@@ -549,17 +550,18 @@ function skillsAnimations() {
 
 // ABOUT ME Section Animations
 function aboutAnimations() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
     const aboutSection = document.querySelector('.about-section');
     if (!aboutSection) return;
 
-    const imgTop = document.querySelector('.about-image-top');
-    const imgBottom = document.querySelector('.about-image-bottom');
+    const imgTop = aboutSection.querySelector('.about-image-top');
+    const imgBottom = aboutSection.querySelector('.about-image-bottom');
 
     // Fade in images on scroll
     if (imgTop) {
         gsap.to(imgTop, {
             scrollTrigger: {
-                trigger: '.about-section',
+                trigger: aboutSection,
                 start: 'top 70%',
                 toggleActions: 'play none none reverse'
             },
@@ -573,7 +575,7 @@ function aboutAnimations() {
         // Parallax effect on images
         gsap.to(imgTop, {
             scrollTrigger: {
-                trigger: '.about-section',
+                trigger: aboutSection,
                 start: 'top bottom',
                 end: 'bottom top',
                 scrub: 1
@@ -586,7 +588,7 @@ function aboutAnimations() {
     if (imgBottom) {
         gsap.to(imgBottom, {
             scrollTrigger: {
-                trigger: '.about-section',
+                trigger: aboutSection,
                 start: 'top 70%',
                 toggleActions: 'play none none reverse'
             },
@@ -601,7 +603,7 @@ function aboutAnimations() {
         // Parallax effect on images
         gsap.to(imgBottom, {
             scrollTrigger: {
-                trigger: '.about-section',
+                trigger: aboutSection,
                 start: 'top bottom',
                 end: 'bottom top',
                 scrub: 1
@@ -628,19 +630,203 @@ window.addEventListener("resize", () => {
 
 // Clean DOMContentLoaded registration and initialization block
 window.addEventListener("DOMContentLoaded", () => {
+    initSmoothScroll();
     initMenu();
     initButtons();
     initFooterAnimations();
-    initFooterCursorVideo();
     initCustomCursor();
 
-    loco();
     homepageanimation();
     servicesAnimation();
-    servicesPageAnimation();
     colorchange();
 
     capsule();
     skillsAnimations();
     aboutAnimations();
+    initAboutPageAnimations();
 });
+
+function initAboutPageAnimations() {
+    const heading = document.querySelector('.about-heading');
+    if (!heading) return;
+
+    gsap.set('.about-heading', { y: 50 });
+    gsap.set('.about-content', { x: 50 });
+    gsap.set('.quote-text', { y: 30 });
+    gsap.set('.quote-author', { x: -20 });
+    gsap.set('.workspace-image', { scale: 0.95 });
+    gsap.set('.outside-work-section', { y: 40 });
+
+    // Hero section
+    gsap.to('.about-heading', {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: 'power3.out',
+        delay: 0.3
+    });
+
+    gsap.to('.about-content', {
+        opacity: 1,
+        x: 0,
+        duration: 1.2,
+        ease: 'power3.out',
+        delay: 0.5
+    });
+
+    // Quote section
+    if (document.querySelector('.quote-section')) {
+        const quoteTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.quote-section',
+                start: 'top 75%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+
+        quoteTimeline.to('.quote-text', {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            ease: 'power3.out'
+        })
+        .to('.quote-author', {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            ease: 'power2.out'
+        }, '-=0.4');
+    }
+
+    // Workspace image
+    if (document.querySelector('.workspace-image')) {
+        gsap.to('.workspace-image', {
+            scrollTrigger: {
+                trigger: '.workspace-image',
+                start: 'top 75%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            ease: 'power2.out'
+        });
+    }
+
+    // Outside of work section
+    const filmSection = document.querySelector('.outside-work-section');
+    const filmCamera = document.querySelector('.film-camera');
+
+    if (filmCamera) {
+        gsap.to(filmCamera, {
+            scrollTrigger: {
+                trigger: '.outside-work-section',
+                start: 'top 75%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0.6,
+            rotation: 360,
+            duration: 2,
+            ease: 'power2.inOut',
+            onComplete: () => {
+                gsap.to('.film-camera-svg circle', {
+                    rotation: 360,
+                    transformOrigin: 'center',
+                    duration: 4,
+                    repeat: -1,
+                    ease: 'none'
+                });
+
+                gsap.to('.lens-letter', {
+                    rotation: 360,
+                    transformOrigin: 'center',
+                    duration: 3,
+                    repeat: -1,
+                    ease: 'linear'
+                });
+            }
+        });
+
+        filmCamera.addEventListener('mouseenter', () => {
+            gsap.to('.lens-letter', {
+                opacity: 1,
+                duration: 0.3,
+                scale: 1.2,
+                ease: 'power2.out'
+            });
+        });
+
+        filmCamera.addEventListener('mouseleave', () => {
+            gsap.to('.lens-letter', {
+                opacity: 0.8,
+                duration: 0.3,
+                scale: 1,
+                ease: 'power2.out'
+            });
+        });
+    }
+
+    if (filmSection) {
+        gsap.to('.outside-work-section', {
+            scrollTrigger: {
+                trigger: '.outside-work-section',
+                start: 'top 75%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power3.out'
+        });
+    }
+
+    if (document.querySelector('.film-title')) {
+        gsap.to('.film-title', {
+            scrollTrigger: {
+                trigger: '.film-title',
+                start: 'top 80%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 1,
+            duration: 0.1,
+            repeat: 3,
+            yoyo: true,
+            ease: 'steps(1)',
+            onComplete: () => {
+                gsap.set('.film-title', { opacity: 1 });
+            }
+        });
+    }
+
+    if (filmSection && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        filmSection.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const { left, top, width, height } = filmSection.getBoundingClientRect();
+            const x = (clientX - left) / width - 0.5;
+            const y = (clientY - top) / height - 0.5;
+
+            const filmTexts = document.querySelectorAll('.film-text');
+            filmTexts.forEach((text, index) => {
+                const depth = (index + 1) * 15;
+                gsap.to(text, {
+                    x: x * depth,
+                    y: y * depth,
+                    duration: 0.8,
+                    ease: 'power2.out'
+                });
+            });
+        });
+
+        filmSection.addEventListener('mouseleave', () => {
+            const filmTexts = document.querySelectorAll('.film-text');
+            filmTexts.forEach(text => {
+                gsap.to(text, {
+                    x: 0,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power2.out'
+                });
+            });
+        });
+    }
+}

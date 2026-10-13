@@ -4,8 +4,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About | Rubbas Yar Khan</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>About Me | Rubbas Yar Khan</title>
+    <meta name="description" content="Learn more about Rubbas Yar Khan, an independent creative developer and designer crafting cutting-edge digital experiences." />
+    <meta property="og:title" content="About Me | Rubbas Yar Khan" />
+    <meta property="og:description" content="Learn more about Rubbas Yar Khan, an independent creative developer and designer crafting cutting-edge digital experiences." />
+    <meta property="og:type" content="profile" />
+    <meta property="og:image" content="assets/images/herobg1.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Me | Rubbas Yar Khan" />
+    <meta name="twitter:description" content="Learn more about Rubbas Yar Khan, an independent creative developer and designer crafting cutting-edge digital experiences." />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="css/tailwind.css" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
     <link
@@ -390,10 +399,6 @@
             </p>
         </div>
 
-        <div class="footer-cursor-video pointer-events-none">
-            <video src="https://www.pexels.com/download/video/18069165/" autoplay muted loop playsinline onloadedmetadata="this.playbackRate = 2.0;"></video>
-        </div>
-
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
@@ -402,211 +407,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script src="js/script.js"></script>
     <div class="noise-overlay"></div>
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        function initAboutAnimations() {
-            // Hero section
-            gsap.to('.about-heading', {
-                opacity: 1,
-                y: 0,
-                duration: 1.2,
-                ease: 'power3.out',
-                delay: 0.3
-            });
-
-            gsap.to('.about-content', {
-                opacity: 1,
-                x: 0,
-                duration: 1.2,
-                ease: 'power3.out',
-                delay: 0.5
-            });
-
-            // Quote section - Enhanced animations
-            const quoteTimeline = gsap.timeline({
-                scrollTrigger: {
-                    trigger: '.quote-section',
-                    start: 'top 75%',
-                    toggleActions: 'play none none reverse'
-                }
-            });
-
-            quoteTimeline.to('.quote-text', {
-                opacity: 1,
-                y: 0,
-                duration: 1.2,
-                ease: 'power3.out'
-            })
-                .to('.quote-author', {
-                    opacity: 1,
-                    x: 0,
-                    duration: 0.8,
-                    ease: 'power2.out'
-                }, '-=0.4');
-
-            // Workspace image
-            gsap.to('.workspace-image', {
-                scrollTrigger: {
-                    trigger: '.workspace-image',
-                    start: 'top 75%',
-                    toggleActions: 'play none none reverse'
-                },
-                opacity: 1,
-                scale: 1,
-                duration: 1,
-                ease: 'power2.out'
-            });
-
-            // Outside of work section - Film Camera & Mouse Interactions
-            const filmSection = document.querySelector('.outside-work-section');
-            const filmCamera = document.querySelector('.film-camera');
-            const filmTexts = document.querySelectorAll('.film-text');
-
-            // Vintage Film Camera Animation
-            if (filmCamera) {
-                gsap.to(filmCamera, {
-                    scrollTrigger: {
-                        trigger: '.outside-work-section',
-                        start: 'top 75%',
-                        toggleActions: 'play none none reverse'
-                    },
-                    opacity: 0.6,
-                    rotation: 360,
-                    duration: 2,
-                    ease: 'power2.inOut',
-                    onComplete: () => {
-                        gsap.to('.film-camera-svg circle', {
-                            rotation: 360,
-                            transformOrigin: 'center',
-                            duration: 4,
-                            repeat: -1,
-                            ease: 'none'
-                        });
-
-                        gsap.to('.lens-letter', {
-                            rotation: 360,
-                            transformOrigin: 'center',
-                            duration: 3,
-                            repeat: -1,
-                            ease: 'linear'
-                        });
-                    }
-                });
-
-                filmCamera.addEventListener('mouseenter', () => {
-                    gsap.to('.lens-letter', {
-                        opacity: 1,
-                        duration: 0.3,
-                        scale: 1.2,
-                        ease: 'power2.out'
-                    });
-                });
-
-                filmCamera.addEventListener('mouseleave', () => {
-                    gsap.to('.lens-letter', {
-                        opacity: 0.8,
-                        duration: 0.3,
-                        scale: 1,
-                        ease: 'power2.out'
-                    });
-                });
-            }
-
-            // Main section fade in
-            gsap.to('.outside-work-section', {
-                scrollTrigger: {
-                    trigger: '.outside-work-section',
-                    start: 'top 75%',
-                    toggleActions: 'play none none reverse'
-                },
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                ease: 'power3.out'
-            });
-
-            // Film grain flicker effect on title
-            gsap.to('.film-title', {
-                scrollTrigger: {
-                    trigger: '.film-title',
-                    start: 'top 80%',
-                    toggleActions: 'play none none reverse'
-                },
-                opacity: 1,
-                duration: 0.1,
-                repeat: 3,
-                yoyo: true,
-                ease: 'steps(1)',
-                onComplete: () => {
-                    gsap.set('.film-title', { opacity: 1 });
-                }
-            });
-
-            // Mouse movement parallax on text for pointer devices
-            if (filmSection && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-                filmSection.addEventListener('mousemove', (e) => {
-                    const rect = filmSection.getBoundingClientRect();
-                    const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
-                    const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
-
-                    filmTexts.forEach((text) => {
-                        const speed = parseFloat(text.dataset.speed) || 0.5;
-                        gsap.to(text, {
-                            x: x * 20 * speed,
-                            y: y * 20 * speed,
-                            duration: 0.5,
-                            ease: 'power2.out'
-                        });
-                    });
-
-                    if (filmCamera) {
-                        gsap.to(filmCamera, {
-                            x: x * 30,
-                            y: y * 30,
-                            duration: 0.8,
-                            ease: 'power2.out'
-                        });
-                    }
-                });
-
-                filmSection.addEventListener('mouseleave', () => {
-                    filmTexts.forEach((text) => {
-                        gsap.to(text, {
-                            x: 0,
-                            y: 0,
-                            duration: 0.8,
-                            ease: 'power2.out'
-                        });
-                    });
-
-                    if (filmCamera) {
-                        gsap.to(filmCamera, {
-                            x: 0,
-                            y: 0,
-                            duration: 0.8,
-                            ease: 'power2.out'
-                        });
-                    }
-                });
-            }
-
-            // Set initial states
-            gsap.set('.about-heading', { y: 50 });
-            gsap.set('.about-content', { x: 50 });
-            gsap.set('.quote-text', { y: 30 });
-            gsap.set('.quote-author', { x: -20 });
-            gsap.set('.workspace-image', { scale: 0.95 });
-            gsap.set('.outside-work-section', { y: 40 });
-        }
-
-        window.addEventListener('load', () => {
-            initAboutAnimations();
-        });
-    </script>
+    
 </body>
 
 </html>
