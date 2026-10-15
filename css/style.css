@@ -8,7 +8,7 @@
     --text-disabled-dark: #6B7280;
 
     /* Light Mode */
-    --bg-light: #F4F1EC;
+    --bg-light: #F1EFEB;
     --surface-light: #FFFFFF;
     --border-light: #E5E2DC;
     --text-primary-light: #0B0D10;
@@ -529,3 +529,16 @@ body {
         will-change: transform, opacity;
     }
 }
+
+/* Interactive Artistic Drawing Canvas */
+.interactive-draw-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 40;
+    mix-blend-mode: multiply;
+}
+

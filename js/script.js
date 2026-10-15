@@ -311,6 +311,264 @@ function initCustomCursor() {
     });
 }
 
+// Interactive Artistic Chromatic Drawing Canvas (Exclusive to light sections #F1EFEB)
+function initDrawingCanvas() {
+    // Only run on desktop devices with fine hover capability
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+    let canvas = document.querySelector(".interactive-draw-canvas");
+    if (!canvas) {
+        canvas = document.createElement("canvas");
+        canvas.className = "interactive-draw-canvas";
+        canvas.id = "interactive-draw-canvas";
+        document.body.appendChild(canvas);
+    }
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    let dpr = window.devicePixelRatio || 1;
+
+    function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        dpr = window.devicePixelRatio || 1;
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(dpr, dpr);
+    }
+    resize();
+    window.addEventListener("resize", resize);
+
+    function isOverLightSection(x, y) {
+        // If full navigation menu is open, do not draw
+        const fullMenu = document.getElementById("full-menu");
+        if (fullMenu && fullMenu.classList.contains("active")) {
+            return false;
+        }
+
+        const elem = document.elementFromPoint(x, y);
+        if (!elem) return false;
+
+        // Disallow black sections, dark hero, skills, and dark footer
+        if (elem.closest('footer[data-color="black"]') ||
+            elem.closest('section[data-color="black"]') ||
+            elem.closest('.home') ||
+            elem.closest('.skills-section') ||
+            elem.closest('.dark-section')) {
+            return false;
+        }
+
+        // Allow explicitly marked white sections or about section
+        if (elem.closest('section[data-color="white"]') || elem.closest('.about-section')) {
+            return true;
+        }
+
+        // Active white theme on body
+        if (document.body.getAttribute("theme") === "white") {
+            if (!elem.closest('footer') && !elem.closest('.home') && !elem.closest('.skills-section')) {
+                return true;
+            }
+        }
+
+        // Color brightness fallback for #F1EFEB or light containers
+        let curr = elem;
+        while (curr && curr !== document.documentElement) {
+            const bg = window.getComputedStyle(curr).backgroundColor;
+            if (bg && bg !== "transparent" && !bg.includes("rgba(0, 0, 0, 0)")) {
+                const rgb = bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+                if (rgb) {
+                    const brightness = (Number(rgb[1]) * 299 + Number(rgb[2]) * 587 + Number(rgb[3]) * 114) / 1000;
+                    return brightness > 180;
+                }
+            }
+            curr = curr.parentElement;
+        }
+
+        return false;
+    }
+
+    const strokes = [];
+    let currentStroke = null;
+    let lastPoint = null;
+    let hue = 220; // Starting chromatic hue
+    let isLoopRunning = false;
+
+    function addPoint(clientX, clientY) {
+        if (!isOverLightSection(clientX, clientY)) {
+            currentStroke = null;
+            lastPoint = null;
+            return;
+        }
+
+        const scrollX = window.scrollX || window.pageXOffset || 0;
+        const scrollY = window.scrollY || window.pageYOffset || 0;
+        const pageX = clientX + scrollX;
+        const pageY = clientY + scrollY;
+
+        const now = performance.now();
+        let dist = 0;
+        let speed = 0;
+
+        if (lastPoint) {
+            const dx = pageX - lastPoint.x;
+            const dy = pageY - lastPoint.y;
+            dist = Math.hypot(dx, dy);
+            const dt = Math.max(1, now - lastPoint.time);
+            speed = dist / dt;
+
+            // Ignore jitter / imperceptible micro-movements
+            if (dist < 2.5) return;
+
+            // If mouse hopped across screen, start a fresh stroke
+            if (dist > 120) {
+                currentStroke = null;
+            }
+        }
+
+        // Dynamic chromatic color shift based on cursor travel
+        hue = (hue + Math.min(dist * 0.45, 6)) % 360;
+
+        // Velocity-based brush width: fuller stroke when slow, elegant ribbon taper when fast
+        const targetWidth = Math.max(4, Math.min(15, 18 - speed * 4));
+
+        const point = {
+            x: pageX,
+            y: pageY,
+            midX: pageX,
+            midY: pageY,
+            hue,
+            width: targetWidth,
+            age: 0,
+            maxAge: 52, // ~0.85s - 1.1s graceful dissolve
+            time: now
+        };
+
+        if (!currentStroke || currentStroke.length === 0) {
+            currentStroke = [point];
+            strokes.push(currentStroke);
+        } else {
+            const prev = currentStroke[currentStroke.length - 1];
+            point.midX = (prev.x + pageX) / 2;
+            point.midY = (prev.y + pageY) / 2;
+            currentStroke.push(point);
+        }
+
+        lastPoint = { x: pageX, y: pageY, time: now };
+
+        if (!isLoopRunning) {
+            isLoopRunning = true;
+            requestAnimationFrame(render);
+        }
+    }
+
+    window.addEventListener("mousemove", (e) => {
+        addPoint(e.clientX, e.clientY);
+    }, { passive: true });
+
+    document.addEventListener("mouseleave", () => {
+        currentStroke = null;
+        lastPoint = null;
+    });
+
+    const wakeAnimation = () => {
+        if (!isLoopRunning && strokes.length > 0) {
+            isLoopRunning = true;
+            requestAnimationFrame(render);
+        }
+    };
+
+    window.addEventListener("scroll", wakeAnimation, { passive: true });
+    if (window.lenis) {
+        window.lenis.on('scroll', wakeAnimation);
+    }
+
+    function render() {
+        ctx.clearRect(0, 0, width, height);
+
+        const scrollX = window.scrollX || window.pageXOffset || 0;
+        const scrollY = window.scrollY || window.pageYOffset || 0;
+        let activeCount = 0;
+
+        for (let s = strokes.length - 1; s >= 0; s--) {
+            const stroke = strokes[s];
+
+            // Age points
+            for (let i = 0; i < stroke.length; i++) {
+                stroke[i].age++;
+            }
+
+            // Prune expired points
+            while (stroke.length > 0 && stroke[0].age >= stroke[0].maxAge) {
+                stroke.shift();
+            }
+
+            if (stroke.length === 0) {
+                strokes.splice(s, 1);
+                continue;
+            }
+
+            activeCount += stroke.length;
+
+            if (stroke.length === 1) {
+                const p = stroke[0];
+                const alpha = Math.max(0, 1 - (p.age / p.maxAge));
+                if (alpha > 0.01) {
+                    ctx.beginPath();
+                    ctx.fillStyle = `hsla(${p.hue}, 88%, 46%, ${(alpha * 0.85).toFixed(3)})`;
+                    ctx.arc(p.x - scrollX, p.y - scrollY, p.width * 0.5 * (0.3 + 0.7 * alpha), 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                continue;
+            }
+
+            // Draw smooth quadratic bezier curve segments
+            for (let i = 1; i < stroke.length; i++) {
+                const p0 = stroke[i - 1];
+                const p1 = stroke[i];
+
+                const progress = p1.age / p1.maxAge;
+                const alpha = Math.max(0, 1 - Math.pow(progress, 1.4));
+                if (alpha <= 0.01) continue;
+
+                const p0MidX = p0.midX - scrollX;
+                const p0MidY = p0.midY - scrollY;
+                const p0X = p0.x - scrollX;
+                const p0Y = p0.y - scrollY;
+                const p1MidX = p1.midX - scrollX;
+                const p1MidY = p1.midY - scrollY;
+
+                // Culling offscreen segments
+                if ((p0MidX < -50 && p1MidX < -50) || (p0MidX > width + 50 && p1MidX > width + 50) ||
+                    (p0MidY < -50 && p1MidY < -50) || (p0MidY > height + 50 && p1MidY > height + 50)) {
+                    continue;
+                }
+
+                ctx.beginPath();
+                ctx.strokeStyle = `hsla(${p1.hue}, 88%, 46%, ${(alpha * 0.85).toFixed(3)})`;
+                ctx.lineWidth = Math.max(1.5, p1.width * (0.3 + 0.7 * alpha));
+                ctx.lineCap = "round";
+                ctx.lineJoin = "round";
+
+                ctx.moveTo(p0MidX, p0MidY);
+                ctx.quadraticCurveTo(p0X, p0Y, p1MidX, p1MidY);
+                ctx.stroke();
+            }
+        }
+
+        if (activeCount > 0) {
+            requestAnimationFrame(render);
+        } else {
+            isLoopRunning = false;
+            ctx.clearRect(0, 0, width, height);
+        }
+    }
+}
+
+
 function initSmoothScroll() {
     if (typeof Lenis === 'undefined') return;
     const lenis = new Lenis({
@@ -638,6 +896,7 @@ window.addEventListener("DOMContentLoaded", () => {
     initButtons();
     initFooterAnimations();
     initCustomCursor();
+    initDrawingCanvas();
 
     homepageanimation();
     servicesAnimation();
