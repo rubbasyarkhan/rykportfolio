@@ -219,42 +219,40 @@ function initCustomCursor() {
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
     if (typeof gsap === 'undefined') return;
 
-    // Avoid duplicate injection
-    let dot = document.querySelector(".custom-cursor-dot");
-    let ring = document.querySelector(".custom-cursor-ring");
+    // Clean up any old cursor elements if present
+    const oldDot = document.querySelector(".custom-cursor-dot");
+    if (oldDot) oldDot.remove();
+    const oldRing = document.querySelector(".custom-cursor-ring");
+    if (oldRing) oldRing.remove();
 
-    if (!dot) {
-        dot = document.createElement("div");
-        dot.className = "custom-cursor-dot";
-        document.body.appendChild(dot);
-    }
-    if (!ring) {
-        ring = document.createElement("div");
-        ring.className = "custom-cursor-ring";
-        document.body.appendChild(ring);
+    // Inject sleek single cursor element
+    let cursor = document.querySelector(".custom-cursor");
+    if (!cursor) {
+        cursor = document.createElement("div");
+        cursor.className = "custom-cursor";
+        document.body.appendChild(cursor);
     }
 
-    gsap.set([dot, ring], {
+    gsap.set(cursor, {
         xPercent: -50,
         yPercent: -50,
+        scale: 1,
         opacity: 0,
         pointerEvents: "none"
     });
 
     const mouse = { x: -100, y: -100 };
-    const dotPos = { x: -100, y: -100 };
-    const ringPos = { x: -100, y: -100 };
+    const pos = { x: -100, y: -100 };
     let isVisible = false;
+    let isHovering = false;
 
-    const setDotX = gsap.quickSetter(dot, "x", "px");
-    const setDotY = gsap.quickSetter(dot, "y", "px");
-    const setRingX = gsap.quickSetter(ring, "x", "px");
-    const setRingY = gsap.quickSetter(ring, "y", "px");
+    const setCursorX = gsap.quickSetter(cursor, "x", "px");
+    const setCursorY = gsap.quickSetter(cursor, "y", "px");
 
     window.addEventListener("mousemove", (e) => {
         if (!isVisible) {
             isVisible = true;
-            gsap.to([dot, ring], { opacity: 1, duration: 0.2 });
+            gsap.to(cursor, { opacity: 1, duration: 0.25 });
         }
         mouse.x = e.clientX;
         mouse.y = e.clientY;
@@ -262,38 +260,43 @@ function initCustomCursor() {
 
     document.addEventListener("mouseleave", () => {
         isVisible = false;
-        gsap.to([dot, ring], { opacity: 0, duration: 0.2 });
+        gsap.to(cursor, { opacity: 0, duration: 0.25 });
     });
 
     document.addEventListener("mouseenter", () => {
         isVisible = true;
-        gsap.to([dot, ring], { opacity: 1, duration: 0.2 });
+        gsap.to(cursor, { opacity: 1, duration: 0.25 });
     });
 
-    // Animate smoothly using GSAP ticker
-    const cursorTicker = () => {
-        dotPos.x += (mouse.x - dotPos.x) * 0.3;
-        dotPos.y += (mouse.y - dotPos.y) * 0.3;
-        ringPos.x += (mouse.x - ringPos.x) * 0.15;
-        ringPos.y += (mouse.y - ringPos.y) * 0.15;
+    // Tactile press feedback on click
+    document.addEventListener("mousedown", () => {
+        gsap.to(cursor, { scale: isHovering ? 2.8 : 0.75, duration: 0.15, ease: "power2.out" });
+    });
 
-        setDotX(dotPos.x);
-        setDotY(dotPos.y);
-        setRingX(ringPos.x);
-        setRingY(ringPos.y);
+    document.addEventListener("mouseup", () => {
+        gsap.to(cursor, { scale: isHovering ? 3.6 : 1, duration: 0.25, ease: "power2.out" });
+    });
+
+    // Animate smoothly using GSAP ticker with responsive lerp
+    const cursorTicker = () => {
+        pos.x += (mouse.x - pos.x) * 0.25;
+        pos.y += (mouse.y - pos.y) * 0.25;
+
+        setCursorX(pos.x);
+        setCursorY(pos.y);
     };
     gsap.ticker.add(cursorTicker);
 
     // Performant event delegation for hover states
-    const hoverSelector = "a, button, [role='button'], .skill-item, #menu-toggle, .gsap-btn, input, textarea, select";
+    const hoverSelector = "a, button, [role='button'], .skill-item, #menu-toggle, .gsap-btn, input, textarea, select, .project-card, .service-item";
 
     document.addEventListener("mouseover", (e) => {
         const target = e.target.closest(hoverSelector);
         const related = e.relatedTarget ? e.relatedTarget.closest(hoverSelector) : null;
         if (target && target !== related) {
-            ring.classList.add("hover");
-            dot.classList.add("hover");
-            gsap.to(dot, { scale: 0, duration: 0.2 });
+            isHovering = true;
+            cursor.classList.add("hover");
+            gsap.to(cursor, { scale: 3.6, duration: 0.3, ease: "power2.out" });
         }
     });
 
@@ -301,9 +304,9 @@ function initCustomCursor() {
         const target = e.target.closest(hoverSelector);
         const related = e.relatedTarget ? e.relatedTarget.closest(hoverSelector) : null;
         if (target && target !== related) {
-            ring.classList.remove("hover");
-            dot.classList.remove("hover");
-            gsap.to(dot, { scale: 1, duration: 0.2 });
+            isHovering = false;
+            cursor.classList.remove("hover");
+            gsap.to(cursor, { scale: 1, duration: 0.3, ease: "power2.out" });
         }
     });
 }
