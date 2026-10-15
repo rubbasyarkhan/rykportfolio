@@ -516,8 +516,8 @@ body {
     }
 
     .custom-cursor {
-        width: 20px;
-        height: 20px;
+        width: 28px;
+        height: 28px;
         background-color: #ffffff;
         border-radius: 50%;
         position: fixed;
@@ -528,6 +528,13 @@ body {
         mix-blend-mode: difference;
         will-change: transform, opacity;
     }
+}
+
+/* Project Cards & Media Layering (Above drawing canvas) */
+.project-card,
+.workspace-image {
+    position: relative;
+    z-index: 45;
 }
 
 /* Interactive Artistic Drawing Canvas */

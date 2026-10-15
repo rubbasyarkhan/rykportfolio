@@ -270,11 +270,11 @@ function initCustomCursor() {
 
     // Tactile press feedback on click
     document.addEventListener("mousedown", () => {
-        gsap.to(cursor, { scale: isHovering ? 2.6 : 0.8, duration: 0.15, ease: "power2.out" });
+        gsap.to(cursor, { scale: isHovering ? 2.1 : 0.85, duration: 0.15, ease: "power2.out" });
     });
 
     document.addEventListener("mouseup", () => {
-        gsap.to(cursor, { scale: isHovering ? 3.2 : 1, duration: 0.25, ease: "power2.out" });
+        gsap.to(cursor, { scale: isHovering ? 2.5 : 1, duration: 0.25, ease: "power2.out" });
     });
 
     // Animate smoothly using GSAP ticker with responsive lerp
@@ -296,7 +296,7 @@ function initCustomCursor() {
         if (target && target !== related) {
             isHovering = true;
             cursor.classList.add("hover");
-            gsap.to(cursor, { scale: 3.2, duration: 0.3, ease: "power2.out" });
+            gsap.to(cursor, { scale: 2.5, duration: 0.3, ease: "power2.out" });
         }
     });
 
@@ -359,6 +359,26 @@ function initDrawingCanvas() {
             elem.closest('.home') ||
             elem.closest('.skills-section') ||
             elem.closest('.dark-section')) {
+            return false;
+        }
+
+        // Disallow cards, project items, media, and preview containers ("colors should not work on cards")
+        const cardSelectors = [
+            '.project-card',
+            'a[href*="project"]',
+            '.card',
+            '[class*="card"]',
+            '.service-box',
+            '.service-item',
+            '.workspace-image',
+            '.film-camera',
+            'img',
+            'video',
+            'picture',
+            'figure'
+        ].join(', ');
+
+        if (elem.closest(cardSelectors)) {
             return false;
         }
 
@@ -433,7 +453,7 @@ function initDrawingCanvas() {
         hue = (hue + Math.min(dist * 0.45, 6)) % 360;
 
         // Velocity-based brush width: fuller stroke when slow, elegant ribbon taper when fast
-        const targetWidth = Math.max(4, Math.min(15, 18 - speed * 4));
+        const targetWidth = Math.max(10, Math.min(30, 36 - speed * 5));
 
         const point = {
             x: pageX,
@@ -443,7 +463,7 @@ function initDrawingCanvas() {
             hue,
             width: targetWidth,
             age: 0,
-            maxAge: 52, // ~0.85s - 1.1s graceful dissolve
+            maxAge: 56, // ~0.9s - 1.2s graceful dissolve
             time: now
         };
 
@@ -518,8 +538,8 @@ function initDrawingCanvas() {
                 const alpha = Math.max(0, 1 - (p.age / p.maxAge));
                 if (alpha > 0.01) {
                     ctx.beginPath();
-                    ctx.fillStyle = `hsla(${p.hue}, 88%, 46%, ${(alpha * 0.85).toFixed(3)})`;
-                    ctx.arc(p.x - scrollX, p.y - scrollY, p.width * 0.5 * (0.3 + 0.7 * alpha), 0, Math.PI * 2);
+                    ctx.fillStyle = `hsla(${p.hue}, 92%, 46%, ${(alpha * 0.9).toFixed(3)})`;
+                    ctx.arc(p.x - scrollX, p.y - scrollY, p.width * 0.5 * (0.35 + 0.65 * alpha), 0, Math.PI * 2);
                     ctx.fill();
                 }
                 continue;
@@ -548,8 +568,8 @@ function initDrawingCanvas() {
                 }
 
                 ctx.beginPath();
-                ctx.strokeStyle = `hsla(${p1.hue}, 88%, 46%, ${(alpha * 0.85).toFixed(3)})`;
-                ctx.lineWidth = Math.max(1.5, p1.width * (0.3 + 0.7 * alpha));
+                ctx.strokeStyle = `hsla(${p1.hue}, 92%, 46%, ${(alpha * 0.9).toFixed(3)})`;
+                ctx.lineWidth = Math.max(4, p1.width * (0.35 + 0.65 * alpha));
                 ctx.lineCap = "round";
                 ctx.lineJoin = "round";
 
