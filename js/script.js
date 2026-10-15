@@ -270,11 +270,11 @@ function initCustomCursor() {
 
     // Tactile press feedback on click
     document.addEventListener("mousedown", () => {
-        gsap.to(cursor, { scale: isHovering ? 2.8 : 0.75, duration: 0.15, ease: "power2.out" });
+        gsap.to(cursor, { scale: isHovering ? 2.6 : 0.8, duration: 0.15, ease: "power2.out" });
     });
 
     document.addEventListener("mouseup", () => {
-        gsap.to(cursor, { scale: isHovering ? 3.6 : 1, duration: 0.25, ease: "power2.out" });
+        gsap.to(cursor, { scale: isHovering ? 3.2 : 1, duration: 0.25, ease: "power2.out" });
     });
 
     // Animate smoothly using GSAP ticker with responsive lerp
@@ -296,7 +296,7 @@ function initCustomCursor() {
         if (target && target !== related) {
             isHovering = true;
             cursor.classList.add("hover");
-            gsap.to(cursor, { scale: 3.6, duration: 0.3, ease: "power2.out" });
+            gsap.to(cursor, { scale: 3.2, duration: 0.3, ease: "power2.out" });
         }
     });
 
