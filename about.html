@@ -195,64 +195,184 @@
 
         </div>
 
-        <!-- FULL WIDTH IMAGE -->
-        <section data-color="white" class="px-5 sm:px-8 md:px-[5%] mb-20 sm:mb-32">
-            <div class="workspace-image opacity-0">
-                <img src="assets/images/herobg1.png" alt="Workspace" class="w-full h-64 sm:h-96 md:h-[500px] object-cover rounded-sm" />
-            </div>
-        </section>
+        <!-- BENTO GRID SECTION: PERSPECTIVE, CRAFT & DESIGN SYSTEM (COMPACT DENSE EDITORIAL VIEW) -->
+        <section data-color="white" class="bento-grid-section w-full px-5 sm:px-8 md:px-[4%] lg:px-[5%] py-8 sm:py-10 lg:py-12 font-sans">
+            <div class="max-w-7xl mx-auto w-full">
 
-        <!-- PHILOSOPHY -->
-        <section data-color="white" class="px-5 sm:px-8 md:px-[5%] mb-20 sm:mb-32">
-            <div class="max-w-4xl mx-auto">
+                <!-- Compact Editorial Header -->
+                <div class="flex justify-between items-baseline mb-3 sm:mb-4 pb-2.5 border-b border-zinc-300">
+                    <div class="flex items-baseline gap-3">
+                        <h2 class="text-xl sm:text-2xl lg:text-3xl font-black tracking-tight uppercase leading-none" style="font-family: 'Space Grotesk', sans-serif;">
+                            Beyond The Pixels
+                        </h2>
+                       
+                    </div>
+                    <span class="text-[10px] font-mono tracking-widest uppercase text-zinc-500 font-bold">
+                        06 NODES
+                    </span>
+                </div>
 
-                <div class="space-y-6 sm:space-y-8 outside-work-section opacity-0 relative">
+                <!-- Bento Grid (Compact, dense, diverse sizes, no dead space) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 sm:gap-3.5 items-stretch">
 
-                    <!-- Film Camera Icon (Vintage Effect) -->
-                    <div class="film-camera hidden sm:block absolute -top-12 -right-8 md:-right-12 opacity-0" style="width: 100px; height: 100px;">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="film-camera-svg">
-                            <!-- Camera Body -->
-                            <rect x="20" y="30" width="60" height="40" rx="4" fill="var(--text-primary-light)"
-                                opacity="0.15" />
-                            <!-- Lens -->
-                            <circle cx="50" cy="50" r="15" fill="var(--text-primary-light)" opacity="0.2" />
-                            <circle cx="50" cy="50" r="10" fill="var(--text-primary-light)" opacity="0.1" />
-                            <!-- Letter R in Lens -->
-                            <text x="50" y="55" class="lens-letter" text-anchor="middle" font-size="16"
-                                font-weight="bold" font-family="Space Grotesk, sans-serif"
-                                fill="var(--text-primary-light)" opacity="0.8">R</text>
-                            <!-- Film Reel -->
-                            <circle cx="30" cy="20" r="8" fill="var(--text-primary-light)" opacity="0.15" />
-                            <circle cx="70" cy="20" r="8" fill="var(--text-primary-light)" opacity="0.15" />
-                            <!-- Viewfinder -->
-                            <rect x="65" y="35" width="10" height="8" fill="var(--text-primary-light)" opacity="0.15" />
-                        </svg>
+                    <!-- Box 1: Interactive 3D Avatar (lg:col-span-3, Funky, Reactive & Autonomous) -->
+                    <div id="ryk-avatar-card" class="bento-card card lg:col-span-3 bg-[#0B0D10] border border-[#1F232B] rounded-2xl overflow-hidden relative shadow-lg min-h-[240px] flex items-center justify-center select-none cursor-pointer group" style="perspective: 900px;">
+                        
+                        <!-- Ambient 3D Rim Glow (Dynamically tracks cursor) -->
+                        <div id="avatar-ambient-glow" class="absolute inset-0 pointer-events-none transition-opacity duration-500 opacity-60"
+                            style="background: radial-gradient(circle at 50% 50%, rgba(244, 185, 70, 0.25), transparent 70%);"></div>
+
+                        <!-- 3D Holographic Orbit Ring (Spins continuously in 3D space) -->
+                        <div class="avatar-orbit-ring absolute w-44 h-44 rounded-full border border-[#F4B946]/30 pointer-events-none"
+                            style="transform: rotateX(72deg) rotateZ(0deg);"></div>
+
+                        <!-- 3D Character Rig Container -->
+                        <div id="avatar-character-rig" class="relative w-full h-full flex items-center justify-center pointer-events-none py-2"
+                            style="transform-style: preserve-3d; will-change: transform;">
+                            
+                            <!-- 3D Avatar Render of RYK -->
+                            <img id="avatar-img" src="assets/images/ryk-3d-avatar.png" alt="Rubbas Yar Khan 3D Avatar"
+                                class="w-full h-full max-h-[230px] object-contain object-center filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.7)]"
+                                style="transform: translateZ(25px);" />
+
+                            <!-- Dynamic Specular Glare (Glasses & vinyl reflection) -->
+                            <div id="avatar-glare" class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-40 transition-opacity duration-300 mix-blend-overlay"
+                                style="background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.7) 0%, transparent 55%); transform: translateZ(35px);"></div>
+                        </div>
+
+                        <!-- Top Status Badge -->
+                        <div class="absolute top-3 left-3 z-20 flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[16px] font-mono tracking-widest uppercase text-white/90">
+                            <span>RYK // 3D</span>
+                        </div>
+
+                     
+                     
                     </div>
 
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold film-title"
-                        style="font-family: 'Space Grotesk', sans-serif; color: var(--text-primary-light);">
-                        Outside of work
-                    </h2>
+                    <!-- Box 2: Outside of Work (lg:col-span-5, Crisp White Background, Sleek & Minimal) -->
+                    <div class="bento-card card lg:col-span-5 bg-[#FFFFFF] border border-[#E5E2DC] text-[#0B0D10] rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-lg">
+                        <div class="flex justify-between items-center text-[10px] font-mono font-bold tracking-widest text-zinc-400 uppercase">
+                            <span>Outside of Work</span>
+                         
+                        </div>
 
-                    <p class="text-base sm:text-lg md:text-xl leading-relaxed film-text" data-speed="0.5"
-                        style="color: var(--text-secondary-light);">
-                        When I’m not designing, I spend my time watching films, talking to people, and observing the
-                        details of architecture and everyday life.
-                    </p>
+                        <div class="my-auto py-2">
+                            <h3 class="text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#0B0D10] mb-2" style="font-family: 'Space Grotesk', sans-serif;">
+                                Cinema &bull; Tension &bull; Brutalism
+                            </h3>
+                            <p class="text-xs sm:text-sm text-zinc-600 font-sans leading-relaxed">
+                                Finding deliberate rhythm in slow cinema, concrete masses, and human pacing. Borrowing silence and weight to build interfaces that feel real.
+                            </p>
+                        </div>
 
-                    <p class="text-base sm:text-lg md:text-xl leading-relaxed film-text" data-speed="0.7"
-                        style="color: var(--text-secondary-light);">
-                        I’m especially drawn to movies in the psychological thriller, Mob, and mind-bending
-                        genres — stories that play with perspective, tension, and emotion.
-                    </p>
+                        <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
+                            Observation &bull; Pacing &bull; Silence
+                        </div>
+                    </div>
 
-                    <p class="text-base sm:text-lg md:text-xl leading-relaxed film-text" data-speed="0.9"
-                        style="color: var(--text-secondary-light);">
-                        These experiences influence how I think about storytelling, mood, and composition.
-                        They remind me that meaningful design, like a great film, is intentional, immersive,
-                        and timeless.
-                    </p>
+                    <!-- Box 5: Famous Design Quote (lg:col-span-4, Cyber Amber #F4B946, Big Heavy Typography) -->
+                    <div class="bento-card card lg:col-span-4 bg-[#F4B946] border border-[#D89C2A] text-[#0B0D10] rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-lg select-none">
+                        <div class="flex justify-between items-baseline text-xs font-mono font-bold tracking-widest uppercase text-[#0B0D10]/70">
+                            <span>Dieter Rams</span>
+                            <span class="text-[10px]">1976</span>
+                        </div>
+
+                        <div class="my-auto py-1">
+                            <blockquote class="text-5xl sm:text-6xl lg:text-[4.6rem] xl:text-[5.4rem] font-black tracking-tighter text-[#0B0D10] leading-[0.78] uppercase" style="font-family: 'Space Grotesk', sans-serif;">
+                                LESS,<br>
+                                BUT<br>
+                                BETTER.
+                            </blockquote>
+                        </div>
+
+                        <div class="flex justify-between items-baseline text-xs font-black uppercase tracking-wider text-[#0B0D10]/80">
+                            <span>Good Design</span>
+                            <span class="text-[10px] font-mono tracking-widest">Weniger, aber besser</span>
+                        </div>
+                    </div>
+
+                    <!-- Box 3: Three Design Principles (lg:col-span-5, Obsidian Noir #0B0D10, Big Heavy Typography) -->
+                    <div class="bento-card card lg:col-span-5 bg-[#0B0D10] border border-[#1F232B] text-white rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-lg">
+                        <div class="flex justify-between items-center text-[10px] font-mono tracking-widest uppercase text-zinc-500 font-bold">
+                            <span>Guiding Principles</span>
+                        </div>
+
+                        <div class="my-auto py-2 space-y-1 sm:space-y-1.5">
+                            <div class="text-2xl sm:text-3xl lg:text-[2.2rem] xl:text-[2.4rem] font-black uppercase tracking-tighter text-white leading-none flex items-baseline gap-2.5" style="font-family: 'Neue-Machina', sans-serif;">
+                                <span>Subtraction</span>
+                            </div>
+                            <div class="text-2xl sm:text-3xl lg:text-[2.2rem] xl:text-[2.4rem] font-black uppercase tracking-tighter text-white leading-none flex items-baseline gap-2.5" style="font-family: 'Neue-Machina', sans-serif;">
+                                <span>Tactility</span>
+                            </div>
+                            <div class="text-2xl sm:text-3xl lg:text-[2.2rem] xl:text-[2.4rem] font-black uppercase tracking-tighter text-white leading-none flex items-baseline gap-2.5" style="font-family: 'Neue-Machina', sans-serif;">
+                                <span>Clarity</span>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center text-[10px] font-mono text-[#FCFEFC] uppercase tracking-widest pt-2 border-t border-[#1F232B]">
+                            <span>Noise stripped</span>
+                            <span>Physical friction</span>
+                            <span>Zero pause</span>
+                        </div>
+                    </div>
+
+                    <!-- Box 4: Design Tokens (lg:col-span-4, Crisp White, Sleek & Minimal) -->
+                    <div class="bento-card card lg:col-span-4 bg-[#FFFFFF] border border-[#E5E2DC] text-[#0B0D10] rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-lg">
+                        <div class="flex justify-between items-baseline text-[10px] font-mono font-bold tracking-widest uppercase text-zinc-400">
+                            <span>Design Tokens</span>
+                        </div>
+
+                        <div class="my-auto py-2 space-y-3">
+                            <div class="space-y-1">
+                                <div class="text-sm font-bold uppercase tracking-tight text-[#0B0D10]" style="font-family: 'Neue-Machina', sans-serif;">
+                                    Neue-Machina <span class="text-[10px] font-mono text-zinc-400 font-normal lowercase">// display</span>
+                                </div>
+                                <div class="text-xs text-zinc-600 font-medium" style="font-family: 'satoshi', sans-serif;">
+                                    Satoshi Variable <span class="text-[10px] font-mono text-zinc-400 font-normal lowercase">// interface</span>
+                                </div>
+                                <div class="text-xs font-mono text-zinc-500">
+                                    Space Grotesk <span class="text-[10px] text-zinc-400 lowercase">// monospace</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="grid grid-cols-6 gap-1 mb-1">
+                                    <div class="h-6 rounded bg-[#0B0D10] border border-black/10" title="#0B0D10"></div>
+                                    <div class="h-6 rounded bg-[#F1EFEB] border border-zinc-300" title="#F1EFEB"></div>
+                                    <div class="h-6 rounded bg-[#13161B] border border-black/10" title="#13161B"></div>
+                                    <div class="h-6 rounded bg-[#F4B946] border border-[#D89C2A]" title="#F4B946"></div>
+                                    <div class="h-6 rounded bg-[#E6E6E6] border border-zinc-300" title="#E6E6E6"></div>
+                                    <div class="h-6 rounded bg-[#9CA3AF] border border-zinc-400" title="#9CA3AF"></div>
+                                </div>
+                                <div class="flex justify-between text-[10px] font-mono text-[#111416] uppercase tracking-tighter">
+                                    <span>#0B0D10</span>
+                                    <span>#F1EFEB</span>
+                                    <span>#13161B</span>
+                                    <span>#F4B946</span>
+                                    <span>#E6E6E6</span>
+                                    <span>#9CA3AF</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                    <!-- Box 6: Selected Toolkit & Studio Status (lg:col-span-3, Graphite Charcoal, Sleek & Minimal) -->
+                    <div class="bento-card card lg:col-span-3 bg-[#13161B] border border-[#232835] text-white rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-lg">
+                      
+
+                        <div class="my-auto py-2">
+                            <div class="text-xs sm:text-[13px] font-mono font-bold tracking-wider text-zinc-300 leading-loose">
+                                Figma &bull; Three.js<br>
+                                WebGL &bull; GSAP<br>
+                                TypeScript &bull; Tailwind
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
         </section>
 

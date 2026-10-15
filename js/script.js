@@ -382,6 +382,33 @@ function initDrawingCanvas() {
             return false;
         }
 
+        // Disallow all text elements, text content sections, and typography across the full website
+        const textSelectors = [
+            'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+            'p', 'span', 'a', 'blockquote', 'q', 'cite',
+            'ul', 'ol', 'li',
+            'button', 'input', 'textarea', 'label', 'select', 'form',
+            'code', 'pre', 'em', 'strong', 'b', 'i',
+            '.about-heading', '.about-content', '.quote-section',
+            '.editorial-container', '.film-text', '.service-content',
+            '.project-info', '.info-block', '.cta-area', 'nav',
+            '#nav-center', '#full-menu', '.bento-card'
+        ].join(', ');
+
+        if (elem.closest(textSelectors)) {
+            return false;
+        }
+
+        // If the element directly wraps any readable text nodes, do not draw
+        if (elem.childNodes && elem.childNodes.length) {
+            for (let i = 0; i < elem.childNodes.length; i++) {
+                const node = elem.childNodes[i];
+                if (node.nodeType === Node.TEXT_NODE && node.textContent.trim().length > 0) {
+                    return false;
+                }
+            }
+        }
+
         // Allow explicitly marked white sections or about section
         if (elem.closest('section[data-color="white"]') || elem.closest('.about-section')) {
             return true;
@@ -926,6 +953,8 @@ window.addEventListener("DOMContentLoaded", () => {
     skillsAnimations();
     aboutAnimations();
     initAboutPageAnimations();
+    initRyk3DAvatar();
+    initTestimonialAnimation();
 });
 
 function initAboutPageAnimations() {
@@ -980,135 +1009,170 @@ function initAboutPageAnimations() {
         }, '-=0.4');
     }
 
-    // Workspace image
-    if (document.querySelector('.workspace-image')) {
-        gsap.to('.workspace-image', {
+    // Bento Grid section animations
+    const bentoCards = document.querySelectorAll('.bento-card');
+    if (bentoCards.length) {
+        gsap.from(bentoCards, {
             scrollTrigger: {
-                trigger: '.workspace-image',
+                trigger: '.bento-grid-section',
                 start: 'top 75%',
                 toggleActions: 'play none none reverse'
             },
-            opacity: 1,
-            scale: 1,
-            duration: 1,
-            ease: 'power2.out'
-        });
-    }
-
-    // Outside of work section
-    const filmSection = document.querySelector('.outside-work-section');
-    const filmCamera = document.querySelector('.film-camera');
-
-    if (filmCamera) {
-        gsap.to(filmCamera, {
-            scrollTrigger: {
-                trigger: '.outside-work-section',
-                start: 'top 75%',
-                toggleActions: 'play none none reverse'
-            },
-            opacity: 0.6,
-            rotation: 360,
-            duration: 2,
-            ease: 'power2.inOut',
-            onComplete: () => {
-                gsap.to('.film-camera-svg circle', {
-                    rotation: 360,
-                    transformOrigin: 'center',
-                    duration: 4,
-                    repeat: -1,
-                    ease: 'none'
-                });
-
-                gsap.to('.lens-letter', {
-                    rotation: 360,
-                    transformOrigin: 'center',
-                    duration: 3,
-                    repeat: -1,
-                    ease: 'linear'
-                });
-            }
-        });
-
-        filmCamera.addEventListener('mouseenter', () => {
-            gsap.to('.lens-letter', {
-                opacity: 1,
-                duration: 0.3,
-                scale: 1.2,
-                ease: 'power2.out'
-            });
-        });
-
-        filmCamera.addEventListener('mouseleave', () => {
-            gsap.to('.lens-letter', {
-                opacity: 0.8,
-                duration: 0.3,
-                scale: 1,
-                ease: 'power2.out'
-            });
-        });
-    }
-
-    if (filmSection) {
-        gsap.to('.outside-work-section', {
-            scrollTrigger: {
-                trigger: '.outside-work-section',
-                start: 'top 75%',
-                toggleActions: 'play none none reverse'
-            },
-            opacity: 1,
-            y: 0,
-            duration: 1,
+            y: 45,
+            opacity: 0,
+            duration: 0.9,
+            stagger: 0.12,
             ease: 'power3.out'
         });
     }
+}
 
-    if (document.querySelector('.film-title')) {
-        gsap.to('.film-title', {
-            scrollTrigger: {
-                trigger: '.film-title',
-                start: 'top 80%',
-                toggleActions: 'play none none reverse'
-            },
-            opacity: 1,
-            duration: 0.1,
-            repeat: 3,
-            yoyo: true,
-            ease: 'steps(1)',
-            onComplete: () => {
-                gsap.set('.film-title', { opacity: 1 });
-            }
+// ----------------------------------------------------
+// Interactive 3D Avatar Controller (RYK Character Rig)
+// ----------------------------------------------------
+function initRyk3DAvatar() {
+    const card = document.getElementById("ryk-avatar-card");
+    const rig = document.getElementById("avatar-character-rig");
+    const glare = document.getElementById("avatar-glare");
+    const glow = document.getElementById("avatar-ambient-glow");
+    const orbitRing = document.querySelector(".avatar-orbit-ring");
+
+    if (!card || !rig || typeof gsap === 'undefined') return;
+
+    let targetRotX = 0;
+    let targetRotY = 0;
+    let currentRotX = 0;
+    let currentRotY = 0;
+    let isHovering = false;
+    let ringAngle = 0;
+    const startTime = Date.now();
+
+    // Mouse tracking over card
+    card.addEventListener("mouseenter", () => {
+        isHovering = true;
+        gsap.to(card, {
+            scale: 1.025,
+            duration: 0.35,
+            ease: "power2.out"
         });
-    }
+    });
 
-    if (filmSection && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-        filmSection.addEventListener('mousemove', (e) => {
-            const { clientX, clientY } = e;
-            const { left, top, width, height } = filmSection.getBoundingClientRect();
-            const x = (clientX - left) / width - 0.5;
-            const y = (clientY - top) / height - 0.5;
+    card.addEventListener("mouseleave", () => {
+        isHovering = false;
+        targetRotX = 0;
+        targetRotY = 0;
+        gsap.to(card, {
+            scale: 1.0,
+            duration: 0.5,
+            ease: "power2.out"
+        });
+        if (glare) {
+            gsap.to(glare, { opacity: 0, duration: 0.3 });
+        }
+        if (glow) {
+            glow.style.background = `radial-gradient(circle at 50% 50%, rgba(244, 185, 70, 0.25), transparent 70%)`;
+        }
+    });
 
-            const filmTexts = document.querySelectorAll('.film-text');
-            filmTexts.forEach((text, index) => {
-                const depth = (index + 1) * 15;
-                gsap.to(text, {
-                    x: x * depth,
-                    y: y * depth,
-                    duration: 0.8,
-                    ease: 'power2.out'
-                });
+    card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        // Normalized coordinate from -1 to 1 relative to center of card
+        const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+        const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+
+        // Turn head and bust towards cursor with responsive limits
+        targetRotY = x * 24;  // max 24deg yaw
+        targetRotX = -y * 18; // max 18deg pitch
+
+        // Dynamic specular glare across glasses
+        if (glare) {
+            const glareX = ((x + 1) / 2) * 100;
+            const glareY = ((y + 1) / 2) * 100;
+            glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.7) 0%, transparent 55%)`;
+            glare.style.opacity = '0.45';
+        }
+
+        // Shift amber ambient rim light
+        if (glow) {
+            const glowX = 50 + x * 25;
+            const glowY = 50 + y * 25;
+            glow.style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, rgba(244, 185, 70, 0.38), transparent 70%)`;
+        }
+    });
+
+    // Tap / Click pop bounce effect (funky squash & stretch)
+    card.addEventListener("click", () => {
+        gsap.timeline()
+            .to(rig, {
+                scale: 0.88,
+                rotateZ: -5,
+                duration: 0.12,
+                ease: "power2.in"
+            })
+            .to(rig, {
+                scale: 1.14,
+                rotateZ: 5,
+                duration: 0.22,
+                ease: "back.out(2.5)"
+            })
+            .to(rig, {
+                scale: 1.0,
+                rotateZ: 0,
+                duration: 0.35,
+                ease: "elastic.out(1, 0.45)"
             });
-        });
 
-        filmSection.addEventListener('mouseleave', () => {
-            const filmTexts = document.querySelectorAll('.film-text');
-            filmTexts.forEach(text => {
-                gsap.to(text, {
-                    x: 0,
-                    y: 0,
-                    duration: 0.8,
-                    ease: 'power2.out'
-                });
-            });
-        });
-    }
+        // Flash orbit ring on pop
+        if (orbitRing) {
+            gsap.fromTo(orbitRing,
+                { borderColor: "rgba(255, 255, 255, 0.95)", scale: 1.2 },
+                { borderColor: "rgba(244, 185, 70, 0.3)", scale: 1.0, duration: 0.6, ease: "power2.out" }
+            );
+        }
+    });
+
+    // Continuous physics ticker for autonomous idle movement & smooth lerp
+    gsap.ticker.add(() => {
+        const elapsed = (Date.now() - startTime) / 1000;
+
+        // 1. Autonomous motion loop: continuous breathing and floating
+        const floatY = Math.sin(elapsed * 2.2) * 6;
+        const breathScale = 1 + Math.sin(elapsed * 2.8) * 0.012;
+        const idleTilt = Math.sin(elapsed * 1.5) * 1.8;
+
+        // 2. Smooth interpolation towards mouse orientation
+        const lerpFactor = isHovering ? 0.1 : 0.04;
+        currentRotX += (targetRotX - currentRotX) * lerpFactor;
+        currentRotY += (targetRotY - currentRotY) * lerpFactor;
+
+        // 3. Composite 3D transform
+        rig.style.transform = `translate3d(0, ${floatY}px, 0) rotateX(${currentRotX}deg) rotateY(${currentRotY}deg) rotateZ(${idleTilt}deg) scale(${breathScale})`;
+
+        // 4. Continuously spin holographic 3D orbit ring
+        if (orbitRing) {
+            ringAngle = (ringAngle + 0.65) % 360;
+            orbitRing.style.transform = `rotateX(72deg) rotateZ(${ringAngle}deg)`;
+        }
+    });
+}
+
+// ----------------------------------------------------
+// Testimonial Scroll Animation
+// ----------------------------------------------------
+function initTestimonialAnimation() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+    const card = document.querySelector('.testimonial-card');
+    if (!card) return;
+
+    gsap.from(card, {
+        scrollTrigger: {
+            trigger: '.testimonial-section',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        },
+        y: 60,
+        opacity: 0,
+        duration: 1.1,
+        ease: 'power3.out'
+    });
 }

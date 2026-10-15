@@ -530,14 +530,17 @@ body {
     }
 }
 
-/* Project Cards & Media Layering (Above drawing canvas) */
-.project-card,
-.workspace-image {
+/* Text Content Sections, Project Cards & Media Layering (Always cleanly above drawing canvas) */
+p, h1, h2, h3, h4, h5, h6, blockquote, q, cite,
+ul, ol, li, a, button, label, input, textarea,
+.about-heading, .about-content, .quote-section, .editorial-container,
+.film-text, .service-content, .project-info, .info-block, .cta-area,
+.project-card, .bento-card, .workspace-image {
     position: relative;
     z-index: 45;
 }
 
-/* Interactive Artistic Drawing Canvas */
+/* Interactive Artistic Drawing Canvas (Renders exclusively on open paper background, under text) */
 .interactive-draw-canvas {
     position: fixed;
     top: 0;
@@ -545,7 +548,29 @@ body {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    z-index: 40;
+    z-index: 10;
     mix-blend-mode: multiply;
+}
+
+/* Bento Grid Tactile Textures */
+.texture-grid-blueprint {
+    background-image: 
+        linear-gradient(rgba(16, 185, 129, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 185, 129, 0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+.texture-dots-halftone {
+    background-image: radial-gradient(rgba(245, 158, 11, 0.22) 1.5px, transparent 1.5px);
+    background-size: 14px 14px;
+}
+
+.texture-shader-lines {
+    background-image: repeating-linear-gradient(45deg, rgba(59, 130, 246, 0.08) 0, rgba(59, 130, 246, 0.08) 1px, transparent 0, transparent 14px);
+}
+
+.texture-perforated-stamp {
+    background-image: radial-gradient(circle, transparent 70%, rgba(236, 72, 153, 0.12) 71%);
+    background-size: 8px 8px;
 }
 
