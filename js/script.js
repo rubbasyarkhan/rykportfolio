@@ -288,7 +288,7 @@ function initCustomCursor() {
     gsap.ticker.add(cursorTicker);
 
     // Performant event delegation for hover states
-    const hoverSelector = "a, button, [role='button'], .skill-item, #menu-toggle, .gsap-btn, input, textarea, select, .project-card, .service-item";
+    const hoverSelector = "a, button, [role='button'], .skill-item, .discipline-row, .discipline-card, #menu-toggle, .gsap-btn, input, textarea, select, .project-card, .service-item";
 
     document.addEventListener("mouseover", (e) => {
         const target = e.target.closest(hoverSelector);
@@ -807,50 +807,63 @@ function colorchange() {
     });
 }
 
-// Skills Section Animations
+// Skills & Disciplines Section Animations
 function skillsAnimations() {
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-    const skillItems = document.querySelectorAll('.skill-item');
-    if (!skillItems.length) return;
 
-    const isMobile = window.innerWidth < 768;
-
-    // Fade in skill items on scroll
-    skillItems.forEach((item, index) => {
-        gsap.from(item, {
-            scrollTrigger: {
-                trigger: item,
-                start: 'top 90%',
-                toggleActions: 'play none none reverse'
-            },
-            y: 25,
-            opacity: 0,
-            duration: 0.6,
-            delay: isMobile ? 0 : index * 0.08,
-            ease: 'power3.out'
-        });
-    });
-
-    // Micro-interactions on hover (only on hover/pointer devices)
-    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-        skillItems.forEach((item) => {
-            const border = item.querySelector('.border-b');
-            const number = item.querySelector('.skill-number');
-            const title = item.querySelector('.skill-title');
-            const percent = item.querySelector('.skill-percent');
-
-            item.addEventListener('mouseenter', function () {
-                if (border) gsap.to(border, { borderColor: 'var(--accent-primary)', duration: 0.3, ease: 'power2.out' });
-                if (number) gsap.to(number, { opacity: 0.6, scale: 1.05, duration: 0.3, ease: 'power2.out' });
-                if (title) gsap.to(title, { x: 8, color: 'var(--accent-primary)', duration: 0.3, ease: 'power2.out' });
-                if (percent) gsap.to(percent, { opacity: 1, scale: 1.1, color: 'var(--accent-primary)', duration: 0.3, ease: 'power2.out' });
+    // Animate discipline cards (2-column responsive layout)
+    const disciplineCards = document.querySelectorAll('.discipline-card');
+    if (disciplineCards.length) {
+        disciplineCards.forEach((card, index) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 90%',
+                    toggleActions: 'play none none reverse'
+                },
+                y: 35,
+                opacity: 0,
+                duration: 0.7,
+                delay: (index % 2) * 0.1,
+                ease: 'power3.out'
             });
+        });
+    }
 
-            item.addEventListener('mouseleave', function () {
-                if (border) gsap.to(border, { borderColor: 'var(--border-dark)', duration: 0.3, ease: 'power2.out' });
-                if (number) gsap.to(number, { opacity: 0.3, scale: 1, duration: 0.3, ease: 'power2.out' });
-                if (title) gsap.to(title, { x: 0, color: 'var(--text-primary-dark)', duration: 0.3, ease: 'power2.out' });
-                if (percent) gsap.to(percent, { opacity: 0.5, scale: 1, color: 'var(--text-secondary-dark)', duration: 0.3, ease: 'power2.out' });
+    // Animate discipline typography rows
+    const disciplineRows = document.querySelectorAll('.discipline-row');
+    if (disciplineRows.length) {
+        disciplineRows.forEach((row, index) => {
+            gsap.from(row, {
+                scrollTrigger: {
+                    trigger: row,
+                    start: 'top 88%',
+                    toggleActions: 'play none none reverse'
+                },
+                y: 35,
+                opacity: 0,
+                duration: 0.8,
+                delay: index * 0.1,
+                ease: 'power3.out'
+            });
+        });
+    }
+
+    // Fallback for .skill-item if present
+    const skillItems = document.querySelectorAll('.skill-item');
+    if (skillItems.length) {
+        skillItems.forEach((item, index) => {
+            gsap.from(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 90%',
+                    toggleActions: 'play none none reverse'
+                },
+                y: 25,
+                opacity: 0,
+                duration: 0.6,
+                delay: index * 0.08,
+                ease: 'power3.out'
             });
         });
     }
