@@ -43,6 +43,7 @@ npm run start -- -p 3000
 ```
 rykportfolio/
 ├── AGENT.md                       # This instructions file for AI agents
+├── netlify.toml                   # Netlify build configuration & Next.js plugin
 ├── package.json                   # Dependencies and npm scripts
 ├── tsconfig.json                  # TypeScript configuration
 ├── tailwind.config.ts             # Tailwind design tokens, typography & animations
@@ -52,16 +53,19 @@ rykportfolio/
 │       ├── fonts/                 # Neue-Machina, PPNeueMachina, Satoshi
 │       └── images/                # Project hero & gallery screenshots, 3D avatar
 └── src/
-    ├── app/                       # Next.js App Router routes
-    │   ├── layout.tsx             # Root layout (Fonts, SmoothScroll, Cursor, Navbar, Footer)
+    ├── app/                       # Next.js App Router (Server Components with Metadata)
+    │   ├── layout.tsx             # Root layout (MetadataBase, JSON-LD Schema, Googlebot Directives)
+    │   ├── sitemap.ts             # Dynamic XML sitemap generator (/sitemap.xml)
+    │   ├── robots.ts              # Dynamic robots.txt generator (/robots.txt)
     │   ├── globals.css            # CSS variables, typography, custom cursors & utilities
     │   ├── not-found.tsx          # Custom 404 page
-    │   ├── page.tsx               # Homepage (Hero scrub, Selected Work, Testimonial, About, Skills)
-    │   ├── work/page.tsx          # Work archive page (All project cards with editorial labels)
-    │   ├── about/page.tsx         # About page (2-paragraph statement, quotes, disciplines)
-    │   ├── contact/page.tsx       # Contact page (Interactive FormSubmit form, active orange border)
+    │   ├── page.tsx               # Homepage Server Component (Canonical, OG Metadata)
+    │   ├── work/page.tsx          # Work page Server Component
+    │   ├── about/page.tsx         # About page Server Component
+    │   ├── contact/page.tsx       # Contact page Server Component
     │   └── projects/[slug]/page.tsx # Dynamic project detail page (SSG with generateStaticParams)
     ├── components/
+    │   ├── views/                 # Client animation views (HomeView, WorkView, AboutView, ContactView)
     │   ├── layout/
     │   │   ├── Navbar.tsx         # See-through frosted glass navbar with real-time theme adaptation
     │   │   ├── FullMenu.tsx       # Fullscreen circular curtain menu with morphing hamburger 'X'

@@ -34,37 +34,84 @@ const poppins = Poppins({
   display: 'swap',
 });
 
+const siteUrl = 'https://rubbasyarkhan.netlify.app';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://rubbasyarkhan.com'),
-  title: 'Rubbas Yar Khan | Creative Developer & UI/UX Designer',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'Rubbas Yar Khan | Creative Developer & UI/UX Designer',
+    template: '%s | Rubbas Yar Khan',
+  },
   description:
-    'Portfolio of Rubbas Yar Khan — Creative Developer & Designer specializing in modern web experiences, high-performance animations, and digital interfaces.',
+    'Portfolio of Rubbas Yar Khan (RUBBAS .YK) — Creative Developer & UI/UX Designer specializing in bespoke digital experiences, high-performance web animations, interactive digital products, and modern design systems.',
+  keywords: [
+    'Rubbas Yar Khan',
+    'RUBBAS .YK',
+    'Creative Developer',
+    'UI/UX Designer',
+    'Frontend Developer',
+    'Web Animation',
+    'GSAP ScrollTrigger',
+    'Next.js Portfolio',
+    'Interactive 3D Web',
+    'Product Designer',
+    'Full-Stack Developer',
+    'Bespoke Web Design',
+    'Editorial Web Design',
+  ],
+  authors: [{ name: 'Rubbas Yar Khan', url: siteUrl }],
+  creator: 'Rubbas Yar Khan',
+  publisher: 'Rubbas Yar Khan',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: '/assets/favicon.svg',
+    apple: '/assets/favicon.svg',
   },
   openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: siteUrl,
+    siteName: 'Rubbas Yar Khan Portfolio',
     title: 'Rubbas Yar Khan | Creative Developer & UI/UX Designer',
     description:
-      'Portfolio of Rubbas Yar Khan — Creative Developer & Designer specializing in modern web experiences, high-performance animations, and digital interfaces.',
-    url: 'https://rubbasyarkhan.com',
-    siteName: 'Rubbas Yar Khan Portfolio',
+      'Portfolio of Rubbas Yar Khan — Creative Developer & UI/UX Designer specializing in bespoke digital experiences, high-performance web animations, and interactive products.',
     images: [
       {
         url: '/assets/images/herobg1.png',
         width: 1200,
         height: 630,
-        alt: 'Rubbas Yar Khan Portfolio',
+        alt: 'Rubbas Yar Khan — Creative Developer & UI/UX Designer Portfolio',
       },
     ],
-    locale: 'en_US',
-    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Rubbas Yar Khan | Creative Developer & UI/UX Designer',
     description:
-      'Portfolio of Rubbas Yar Khan — Creative Developer & Designer specializing in modern web experiences, high-performance animations, and digital interfaces.',
+      'Portfolio of Rubbas Yar Khan — Creative Developer & UI/UX Designer specializing in modern web experiences, high-performance animations, and digital interfaces.',
     images: ['/assets/images/herobg1.png'],
+    creator: '@rubbasyarkhan',
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'YOUR_GOOGLE_VERIFICATION_CODE',
   },
 };
 
@@ -73,11 +120,63 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLdPerson = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Rubbas Yar Khan',
+    alternateName: 'RUBBAS .YK',
+    url: siteUrl,
+    image: `${siteUrl}/assets/images/herobg1.png`,
+    jobTitle: 'Creative Developer & UI/UX Designer',
+    description:
+      'Creative Developer and UI/UX Designer specializing in bespoke web experiences, interactive GSAP animations, and scalable digital interfaces.',
+    sameAs: [
+      'https://github.com/rubbasyarkhan',
+      'https://www.linkedin.com/in/rubbas-yar-khan',
+      'https://www.instagram.com/rubbas_yar_khan',
+      'https://dribbble.com/rubbas',
+      'https://pinterest.com/rubbasyarkhan',
+    ],
+    knowsAbout: [
+      'UI/UX Design',
+      'Frontend Development',
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'GSAP Motion',
+      'Interactive Web Design',
+      'Three.js',
+    ],
+  };
+
+  const jsonLdWebSite = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Rubbas Yar Khan Portfolio',
+    url: siteUrl,
+    description:
+      'Official portfolio of Rubbas Yar Khan — Creative Developer & UI/UX Designer.',
+    author: {
+      '@type': 'Person',
+      name: 'Rubbas Yar Khan',
+    },
+  };
+
   return (
     <html
       lang="en"
       className={`${spaceGrotesk.variable} ${playfair.variable} ${allura.variable} ${poppins.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
+        />
+      </head>
       <body className="font-sans antialiased bg-[#0B0D10] text-[#E6E6E6] selection:bg-[#F5B942] selection:text-[#0B0D10]">
         <SmoothScroll>
           <PageTransitionProvider>
