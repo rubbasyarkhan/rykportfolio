@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Space_Grotesk, Playfair_Display, Allura, Poppins } from 'next/font/google';
 import SmoothScroll from '@/components/interactive/SmoothScroll';
 import CustomCursor from '@/components/interactive/CustomCursor';
@@ -170,6 +171,19 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${playfair.variable} ${allura.variable} ${poppins.variable}`}
     >
       <head>
+        {/* Google Analytics (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-X4C6QXVWF3"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-X4C6QXVWF3');
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}
