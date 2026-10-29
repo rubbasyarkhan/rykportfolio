@@ -1,0 +1,284 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark Mode */
+  --bg-dark: #0B0D10;
+  --surface-dark: #13161B;
+  --border-dark: #1F232B;
+  --text-primary-dark: #E6E6E6;
+  --text-secondary-dark: #9CA3AF;
+  --text-disabled-dark: #6B7280;
+
+  /* Light Mode */
+  --bg-light: #F1EFEB;
+  --surface-light: #FFFFFF;
+  --border-light: #E5E2DC;
+  --text-primary-light: #0B0D10;
+  --text-secondary-light: #5E636E;
+  --text-disabled-light: #8A8F99;
+
+  /* Accent */
+  --accent-primary: #F5B942;
+  --accent-muted: #D9A737;
+  --accent-soft: #FFF3D6;
+
+  /* Utilities */
+  --overlay-dark: rgba(0, 0, 0, 0.6);
+  --overlay-light: rgba(255, 255, 255, 0.6);
+  --focus-ring: #F5B942;
+  --shadow-soft: rgba(0, 0, 0, 0.08);
+  --shadow-strong: rgba(0, 0, 0, 0.25);
+}
+
+body[theme="black"] {
+  background-color: var(--bg-dark);
+}
+
+body[theme="black"] section {
+  color: var(--text-primary-dark);
+}
+
+body[theme="white"] {
+  background-color: var(--bg-light);
+}
+
+body[theme="white"] section {
+  color: var(--text-primary-light);
+}
+
+@font-face {
+  font-family: "Neue-Machina";
+  src: url('/assets/fonts/Neue-Machina.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PPNeue-Machina";
+  src: url('/assets/fonts/PPNeueMachina_-Light.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "satoshi";
+  src: url('/assets/fonts/Satoshi-Variable.ttf') format('truetype');
+  font-display: swap;
+}
+
+*::selection {
+  background-color: var(--accent-primary);
+  color: var(--bg-dark);
+}
+
+.vdiv {
+  clip-path: circle(var(--clip, 0%) at 50% 50%);
+  will-change: clip-path;
+}
+
+body {
+  overflow-x: clip;
+  transition: background-color ease-out .5s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Font & Smoothness */
+.botmtext h1 {
+  font-family: "Neue-Machina", sans-serif;
+  text-transform: uppercase;
+}
+
+/* Fluid Marquee Rows */
+.marqueescontainer {
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+.slmm {
+  width: 100%;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.slmm .row {
+  will-change: transform;
+}
+
+.cta-link:hover .arrow {
+  transform: translateX(8px);
+}
+
+.img-wrapper img {
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.gsap-btn .masker {
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.gsap-btn .btn-text {
+  white-space: nowrap;
+  will-change: transform;
+}
+
+#full-menu {
+  color: white;
+  clip-path: circle(0% at 100% 0%);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.nav-link {
+  font-family: "Neue-Machina", sans-serif;
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+#menu-toggle span {
+  transform-origin: center;
+  transition: background-color 0.3s ease;
+}
+
+.footer-section {
+  font-family: 'satoshi', sans-serif;
+}
+
+.cta-area h1 {
+  font-family: "Neue-Machina", sans-serif;
+  text-transform: uppercase;
+}
+
+.footer-grid {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.img-reveal-container {
+  clip-path: inset(100% 0% 0% 0%);
+  transition: clip-path 0.1s ease-out;
+}
+
+.parallax-img {
+  will-change: transform;
+  object-fit: cover;
+}
+
+.nav-cta .masker span {
+  transition: transform 0.45s cubic-bezier(.77, 0, .18, 1);
+}
+
+.nav-cta:hover .masker span:first-child {
+  transform: translateY(-100%);
+}
+
+.nav-cta:hover .masker span:last-child {
+  transform: translateY(0%);
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tech-marquee-track {
+  animation: marquee 30s linear infinite;
+}
+
+.tech-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  animation: noiseMove 0.35s steps(2) infinite;
+}
+
+@keyframes noiseMove {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-1px, 1px); }
+  50% { transform: translate(1px, -1px); }
+  75% { transform: translate(-1px, -1px); }
+  100% { transform: translate(0, 0); }
+}
+
+@media (max-width: 768px) {
+  .noise-overlay {
+    display: none;
+  }
+}
+
+/* Custom Cursor */
+@media (hover: hover) and (pointer: fine) {
+  html, body {
+    cursor: none;
+  }
+  a, button, [role='button'], .skill-item, #menu-toggle {
+    cursor: none !important;
+  }
+  input, textarea, select {
+    cursor: auto !important;
+  }
+
+  .custom-cursor {
+    width: 28px;
+    height: 28px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 999999;
+    mix-blend-mode: difference;
+    will-change: transform, opacity;
+  }
+}
+
+/* Drawing Canvas Layer */
+.interactive-draw-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10;
+  mix-blend-mode: multiply;
+}
+
+/* Bento Grid Textures */
+.texture-grid-blueprint {
+  background-image: 
+    linear-gradient(rgba(16, 185, 129, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.texture-dots-halftone {
+  background-image: radial-gradient(rgba(245, 158, 11, 0.22) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+}
+
+.texture-shader-lines {
+  background-image: repeating-linear-gradient(45deg, rgba(59, 130, 246, 0.08) 0, rgba(59, 130, 246, 0.08) 1px, transparent 0, transparent 14px);
+}
+
+.texture-perforated-stamp {
+  background-image: radial-gradient(circle, transparent 70%, rgba(236, 72, 153, 0.12) 71%);
+  background-size: 8px 8px;
+}
