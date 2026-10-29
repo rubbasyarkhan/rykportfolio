@@ -82,19 +82,19 @@ export default function FullMenu({ isOpen, onClose }: FullMenuProps) {
       tl.set(menu, { display: 'flex' })
         .to(menu, {
           clipPath: 'circle(150% at 100% 0%)',
-          duration: 0.85,
+          duration: 0.55,
           ease: 'power3.inOut',
         })
         .from(
           menu.querySelectorAll('.full-menu-link'),
           {
-            y: 50,
+            y: 40,
             opacity: 0,
-            stagger: 0.08,
-            duration: 0.45,
+            stagger: 0.05,
+            duration: 0.35,
             ease: 'power4.out',
           },
-          '-=0.35'
+          '-=0.25'
         )
         .from(
           menu.querySelectorAll('.full-menu-meta'),

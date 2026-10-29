@@ -102,7 +102,7 @@ rykportfolio/
 
 ### B. Circular Page Transitions (`src/components/layout/PageTransition.tsx`)
 - All internal navigation uses `<TransitionLink href="...">` instead of Next.js `<Link>`.
-- Executes a cinematic circular curtain wipe (`clipPath: circle(...)`) scaling from 0% to 150%, navigating via `router.push`, and expanding out on page arrival.
+- Executes a cinematic circular curtain wipe (`clipPath: circle(...)`) scaling from 0% to 150% in 0.55s, navigating via `router.push`, and expanding out in 0.5s on page arrival for a fast, responsive transition.
 
 ### C. Color Palette & Dual-Theme System
 - **Dark Theme (`body[theme="black"]`)**:

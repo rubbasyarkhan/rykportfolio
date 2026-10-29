@@ -44,7 +44,7 @@ export function PageTransitionProvider({ children }: { children: React.ReactNode
       { clipPath: 'circle(0% at 100% 0%)', display: 'block' },
       {
         clipPath: 'circle(150% at 100% 0%)',
-        duration: 0.9,
+        duration: 0.55,
         ease: 'power3.inOut',
         onComplete: () => {
           router.push(href);
@@ -68,7 +68,7 @@ export function PageTransitionProvider({ children }: { children: React.ReactNode
     gsap.killTweensOf(overlay);
     gsap.to(overlay, {
       clipPath: 'circle(0% at 0% 100%)',
-      duration: 0.85,
+      duration: 0.5,
       ease: 'power3.inOut',
       onComplete: () => {
         gsap.set(overlay, { display: 'none', clipPath: 'circle(0% at 100% 0%)' });

@@ -1,156 +1,121 @@
-# Rubbas Yar Khan | Creative UI/UX Designer & Frontend Developer
+# Rubbas Yar Khan | Creative Developer & UI/UX Designer
 
-Personal portfolio and creative development showcase of Rubbas Yar Khan (RUBBAS .YK). Designed and built with a design-first mindset and developer-level execution, focusing on high-contrast editorial typography, smooth 60fps animations, interactive micro-interactions, and responsive digital experiences.
-
----
-
-## What I Do
-
-I specialize in bridging the gap between high-end visual design and technical frontend implementation:
-
-- **UI/UX Design**: Crafting user-centric interfaces, interactive prototypes, design systems, and digital brand identities tailored for modern brands.
-- **Creative Frontend Development**: Building custom, responsive websites with fluid typography, clip-path reveals, scroll-driven storytelling, and smooth animations.
-- **Interaction Design & Motion**: Implementing performance-oriented GSAP timelines, custom cursors, and physics-based smooth scrolling.
-- **Performance & Modern Tooling**: Structuring clean, maintainable codebases with pre-compiled Tailwind CSS, optimized media delivery, and zero runtime bloat.
+Personal portfolio and creative development showcase of **Rubbas Yar Khan (RUBBAS .YK)**. Built with Next.js 14 App Router, TypeScript, Tailwind CSS, and GSAP motion. Designed with a design-first mindset and developer-level execution, highlighting high-contrast editorial typography, dynamic dual-theme transitions, physics-based smooth scrolling, and an interactive digital showcase.
 
 ---
 
-## Featured Work
+## 🌟 Key Highlights & Architecture
 
-The portfolio showcases selected case studies across design and engineering:
-
-1. **Albert Einstein Biography** - Website Development
-2. **Carving Production Agency** - UI/UX Design & Branding
-3. **Coffee Shop Mobile App** - UI/UX Design & Mobile Interface
-4. **K-Town Cypher** - Web Development & Media Presentation
-5. **The Aesthetic Palette** - E-Commerce Interface & Frontend
-6. **Smart Home App** - UI/UX Product Design & IoT Interface
-7. **Three.js 3D Project** - Interactive 3D Web Experience
+- **Next.js 14 App Router (SSG)**: Pre-rendered static pages for instant load speeds, optimal SEO, and zero client-side hydration delays.
+- **Translucent Frosted Glass Navbar**: Modern see-through blurred navbar (`backdrop-filter: blur(12px) saturate(180%)`) that dynamically adapts text contrast and borders based on the active section theme under the navbar.
+- **Fast Circular Curtain Transitions**: Reusable circular clip-path page transitions (`<TransitionLink>`) with snappy, cinematic page wipe animations.
+- **Dual-Theme System**: Dynamic switching between Obsidian Dark (`#0B0D10`) and Linen Light (`#F1EFEB`), powered by GSAP ScrollTrigger intersection observers.
+- **Lenis Smooth Scroll & GSAP Sync**: Native physics-based smooth scrolling integrated with the GSAP ticker for stutter-free scrolling and scrubbing.
+- **Interactive Chromatic Canvas & 3D Tilt Avatar**: Interactive canvas trail on light sections and mouse-reactive 3D perspective avatar on the about section.
+- **Accessible Contact Experience**: Interactive form with active terracotta orange borders (`#ef9d71`), custom select dropdown arrow, FormSubmit AJAX integration, and smart footer CTA suppression.
 
 ---
 
-## Key Features
+## 🚀 Featured Projects
 
-- **Clip-Path Hero Transition**: Interactive two-way scrubbed circular reveal separating portrait imagery and typography marquees.
-- **Lenis Smooth Scroll & GSAP Sync**: Native physics-based smooth scrolling tightly coupled to the GSAP ScrollTrigger ticker for stutter-free scrubbing.
-- **Fluid Marquees**: High-speed, responsive multi-row marquee tracks with contrasting font pairings.
-- **Interactive Custom Cursor**: Hardware-accelerated custom follower with hover delegation across interactive targets.
-- **Bespoke 404 Experience**: Minimalist, editorial error page matching the site design system with clean recovery routing.
-- **Accessible Contact Form**: Accessible form fields with linked label associations, client-side validation, and instant feedback states.
-- **Production CSS Compilation**: Standalone compiled Tailwind CSS stylesheet eliminating runtime JIT script overhead.
+The portfolio showcases 7 curated case studies with detailed deliverable breakdowns and gallery assets:
 
----
-
-## Technologies Used
-
-- **Markup & Structure**: HTML5 (Semantic, accessible markup)
-- **Styling**: CSS3, Tailwind CSS (Compiled production build), Custom Fonts (Neue Machina, PP Neue Machina, Space Grotesk, Allura, Poppins)
-- **Animation & Motion**: GSAP (GreenSock Animation Platform) 3.12, ScrollTrigger
-- **Smooth Scrolling**: Lenis 1.1
-- **Icons**: Remix Icon
-- **Build Tooling**: Node.js, npm, Tailwind CLI
+1. **Azizography Studio** — Visual Arts, Architectural Photography & Creative Studio
+2. **K-Town Cypher** — Hip-Hop & Streetwear Platform
+3. **Carving Production Agency** — Creative Agency Portfolio & Production Suite
+4. **Coffee Shop Mobile App** — Specialized E-Commerce & Ordering Mobile App
+5. **The Kashmiri Aesthetic** — Cultural Preservation & High-End Textile Storefront
+6. **Personal Tax Assistant** — AI-Powered Financial Document & Tax Analysis Platform
+7. **Solitary Brand Identity** — Minimalist Modern Fashion Brand & Digital Retail App
 
 ---
 
-## Project Structure
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router, Static Generation)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS 3.4](https://tailwindcss.com/)
+- **Animation**: [GSAP 3](https://greensock.com/) (ScrollTrigger)
+- **Smooth Scroll**: [Lenis](https://github.com/darkroomengineering/lenis)
+- **Icons**: [Lucide React](https://lucide.dev/) + Custom SVG Icons
+- **Deployment**: [Netlify](https://www.netlify.com/) (Automated CI/CD via `netlify.toml`)
+
+---
+
+## 📁 Project Structure
 
 ```text
 rykportfolio/
-├── assets/
-│   ├── favicon.svg              # Vector monogram favicon
-│   ├── fonts/                    # Custom web fonts (Neue Machina, Satoshi)
-│   └── images/                   # Optimized project screenshots and imagery
-├── css/
-│   ├── style.css                 # Custom component, theme, and font definitions
-│   ├── tailwind-input.css        # Tailwind directives entry point
-│   └── tailwind.css              # Compiled production stylesheet
-├── js/
-│   └── script.js                 # Lenis init, GSAP timelines, cursor, and navigation
-├── projects/
-│   ├── project1.html             # Albert Einstein Biography
-│   ├── project2.html             # Carving Production Agency
-│   ├── project3.html             # Coffee Shop Mobile App
-│   ├── project4.html             # K-Town Cypher
-│   ├── project5.html             # The Aesthetic Palette
-│   ├── project6.html             # Smart Home App
-│   └── project7.html             # Three.js 3D Project
-├── index.html                    # Main landing page
-├── about.html                    # Biography, philosophy, and background
-├── work.html                     # Curated project index
-├── contact.html                  # Inquiries and contact form
-├── 404.html                      # Custom error page
-├── package.json                  # Scripts and dependencies
-└── tailwind.config.js            # Tailwind template paths and theme extensions
+├── AGENT.md                       # Complete guidelines & context for AI coding agents
+├── netlify.toml                   # Netlify build configuration & Next.js plugin
+├── package.json                   # Dependencies and npm scripts
+├── tsconfig.json                  # TypeScript configuration
+├── tailwind.config.ts             # Tailwind design tokens, fonts & animations
+├── public/                        # Static assets
+│   └── assets/
+│       ├── fonts/                 # Neue-Machina, PPNeueMachina, Satoshi
+│       └── images/                # High-resolution project screenshots & avatars
+└── src/
+    ├── app/                       # Next.js App Router
+    │   ├── layout.tsx             # Root layout (Fonts, SmoothScroll, Cursor, Navbar, Footer)
+    │   ├── globals.css            # Base styles, CSS variables, custom cursors & utilities
+    │   ├── not-found.tsx          # Bespoke 404 error page
+    │   ├── page.tsx               # Homepage (Hero scrub, Selected Work, Testimonials, About, Skills)
+    │   ├── work/page.tsx          # Full work catalog with editorial category badges
+    │   ├── about/page.tsx         # About page with editorial statements & discipline cards
+    │   ├── contact/page.tsx       # Contact page with active orange field borders & FormSubmit AJAX
+    │   └── projects/[slug]/page.tsx # Dynamic SSG project detail routes
+    ├── components/
+    │   ├── layout/                # Navbar, FullMenu, Footer, PageTransition
+    │   ├── interactive/           # SmoothScroll, CustomCursor, ChromaticCanvas, Ryk3DAvatar
+    │   └── ui/                    # ProjectCard, DisciplineCard, SocialIcons
+    └── data/
+        └── projects.ts            # Project database (7 projects, gallery imagery, metadata)
 ```
 
 ---
 
-## Getting Started
+## 💻 Getting Started Locally
 
-### 1. Clone the Repository
-
+### 1. Clone the repository
 ```bash
 git clone https://github.com/rubbasyarkhan/rykportfolio.git
 cd rykportfolio
 ```
 
-### 2. Install Dependencies
-
+### 2. Install dependencies
 ```bash
 npm install
 ```
 
-### 3. Build Stylesheet (Optional for customization)
-
-To watch for CSS changes during development:
-
+### 3. Run development server
 ```bash
-npm run watch:css
+npm run dev
 ```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To compile a minified production stylesheet:
-
+### 4. Build for production
 ```bash
-npm run build:css
+npm run build
+npm run start -- -p 3000
 ```
-
-### 4. Run Locally
-
-Serve the static files using any local server:
-
-Using Python:
-```bash
-python -m http.server 5500
-```
-
-Using Node.js (npx):
-```bash
-npx serve .
-```
-
-Open `http://localhost:5500` in your web browser.
 
 ---
 
-## Contact Information
+## 🌐 Deploy to Netlify
 
-- **Name**: Rubbas Yar Khan
-- **Role**: Creative UI/UX Designer & Frontend Developer
-- **Email**: rubbasyarkhan007@gmail.com
-- **Phone**: (+92) 371-029-0861
-- **Location**: Karachi, Pakistan (Available Worldwide)
-- **GitHub**: https://github.com/rubbasyarkhan
-- **LinkedIn**: https://www.linkedin.com/in/rubbas-yar-khan
-- **Instagram**: https://www.instagram.com/rubbas_yar_khan
-- **Dribbble**: https://dribbble.com/rubbas
-- **Pinterest**: https://www.pinterest.com/rubbasyarkhan
+This repository is pre-configured with `netlify.toml` for seamless deployment:
 
----
-
-## Acknowledgments
-
-- Special thanks to Harsh Vandana Sharma and Sheryians Coding School for early inspiration and guidance.
+1. Push your code to GitHub.
+2. Log in to [Netlify](https://app.netlify.com/) and click **"Add new site" > "Import an existing project"**.
+3. Select **GitHub** and choose the `rubbasyarkhan/rykportfolio` repository.
+4. Netlify will auto-detect the Next.js runtime from `netlify.toml`:
+   - **Build command**: `npm run build`
+   - **Publish directory**: `.next`
+5. Click **"Deploy site"** — your portfolio will build and deploy live in under 2 minutes.
 
 ---
 
-Copyright 2026 Rubbas Yar Khan. All rights reserved.
+## 📄 License
+
+© 2026 Rubbas Yar Khan. All rights reserved.
