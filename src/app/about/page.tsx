@@ -11,11 +11,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Rubbas Yar Khan | Creative Developer & UI/UX Designer',
     description:
-      'Digital product designer and creative developer focused on creating bespoke, high-performance web experiences that feel human and tactile.',
+      'Digital product designer and creative developer creating bespoke, high-performance web experiences.',
     url: 'https://rubbasyarkhan.netlify.app/about',
     images: [
       {
-        url: '/assets/images/herobg1.png',
+        url: '/assets/images/og-card.png',
         width: 1200,
         height: 630,
         alt: 'About Rubbas Yar Khan',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About Rubbas Yar Khan | Creative Developer & UI/UX Designer',
     description:
-      'Digital product designer and creative developer focused on creating bespoke, high-performance web experiences.',
-    images: ['/assets/images/herobg1.png'],
+      'Digital product designer and creative developer creating bespoke, high-performance web experiences.',
+    images: ['/assets/images/og-card.png'],
   },
 };
 

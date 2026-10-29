@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     template: '%s | Rubbas Yar Khan',
   },
   description:
-    'Portfolio of Rubbas Yar Khan (RUBBAS .YK) — Creative Developer & UI/UX Designer specializing in bespoke digital experiences, high-performance web animations, interactive digital products, and modern design systems.',
+    'Portfolio of Rubbas Yar Khan (RUBBAS .YK) — Creative Developer & UI/UX Designer crafting bespoke digital experiences, web animations, and design systems.',
   keywords: [
     'Rubbas Yar Khan',
     'RUBBAS .YK',
@@ -93,10 +93,10 @@ export const metadata: Metadata = {
     siteName: 'Rubbas Yar Khan Portfolio',
     title: 'Rubbas Yar Khan | Creative Developer & UI/UX Designer',
     description:
-      'Portfolio of Rubbas Yar Khan — Creative Developer & UI/UX Designer specializing in bespoke digital experiences, high-performance web animations, and interactive products.',
+      'Bespoke digital experiences, high-performance web animations, and UI/UX design by Rubbas Yar Khan.',
     images: [
       {
-        url: '/assets/images/herobg1.png',
+        url: '/assets/images/og-card.png',
         width: 1200,
         height: 630,
         alt: 'Rubbas Yar Khan — Creative Developer & UI/UX Designer Portfolio',
@@ -107,8 +107,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Rubbas Yar Khan | Creative Developer & UI/UX Designer',
     description:
-      'Portfolio of Rubbas Yar Khan — Creative Developer & UI/UX Designer specializing in modern web experiences, high-performance animations, and digital interfaces.',
-    images: ['/assets/images/herobg1.png'],
+      'Bespoke digital experiences, high-performance web animations, and UI/UX design by Rubbas Yar Khan.',
+    images: ['/assets/images/og-card.png'],
     creator: '@rubbasyarkhan',
   },
   verification: {

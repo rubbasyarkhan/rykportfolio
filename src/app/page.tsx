@@ -6,19 +6,19 @@ export const metadata: Metadata = {
     absolute: 'Rubbas Yar Khan | Creative Developer & UI/UX Designer',
   },
   description:
-    'Award-winning portfolio of Rubbas Yar Khan (RUBBAS .YK) — Creative Developer & UI/UX Designer specializing in bespoke digital experiences, high-performance web animations, interactive web products, and modern design systems.',
+    'Portfolio of Rubbas Yar Khan (RUBBAS .YK) — Creative Developer & UI/UX Designer crafting bespoke digital experiences, web animations, and design systems.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Rubbas Yar Khan | Creative Developer & UI/UX Designer',
     description:
-      'Award-winning portfolio of Rubbas Yar Khan (RUBBAS .YK) — Creative Developer & UI/UX Designer specializing in bespoke digital experiences, high-performance web animations, and interactive design.',
+      'Bespoke digital experiences, high-performance web animations, and UI/UX design by Rubbas Yar Khan.',
     url: 'https://rubbasyarkhan.netlify.app',
     siteName: 'Rubbas Yar Khan Portfolio',
     images: [
       {
-        url: '/assets/images/herobg1.png',
+        url: '/assets/images/og-card.png',
         width: 1200,
         height: 630,
         alt: 'Rubbas Yar Khan — Creative Developer & UI/UX Designer Portfolio',
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Rubbas Yar Khan | Creative Developer & UI/UX Designer',
     description:
-      'Award-winning portfolio of Rubbas Yar Khan — Creative Developer & UI/UX Designer specializing in bespoke digital experiences and interactive animations.',
-    images: ['/assets/images/herobg1.png'],
+      'Bespoke digital experiences, high-performance web animations, and UI/UX design by Rubbas Yar Khan.',
+    images: ['/assets/images/og-card.png'],
     creator: '@rubbasyarkhan',
   },
 };
