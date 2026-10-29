@@ -111,7 +111,9 @@ export const metadata: Metadata = {
     creator: '@rubbasyarkhan',
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'YOUR_GOOGLE_VERIFICATION_CODE',
+    google:
+      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+      'ygtRo14X-q0hvFEGZPfsIjmGp0pVJk1Pvoug_QPArSU',
   },
 };
 
