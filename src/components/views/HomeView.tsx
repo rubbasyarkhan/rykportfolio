@@ -700,11 +700,11 @@ export default function HomeView() {
                     src="/assets/images/faiq-aziz.jpeg"
                     alt="Faiq Aziz - Founder & Lead Photographer of Azizography Studio, Client Testimonial for Rubbas Yar Khan"
                     fill
-                    className="absolute inset-0 w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover object-[center_top] transition-transform duration-700 group-hover:scale-105"
                   />
 
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent via-35% pointer-events-none" />
 
                   {/* Overlaid Client Info */}
                   <div className="relative z-10 p-5 sm:p-6">
