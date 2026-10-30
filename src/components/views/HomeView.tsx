@@ -577,32 +577,13 @@ export default function HomeView() {
             <div className="testimonial-card relative z-[45] bg-white border border-[#E5E2DC] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.06)] p-6 sm:p-8 lg:p-12">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
                 {/* Left: Client Portrait (Adnan Taal) */}
-                <div className="lg:col-span-5 relative group overflow-hidden rounded-2xl border border-zinc-200 bg-[#0B0D10] min-h-[380px] sm:min-h-[440px] flex flex-col justify-end">
+                <div className="lg:col-span-5 relative group overflow-hidden rounded-2xl border border-zinc-200/80 bg-zinc-100 min-h-[380px] sm:min-h-[440px]">
                   <Image
                     src="/assets/images/adnan taal.jpeg"
                     alt="Adnan Taal - K-Town Cypher Project Lead & Client Testimonial for Rubbas Yar Khan"
                     fill
-                    className="absolute inset-0 w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
                   />
-
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
-
-                  {/* Overlaid Client Info */}
-                  <div className="relative z-10 p-5 sm:p-6">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white mb-2.5 shadow-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#F5B942]" />
-                      <span className="text-xs font-semibold tracking-wider uppercase text-amber-300 font-sans">
-                        Founder • Director
-                      </span>
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-black uppercase text-white tracking-tight leading-none mb-1 font-sans">
-                      Adnan Taal
-                    </h3>
-                    <p className="text-xs sm:text-sm font-medium text-zinc-300 tracking-wider font-sans">
-                      K-Town Cypher • Pakistan&apos;s #1 Hip-Hop Cypher
-                    </p>
-                  </div>
                 </div>
 
                 {/* Right: Endorsement Quote & Project Specs */}
@@ -637,15 +618,18 @@ export default function HomeView() {
                         <span className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-[0.2em] font-mono font-semibold block mb-1">
                           Client
                         </span>
-                        <span className="text-base sm:text-lg font-black text-zinc-900 font-sans tracking-tight block">
+                        <span className="text-base sm:text-lg font-normal text-zinc-900 font-sans tracking-tight block">
                           Adnan Taal
+                        </span>
+                        <span className="text-xs text-zinc-500 font-sans block mt-0.5">
+                          Founder • Director
                         </span>
                       </div>
                       <div>
                         <span className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-[0.2em] font-mono font-semibold block mb-1">
                           Scope
                         </span>
-                        <span className="text-base sm:text-lg font-bold text-zinc-800 font-sans tracking-tight block">
+                        <span className="text-base sm:text-lg font-normal text-zinc-700 font-sans tracking-tight block">
                           Digital Brand &amp; Web
                         </span>
                       </div>
@@ -653,7 +637,7 @@ export default function HomeView() {
                         <span className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-[0.2em] font-mono font-semibold block mb-1">
                           Movement
                         </span>
-                        <span className="text-base sm:text-lg font-bold text-[#B8810E] font-sans tracking-tight block">
+                        <span className="text-base sm:text-lg font-normal text-[#B8810E] font-sans tracking-tight block">
                           Street Hip-Hop
                         </span>
                       </div>
@@ -695,32 +679,13 @@ export default function HomeView() {
             <div className="testimonial-card relative z-[45] bg-white border border-[#E5E2DC] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.06)] p-6 sm:p-8 lg:p-12">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
                 {/* Left: Client Portrait (Faiq Aziz) */}
-                <div className="lg:col-span-5 relative group overflow-hidden rounded-2xl border border-zinc-200 bg-[#0B0D10] min-h-[380px] sm:min-h-[440px] flex flex-col justify-end">
+                <div className="lg:col-span-5 relative group overflow-hidden rounded-2xl border border-zinc-200/80 bg-zinc-100 min-h-[380px] sm:min-h-[440px]">
                   <Image
                     src="/assets/images/faiq-aziz.jpeg"
                     alt="Faiq Aziz - Founder & Lead Photographer of Azizography Studio, Client Testimonial for Rubbas Yar Khan"
                     fill
-                    className="absolute inset-0 w-full h-full object-cover object-[center_top] transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover object-[center_top] transition-transform duration-700 group-hover:scale-105"
                   />
-
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent via-35% pointer-events-none" />
-
-                  {/* Overlaid Client Info */}
-                  <div className="relative z-10 p-5 sm:p-6">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white mb-2.5 shadow-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#F5B942]" />
-                      <span className="text-xs font-semibold tracking-wider uppercase text-amber-300 font-sans">
-                        Founder • Visual Artist
-                      </span>
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-black uppercase text-white tracking-tight leading-none mb-1 font-sans">
-                      Faiq Aziz
-                    </h3>
-                    <p className="text-xs sm:text-sm font-medium text-zinc-300 tracking-wider font-sans">
-                      Azizography • Tour &amp; Concert Photography
-                    </p>
-                  </div>
                 </div>
 
                 {/* Right: Endorsement Quote & Project Specs */}
@@ -753,15 +718,18 @@ export default function HomeView() {
                         <span className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-[0.2em] font-mono font-semibold block mb-1">
                           Client
                         </span>
-                        <span className="text-base sm:text-lg font-black text-zinc-900 font-sans tracking-tight block">
+                        <span className="text-base sm:text-lg font-normal text-zinc-900 font-sans tracking-tight block">
                           Faiq Aziz
+                        </span>
+                        <span className="text-xs text-zinc-500 font-sans block mt-0.5">
+                          Founder • Lead Photographer
                         </span>
                       </div>
                       <div>
                         <span className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-[0.2em] font-mono font-semibold block mb-1">
                           Scope
                         </span>
-                        <span className="text-base sm:text-lg font-bold text-zinc-800 font-sans tracking-tight block">
+                        <span className="text-base sm:text-lg font-normal text-zinc-700 font-sans tracking-tight block">
                           Full-Stack &amp; Art Direction
                         </span>
                       </div>
@@ -769,7 +737,7 @@ export default function HomeView() {
                         <span className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-[0.2em] font-mono font-semibold block mb-1">
                           Movement
                         </span>
-                        <span className="text-base sm:text-lg font-bold text-[#B8810E] font-sans tracking-tight block">
+                        <span className="text-base sm:text-lg font-normal text-[#B8810E] font-sans tracking-tight block">
                           Tour Visuals
                         </span>
                       </div>
