@@ -82,30 +82,30 @@ export default function FullMenu({ isOpen, onClose }: FullMenuProps) {
       tl.set(menu, { display: 'flex' })
         .to(menu, {
           clipPath: 'circle(150% at 100% 0%)',
-          duration: 0.55,
+          duration: 0.36,
           ease: 'power3.inOut',
         })
         .from(
           menu.querySelectorAll('.full-menu-link'),
           {
-            y: 40,
+            y: 30,
             opacity: 0,
-            stagger: 0.05,
-            duration: 0.35,
+            stagger: 0.035,
+            duration: 0.28,
             ease: 'power4.out',
           },
-          '-=0.25'
+          '-=0.18'
         )
         .from(
           menu.querySelectorAll('.full-menu-meta'),
           {
-            y: 20,
+            y: 15,
             opacity: 0,
-            stagger: 0.08,
-            duration: 0.4,
+            stagger: 0.05,
+            duration: 0.3,
             ease: 'power3.out',
           },
-          '-=0.3'
+          '-=0.2'
         );
 
       timelineRef.current = tl;
@@ -113,12 +113,12 @@ export default function FullMenu({ isOpen, onClose }: FullMenuProps) {
 
     if (isOpen) {
       menu.setAttribute('data-open', 'true');
-      timelineRef.current.play();
+      timelineRef.current.timeScale(1).play();
       document.body.style.overflow = 'hidden';
     } else {
       menu.removeAttribute('data-open');
       if (timelineRef.current) {
-        timelineRef.current.reverse();
+        timelineRef.current.timeScale(1.4).reverse();
       }
       document.body.style.overflow = '';
     }

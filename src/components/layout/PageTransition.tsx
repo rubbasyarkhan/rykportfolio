@@ -24,7 +24,7 @@ export function PageTransitionProvider({ children }: { children: React.ReactNode
   const currentPathRef = useRef(pathname);
   const isFirstRender = useRef(true);
 
-  // Navigate to target route with circular curtain wipe
+  // Navigate to target route with high-speed circular curtain wipe
   const navigateTo = (href: string) => {
     // If same route, do nothing
     if (href === pathname || href === currentPathRef.current) return;
@@ -37,14 +37,17 @@ export function PageTransitionProvider({ children }: { children: React.ReactNode
 
     setIsTransitioning(true);
 
-    // Expand circular curtain from top right (100% 0% - matching hamburger origin)
+    // Warm up the target route chunk immediately
+    router.prefetch(href);
+
+    // Fast, ultra-smooth circular curtain from top right (hamburger origin)
     gsap.killTweensOf(overlay);
     gsap.fromTo(
       overlay,
       { clipPath: 'circle(0% at 100% 0%)', display: 'block' },
       {
         clipPath: 'circle(150% at 100% 0%)',
-        duration: 0.55,
+        duration: 0.32,
         ease: 'power3.inOut',
         onComplete: () => {
           router.push(href);
@@ -53,7 +56,7 @@ export function PageTransitionProvider({ children }: { children: React.ReactNode
     );
   };
 
-  // When pathname changes (new route has mounted), shrink and dismiss the circular curtain
+  // When pathname changes (new route has mounted), reveal page smoothly & instantly
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
@@ -64,18 +67,44 @@ export function PageTransitionProvider({ children }: { children: React.ReactNode
     const overlay = overlayRef.current;
     if (!overlay) return;
 
-    // Reveal new page by wiping toward bottom left
+    // Reset scroll to top before revealing
+    window.scrollTo(0, 0);
+
+    // Snappy outward reveal toward bottom left
     gsap.killTweensOf(overlay);
     gsap.to(overlay, {
       clipPath: 'circle(0% at 0% 100%)',
-      duration: 0.5,
-      ease: 'power3.inOut',
+      duration: 0.28,
+      ease: 'power3.out',
       onComplete: () => {
         gsap.set(overlay, { display: 'none', clipPath: 'circle(0% at 100% 0%)' });
         setIsTransitioning(false);
       },
     });
   }, [pathname]);
+
+  // Safety fallback: auto-dismiss if route transition ever stalls
+  useEffect(() => {
+    if (isTransitioning) {
+      const timeout = setTimeout(() => {
+        const overlay = overlayRef.current;
+        if (overlay) {
+          gsap.to(overlay, {
+            clipPath: 'circle(0% at 0% 100%)',
+            duration: 0.25,
+            ease: 'power2.out',
+            onComplete: () => {
+              if (overlayRef.current) {
+                gsap.set(overlayRef.current, { display: 'none', clipPath: 'circle(0% at 100% 0%)' });
+              }
+              setIsTransitioning(false);
+            },
+          });
+        }
+      }, 1400);
+      return () => clearTimeout(timeout);
+    }
+  }, [isTransitioning]);
 
   return (
     <PageTransitionContext.Provider value={{ navigateTo, isTransitioning }}>
@@ -98,7 +127,7 @@ export function PageTransitionProvider({ children }: { children: React.ReactNode
   );
 }
 
-// Reusable TransitionLink component for smooth page switches
+// Reusable TransitionLink component with instant prefetching on hover & touch
 export const TransitionLink = React.forwardRef<
   HTMLAnchorElement,
   {
@@ -106,10 +135,27 @@ export const TransitionLink = React.forwardRef<
     children: React.ReactNode;
     className?: string;
     onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+    onMouseEnter?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+    onTouchStart?: (e: React.TouchEvent<HTMLAnchorElement>) => void;
     [key: string]: any;
   }
->(function TransitionLink({ href, children, className = '', onClick, ...props }, ref) {
+>(function TransitionLink(
+  { href, children, className = '', onClick, onMouseEnter, onTouchStart, ...props },
+  ref
+) {
   const { navigateTo } = usePageTransition();
+  const router = useRouter();
+
+  const handlePrefetch = () => {
+    if (
+      !href.startsWith('http') &&
+      !href.startsWith('mailto:') &&
+      !href.startsWith('tel:') &&
+      !href.startsWith('#')
+    ) {
+      router.prefetch(href);
+    }
+  };
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     // External links or hash anchors pass through normally
@@ -129,7 +175,21 @@ export const TransitionLink = React.forwardRef<
   };
 
   return (
-    <a ref={ref} href={href} onClick={handleClick} className={className} {...props}>
+    <a
+      ref={ref}
+      href={href}
+      onClick={handleClick}
+      onMouseEnter={(e) => {
+        handlePrefetch();
+        if (onMouseEnter) onMouseEnter(e);
+      }}
+      onTouchStart={(e) => {
+        handlePrefetch();
+        if (onTouchStart) onTouchStart(e);
+      }}
+      className={className}
+      {...props}
+    >
       {children}
     </a>
   );

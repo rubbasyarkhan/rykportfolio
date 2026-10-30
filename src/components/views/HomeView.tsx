@@ -98,21 +98,21 @@ export default function HomeView() {
         });
       });
 
-      // 3. Testimonial card reveal
-      const testimonialCard = document.querySelector('.testimonial-card');
-      if (testimonialCard) {
-        gsap.from(testimonialCard, {
+      // 3. Testimonial cards reveal
+      const testimonialCards = document.querySelectorAll('.testimonial-card');
+      testimonialCards.forEach((card) => {
+        gsap.from(card, {
           scrollTrigger: {
-            trigger: '.testimonial-section',
-            start: 'top 80%',
+            trigger: card,
+            start: 'top 85%',
             toggleActions: 'play none none reverse',
           },
-          y: 60,
+          y: 50,
           opacity: 0,
-          duration: 1.1,
+          duration: 0.9,
           ease: 'power3.out',
         });
-      }
+      });
 
       // 4. Discipline cards animation
       const cards = document.querySelectorAll('.discipline-card');
@@ -571,119 +571,237 @@ export default function HomeView() {
             </div>
           </div>
 
-          {/* Main Testimonial Showcase Card */}
-          <div className="testimonial-card relative z-[45] bg-white border border-[#E5E2DC] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.06)] p-6 sm:p-8 lg:p-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-              {/* Left: Client Portrait (Adnan Taal) */}
-              <div className="lg:col-span-5 relative group overflow-hidden rounded-2xl border border-zinc-200 bg-[#0B0D10] min-h-[380px] sm:min-h-[440px] flex flex-col justify-end">
-                <Image
-                  src="/assets/images/adnan taal.jpeg"
-                  alt="Adnan Taal - K-Town Cypher Project Lead & Client Testimonial for Rubbas Yar Khan"
-                  fill
-                  className="absolute inset-0 w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
-                />
+          {/* Testimonial Showcase Cards Container */}
+          <div className="flex flex-col gap-10 sm:gap-14">
+            {/* 1. Adnan Taal (K-Town Cypher) */}
+            <div className="testimonial-card relative z-[45] bg-white border border-[#E5E2DC] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.06)] p-6 sm:p-8 lg:p-12">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+                {/* Left: Client Portrait (Adnan Taal) */}
+                <div className="lg:col-span-5 relative group overflow-hidden rounded-2xl border border-zinc-200 bg-[#0B0D10] min-h-[380px] sm:min-h-[440px] flex flex-col justify-end">
+                  <Image
+                    src="/assets/images/adnan taal.jpeg"
+                    alt="Adnan Taal - K-Town Cypher Project Lead & Client Testimonial for Rubbas Yar Khan"
+                    fill
+                    className="absolute inset-0 w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+                  />
 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
 
-                {/* Overlaid Client Info */}
-                <div className="relative z-10 p-5 sm:p-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white mb-2.5 shadow-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#F5B942]" />
-                    <span className="text-xs font-semibold tracking-wider uppercase text-amber-300 font-sans">
-                      Founder • Director
-                    </span>
+                  {/* Overlaid Client Info */}
+                  <div className="relative z-10 p-5 sm:p-6">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white mb-2.5 shadow-sm">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#F5B942]" />
+                      <span className="text-xs font-semibold tracking-wider uppercase text-amber-300 font-sans">
+                        Founder • Director
+                      </span>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-black uppercase text-white tracking-tight leading-none mb-1 font-sans">
+                      Adnan Taal
+                    </h3>
+                    <p className="text-xs sm:text-sm font-medium text-zinc-300 tracking-wider font-sans">
+                      K-Town Cypher • Pakistan&apos;s #1 Hip-Hop Cypher
+                    </p>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-black uppercase text-white tracking-tight leading-none mb-1 font-sans">
-                    Adnan Taal
-                  </h3>
-                  <p className="text-xs sm:text-sm font-medium text-zinc-300 tracking-wider font-sans">
-                    K-Town Cypher • Pakistan&apos;s #1 Hip-Hop Cypher
-                  </p>
                 </div>
-              </div>
 
-              {/* Right: Endorsement Quote & Project Specs */}
-              <div className="lg:col-span-7 flex flex-col justify-between py-2 sm:py-4">
-                <div className="my-auto py-6 sm:py-8">
-                  <div className="text-4xl sm:text-5xl font-serif text-[#F4B946]/50 leading-none select-none -mb-3">
-                    &ldquo;
+                {/* Right: Endorsement Quote & Project Specs */}
+                <div className="lg:col-span-7 flex flex-col justify-between py-2 sm:py-4">
+                  <div className="my-auto py-6 sm:py-8">
+                    <div className="text-4xl sm:text-5xl font-serif text-[#F4B946]/50 leading-none select-none -mb-3">
+                      &ldquo;
+                    </div>
+                    <blockquote className="text-lg sm:text-xl lg:text-[1.65rem] font-medium text-zinc-900 leading-relaxed tracking-tight font-sans">
+                      I’m really happy with the work you’ve done on the{' '}
+                      <a
+                        href="https://ktowncypher.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-zinc-900 font-bold underline decoration-[#F4B946] decoration-2 underline-offset-4 hover:text-[#D99A1E] transition-colors"
+                      >
+                        K-Town Cypher website
+                      </a>
+                      . You did an amazing job bringing the whole concept and
+                      vision of K-Town Cypher to life. I’m genuinely very satisfied
+                      with the final result and really appreciate your{' '}
+                      <span className="text-[#B8810E] font-bold">
+                        effort and creativity
+                      </span>{' '}
+                      throughout the process.
+                    </blockquote>
                   </div>
-                  <blockquote className="text-lg sm:text-xl lg:text-[1.65rem] font-medium text-zinc-900 leading-relaxed tracking-tight font-sans">
-                    I’m really happy with the work you’ve done on the{' '}
+
+                  <div className="pt-6 border-t border-zinc-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-xs font-mono">
+                      <div>
+                        <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">
+                          Client
+                        </span>
+                        <span className="text-zinc-900 font-bold text-sm font-sans">
+                          Adnan Taal
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">
+                          Scope
+                        </span>
+                        <span className="text-zinc-700 font-medium font-sans">
+                          Digital Brand &amp; Web
+                        </span>
+                      </div>
+                      <div className="col-span-2 sm:col-span-1">
+                        <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">
+                          Movement
+                        </span>
+                        <span className="text-[#B8810E] font-bold font-sans">
+                          Street Hip-Hop
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Awwwards-style Tilted Arrow Button to K-Town Cypher */}
                     <a
                       href="https://ktowncypher.com/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-zinc-900 font-bold underline decoration-[#F4B946] decoration-2 underline-offset-4 hover:text-[#D99A1E] transition-colors"
+                      className="group/arrow inline-flex items-center gap-3.5 px-6 py-3.5 rounded-full bg-zinc-900 hover:bg-[#F5B942] text-white hover:text-zinc-950 transition-all duration-300 shadow-md hover:shadow-xl self-start sm:self-auto cursor-pointer"
+                      aria-label="Visit K-Town Cypher Website"
                     >
-                      K-Town Cypher website
+                      <span className="text-xs sm:text-sm font-bold uppercase tracking-wider font-sans">
+                        Visit Website
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-white/15 group-hover/arrow:bg-black/15 flex items-center justify-center transition-transform duration-300">
+                        <svg
+                          className="w-4 h-4 transition-transform duration-300 group-hover/arrow:translate-x-0.5 group-hover/arrow:-translate-y-0.5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M7 17L17 7M17 7H7M17 7V17"
+                          />
+                        </svg>
+                      </div>
                     </a>
-                    . You did an amazing job bringing the whole concept and
-                    vision of K-Town Cypher to life. I’m genuinely very satisfied
-                    with the final result and really appreciate your{' '}
-                    <span className="text-[#B8810E] font-bold">
-                      effort and creativity
-                    </span>{' '}
-                    throughout the process.
-                  </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. Faiq Aziz (Azizography Studio) */}
+            <div className="testimonial-card relative z-[45] bg-white border border-[#E5E2DC] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.06)] p-6 sm:p-8 lg:p-12">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+                {/* Left: Client Portrait (Faiq Aziz) */}
+                <div className="lg:col-span-5 relative group overflow-hidden rounded-2xl border border-zinc-200 bg-[#0B0D10] min-h-[380px] sm:min-h-[440px] flex flex-col justify-end">
+                  <Image
+                    src="/assets/images/faiq-aziz.jpeg"
+                    alt="Faiq Aziz - Founder & Lead Photographer of Azizography Studio, Client Testimonial for Rubbas Yar Khan"
+                    fill
+                    className="absolute inset-0 w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+                  />
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
+
+                  {/* Overlaid Client Info */}
+                  <div className="relative z-10 p-5 sm:p-6">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white mb-2.5 shadow-sm">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#F5B942]" />
+                      <span className="text-xs font-semibold tracking-wider uppercase text-amber-300 font-sans">
+                        Founder • Visual Artist
+                      </span>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-black uppercase text-white tracking-tight leading-none mb-1 font-sans">
+                      Faiq Aziz
+                    </h3>
+                    <p className="text-xs sm:text-sm font-medium text-zinc-300 tracking-wider font-sans">
+                      Azizography • Tour &amp; Concert Photography
+                    </p>
+                  </div>
                 </div>
 
-                <div className="pt-6 border-t border-zinc-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5">
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-xs font-mono">
-                    <div>
-                      <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">
-                        Client
-                      </span>
-                      <span className="text-zinc-900 font-bold text-sm font-sans">
-                        Adnan Taal
-                      </span>
+                {/* Right: Endorsement Quote & Project Specs */}
+                <div className="lg:col-span-7 flex flex-col justify-between py-2 sm:py-4">
+                  <div className="my-auto py-6 sm:py-8">
+                    <div className="text-4xl sm:text-5xl font-serif text-[#F4B946]/50 leading-none select-none -mb-3">
+                      &ldquo;
                     </div>
-                    <div>
-                      <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">
-                        Scope
+                    <blockquote className="text-lg sm:text-xl lg:text-[1.65rem] font-medium text-zinc-900 leading-relaxed tracking-tight font-sans">
+                      Rubbas completely redefined how my work is experienced online. For the{' '}
+                      <a
+                        href="https://azizography.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-zinc-900 font-bold underline decoration-[#F4B946] decoration-2 underline-offset-4 hover:text-[#D99A1E] transition-colors"
+                      >
+                        Azizography platform
+                      </a>
+                      , he translated the raw speed and energy of live concert photography into a buttery smooth, high-speed digital gallery. The custom aperture loader, fluid masonry transitions, and instant image delivery showcase my imagery at its absolute best.{' '}
+                      <span className="text-[#B8810E] font-bold">
+                        His attention to detail and design aesthetic are unmatched.
                       </span>
-                      <span className="text-zinc-700 font-medium font-sans">
-                        Digital Brand &amp; Web
-                      </span>
-                    </div>
-                    <div className="col-span-2 sm:col-span-1">
-                      <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">
-                        Movement
-                      </span>
-                      <span className="text-[#B8810E] font-bold font-sans">
-                        Street Hip-Hop
-                      </span>
-                    </div>
+                    </blockquote>
                   </div>
 
-                  {/* Awwwards-style Tilted Arrow Button to K-Town Cypher */}
-                  <a
-                    href="https://ktowncypher.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group/arrow inline-flex items-center gap-3.5 px-6 py-3.5 rounded-full bg-zinc-900 hover:bg-[#F5B942] text-white hover:text-zinc-950 transition-all duration-300 shadow-md hover:shadow-xl self-start sm:self-auto cursor-pointer"
-                    aria-label="Visit K-Town Cypher Website"
-                  >
-                    <span className="text-xs sm:text-sm font-bold uppercase tracking-wider font-sans">
-                      Visit Website
-                    </span>
-                    <div className="w-8 h-8 rounded-full bg-white/15 group-hover/arrow:bg-black/15 flex items-center justify-center transition-transform duration-300">
-                      <svg
-                        className="w-4 h-4 transition-transform duration-300 group-hover/arrow:translate-x-0.5 group-hover/arrow:-translate-y-0.5"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M7 17L17 7M17 7H7M17 7V17"
-                        />
-                      </svg>
+                  <div className="pt-6 border-t border-zinc-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-xs font-mono">
+                      <div>
+                        <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">
+                          Client
+                        </span>
+                        <span className="text-zinc-900 font-bold text-sm font-sans">
+                          Faiq Aziz
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">
+                          Scope
+                        </span>
+                        <span className="text-zinc-700 font-medium font-sans">
+                          Full-Stack &amp; Art Direction
+                        </span>
+                      </div>
+                      <div className="col-span-2 sm:col-span-1">
+                        <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">
+                          Movement
+                        </span>
+                        <span className="text-[#B8810E] font-bold font-sans">
+                          Tour Visuals
+                        </span>
+                      </div>
                     </div>
-                  </a>
+
+                    {/* Awwwards-style Tilted Arrow Button to Azizography */}
+                    <a
+                      href="https://azizography.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/arrow inline-flex items-center gap-3.5 px-6 py-3.5 rounded-full bg-zinc-900 hover:bg-[#F5B942] text-white hover:text-zinc-950 transition-all duration-300 shadow-md hover:shadow-xl self-start sm:self-auto cursor-pointer"
+                      aria-label="Visit Azizography Website"
+                    >
+                      <span className="text-xs sm:text-sm font-bold uppercase tracking-wider font-sans">
+                        Visit Website
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-white/15 group-hover/arrow:bg-black/15 flex items-center justify-center transition-transform duration-300">
+                        <svg
+                          className="w-4 h-4 transition-transform duration-300 group-hover/arrow:translate-x-0.5 group-hover/arrow:-translate-y-0.5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M7 17L17 7M17 7H7M17 7V17"
+                          />
+                        </svg>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
