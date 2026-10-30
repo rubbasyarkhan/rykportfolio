@@ -684,7 +684,7 @@ export default function HomeView() {
                     src="/assets/images/faiq-aziz.jpeg"
                     alt="Faiq Aziz - Founder & Lead Photographer of Azizography Studio, Client Testimonial for Rubbas Yar Khan"
                     fill
-                    className="object-cover object-[center_top] transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover object-[center] transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
 
