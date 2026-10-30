@@ -153,7 +153,7 @@ export const projects: Project[] = [
     year: "2024",
     client: "Aziz (Tour & Concert Photographer)",
     role: "Full-Stack Engineering & Art Direction",
-    liveUrl: "https://azizography.com/",
+    liveUrl: "hhttps://clicksbyazizography.netlify.app/",
     heroImage: "/assets/images/project-azizography-main.png",
     thumbnail: "/assets/images/project-azizography-main.png",
     overview: "A high-performance editorial, concert, and tour photography curator platform engineered with dynamic masonry curation, WebGL liquid carousels, and client-side WebP compression.",

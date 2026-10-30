@@ -684,7 +684,7 @@ export default function HomeView() {
                     src="/assets/images/faiq-aziz.jpeg"
                     alt="Faiq Aziz - Founder & Lead Photographer of Azizography Studio, Client Testimonial for Rubbas Yar Khan"
                     fill
-                    className="object-cover object-[center] transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover object-[top] transition-transform duration-700 group-hover:scale-104"
                   />
                 </div>
 
@@ -697,7 +697,7 @@ export default function HomeView() {
                     <blockquote className="text-lg sm:text-xl lg:text-[1.65rem] font-medium text-zinc-900 leading-relaxed tracking-tight font-sans">
                       Honestly, working with Rubbas on the{' '}
                       <a
-                        href="https://azizography.com/"
+                        href="hhttps://clicksbyazizography.netlify.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-zinc-900 font-bold underline decoration-[#F4B946] decoration-2 underline-offset-4 hover:text-[#D99A1E] transition-colors"
@@ -745,7 +745,7 @@ export default function HomeView() {
 
                     {/* Awwwards-style Tilted Arrow Button to Azizography */}
                     <a
-                      href="https://azizography.com/"
+                      href="hhttps://clicksbyazizography.netlify.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group/arrow inline-flex items-center gap-3.5 px-6 sm:px-7 py-3.5 rounded-full bg-zinc-900 hover:bg-[#F5B942] text-white hover:text-zinc-950 transition-all duration-300 shadow-md hover:shadow-xl shrink-0 whitespace-nowrap cursor-pointer select-none self-start md:self-auto"
@@ -853,9 +853,8 @@ export default function HomeView() {
             {disciplines.map((item, idx) => (
               <div
                 key={item.id}
-                className={`discipline-card group py-6 sm:py-8 border-b border-white/10 relative transition-colors duration-300 ${
-                  idx === 6 ? 'md:col-span-2' : ''
-                }`}
+                className={`discipline-card group py-6 sm:py-8 border-b border-white/10 relative transition-colors duration-300 ${idx === 6 ? 'md:col-span-2' : ''
+                  }`}
               >
                 <div className="absolute left-0 bottom-0 w-full h-[1px] bg-white/10 group-hover:bg-[#F5B942] transition-colors duration-300" />
                 <div className="flex items-start gap-4 sm:gap-5">
