@@ -631,29 +631,29 @@ export default function HomeView() {
                     </blockquote>
                   </div>
 
-                  <div className="pt-6 border-t border-zinc-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-xs font-mono">
+                  <div className="pt-6 border-t border-zinc-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 flex-1">
                       <div>
-                        <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">
+                        <span className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-[0.2em] font-mono font-semibold block mb-1">
                           Client
                         </span>
-                        <span className="text-zinc-900 font-bold text-sm font-sans">
+                        <span className="text-base sm:text-lg font-black text-zinc-900 font-sans tracking-tight block">
                           Adnan Taal
                         </span>
                       </div>
                       <div>
-                        <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">
+                        <span className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-[0.2em] font-mono font-semibold block mb-1">
                           Scope
                         </span>
-                        <span className="text-zinc-700 font-medium font-sans">
+                        <span className="text-base sm:text-lg font-bold text-zinc-800 font-sans tracking-tight block">
                           Digital Brand &amp; Web
                         </span>
                       </div>
                       <div className="col-span-2 sm:col-span-1">
-                        <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">
+                        <span className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-[0.2em] font-mono font-semibold block mb-1">
                           Movement
                         </span>
-                        <span className="text-[#B8810E] font-bold font-sans">
+                        <span className="text-base sm:text-lg font-bold text-[#B8810E] font-sans tracking-tight block">
                           Street Hip-Hop
                         </span>
                       </div>
@@ -664,13 +664,13 @@ export default function HomeView() {
                       href="https://ktowncypher.com/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/arrow inline-flex items-center gap-3.5 px-6 py-3.5 rounded-full bg-zinc-900 hover:bg-[#F5B942] text-white hover:text-zinc-950 transition-all duration-300 shadow-md hover:shadow-xl self-start sm:self-auto cursor-pointer"
+                      className="group/arrow inline-flex items-center gap-3.5 px-6 sm:px-7 py-3.5 rounded-full bg-zinc-900 hover:bg-[#F5B942] text-white hover:text-zinc-950 transition-all duration-300 shadow-md hover:shadow-xl shrink-0 whitespace-nowrap cursor-pointer select-none self-start md:self-auto"
                       aria-label="Visit K-Town Cypher Website"
                     >
-                      <span className="text-xs sm:text-sm font-bold uppercase tracking-wider font-sans">
+                      <span className="text-xs sm:text-sm font-bold uppercase tracking-wider font-sans whitespace-nowrap">
                         Visit Website
                       </span>
-                      <div className="w-8 h-8 rounded-full bg-white/15 group-hover/arrow:bg-black/15 flex items-center justify-center transition-transform duration-300">
+                      <div className="w-8 h-8 rounded-full bg-white/15 group-hover/arrow:bg-black/15 flex items-center justify-center transition-colors duration-300 shrink-0">
                         <svg
                           className="w-4 h-4 transition-transform duration-300 group-hover/arrow:translate-x-0.5 group-hover/arrow:-translate-y-0.5"
                           fill="none"
@@ -730,45 +730,46 @@ export default function HomeView() {
                       &ldquo;
                     </div>
                     <blockquote className="text-lg sm:text-xl lg:text-[1.65rem] font-medium text-zinc-900 leading-relaxed tracking-tight font-sans">
-                      Rubbas completely redefined how my work is experienced online. For the{' '}
+                      Honestly, working with Rubbas on the{' '}
                       <a
                         href="https://azizography.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-zinc-900 font-bold underline decoration-[#F4B946] decoration-2 underline-offset-4 hover:text-[#D99A1E] transition-colors"
                       >
-                        Azizography platform
-                      </a>
-                      , he translated the raw speed and energy of live concert photography into a buttery smooth, high-speed digital gallery. The custom aperture loader, fluid masonry transitions, and instant image delivery showcase my imagery at its absolute best.{' '}
+                        Azizography website
+                      </a>{' '}
+                      was an incredible experience. As a concert photographer, I needed a portfolio that felt just as fast, raw, and energetic as the live shows I shoot, without losing any photo quality. Rubbas totally understood the vision from day one. He brought so much creative energy to the table, and seeing how smoothly everything runs on the live site is amazing. Really appreciate the{' '}
                       <span className="text-[#B8810E] font-bold">
-                        His attention to detail and design aesthetic are unmatched.
-                      </span>
+                        dedication and genuine craft
+                      </span>{' '}
+                      he put into every single detail.
                     </blockquote>
                   </div>
 
-                  <div className="pt-6 border-t border-zinc-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-xs font-mono">
+                  <div className="pt-6 border-t border-zinc-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 flex-1">
                       <div>
-                        <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">
+                        <span className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-[0.2em] font-mono font-semibold block mb-1">
                           Client
                         </span>
-                        <span className="text-zinc-900 font-bold text-sm font-sans">
+                        <span className="text-base sm:text-lg font-black text-zinc-900 font-sans tracking-tight block">
                           Faiq Aziz
                         </span>
                       </div>
                       <div>
-                        <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">
+                        <span className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-[0.2em] font-mono font-semibold block mb-1">
                           Scope
                         </span>
-                        <span className="text-zinc-700 font-medium font-sans">
+                        <span className="text-base sm:text-lg font-bold text-zinc-800 font-sans tracking-tight block">
                           Full-Stack &amp; Art Direction
                         </span>
                       </div>
                       <div className="col-span-2 sm:col-span-1">
-                        <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">
+                        <span className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-[0.2em] font-mono font-semibold block mb-1">
                           Movement
                         </span>
-                        <span className="text-[#B8810E] font-bold font-sans">
+                        <span className="text-base sm:text-lg font-bold text-[#B8810E] font-sans tracking-tight block">
                           Tour Visuals
                         </span>
                       </div>
@@ -779,13 +780,13 @@ export default function HomeView() {
                       href="https://azizography.com/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/arrow inline-flex items-center gap-3.5 px-6 py-3.5 rounded-full bg-zinc-900 hover:bg-[#F5B942] text-white hover:text-zinc-950 transition-all duration-300 shadow-md hover:shadow-xl self-start sm:self-auto cursor-pointer"
+                      className="group/arrow inline-flex items-center gap-3.5 px-6 sm:px-7 py-3.5 rounded-full bg-zinc-900 hover:bg-[#F5B942] text-white hover:text-zinc-950 transition-all duration-300 shadow-md hover:shadow-xl shrink-0 whitespace-nowrap cursor-pointer select-none self-start md:self-auto"
                       aria-label="Visit Azizography Website"
                     >
-                      <span className="text-xs sm:text-sm font-bold uppercase tracking-wider font-sans">
+                      <span className="text-xs sm:text-sm font-bold uppercase tracking-wider font-sans whitespace-nowrap">
                         Visit Website
                       </span>
-                      <div className="w-8 h-8 rounded-full bg-white/15 group-hover/arrow:bg-black/15 flex items-center justify-center transition-transform duration-300">
+                      <div className="w-8 h-8 rounded-full bg-white/15 group-hover/arrow:bg-black/15 flex items-center justify-center transition-colors duration-300 shrink-0">
                         <svg
                           className="w-4 h-4 transition-transform duration-300 group-hover/arrow:translate-x-0.5 group-hover/arrow:-translate-y-0.5"
                           fill="none"
