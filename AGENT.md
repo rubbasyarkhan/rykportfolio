@@ -130,8 +130,7 @@ rykportfolio/
 
 ### E. Contact Page (`src/app/contact/page.tsx`)
 - Heading: **`LET'S WORK TOGETHER`** (`text-[clamp(3.5rem,8.5vw,7rem)] font-extrabold`).
-- Inputs: Resting state is `border-2 border-transparent` (no visible border lines). When focused/active, it lights up with `focus:border-[#ef9d71]`.
-- Submission: AJAX `POST` to `https://formsubmit.co/ajax/rubbasyarkhan007@gmail.com` with `_captcha: "false"`, `_template: "table"`.
+- Direct Channels (No Form): 3 high-contrast interactive cards (`bg-[#13161B]`, `border-white/10`, `.card` cursor hover target) for **Message on WhatsApp** (`https://wa.me/923710290861`), **Send a Mail** (`mailto:rubbasyarkhan007@gmail.com`), and **Connect on LinkedIn** (`https://www.linkedin.com/in/rubbas-yar-khan`).
 - Footer: `<Footer />` detects `pathname === '/contact'` and hides the duplicate `"LET'S BUILD SOMETHING"` / `"START NOW"` CTA block to avoid redundant loops.
 
 ### F. Projects Database (`src/data/projects.ts`)

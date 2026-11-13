@@ -196,7 +196,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/in/rubbasyarkhan"
+                href="https://www.linkedin.com/in/rubbas-yar-khan"
                 className="group flex items-center gap-1.5 text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -260,9 +260,14 @@ export default function Footer() {
           >
             rubbasyarkhan007@gmail.com
           </a>
-          <p className="mt-3 text-xs tracking-widest opacity-60 font-mono">
+          <a
+            href="https://wa.me/923710290861"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block mt-3 text-xs tracking-widest opacity-60 hover:opacity-100 transition font-mono"
+          >
             (+92) 371-029-0861
-          </p>
+          </a>
         </div>
 
         {/* Col 4: Location */}

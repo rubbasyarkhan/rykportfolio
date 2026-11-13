@@ -33,7 +33,7 @@ const SOCIAL_LINKS = [
   },
   {
     name: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/rubbasyarkhan',
+    href: 'https://www.linkedin.com/in/rubbas-yar-khan',
     icon: LinkedinIcon,
   },
   {

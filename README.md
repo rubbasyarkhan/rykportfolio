@@ -18,7 +18,7 @@ Personal portfolio and creative development showcase of **Rubbas Yar Khan (RUBBA
 - **Dual-Theme System**: Dynamic switching between Obsidian Dark (`#0B0D10`) and Linen Light (`#F1EFEB`), powered by GSAP ScrollTrigger intersection observers.
 - **Lenis Smooth Scroll & GSAP Sync**: Native physics-based smooth scrolling integrated with the GSAP ticker for stutter-free scrolling and scrubbing.
 - **Interactive Chromatic Canvas & 3D Tilt Avatar**: Interactive canvas trail on light sections and mouse-reactive 3D perspective avatar on the about section.
-- **Accessible Contact Experience**: Interactive form with active terracotta orange borders (`#ef9d71`), custom select dropdown arrow, FormSubmit AJAX integration, and smart footer CTA suppression.
+- **Frictionless Contact Experience**: Direct, one-click outreach cards for **Message on WhatsApp**, **Send a Mail**, and **Connect on LinkedIn** with smart footer CTA suppression.
 - **Next-Gen Image Formats**: Next.js image configuration serving AVIF and WebP with priority loading on Above-The-Fold hero media.
 
 ---

@@ -137,96 +137,114 @@
             </div>
         </div>
 
-        <section class="min-h-screen bg-black text-white py-24 sm:py-28 md:py-32 px-5 sm:px-8 md:px-16 lg:px-20 font-sans">
-            <div class="max-w-6xl mx-auto">
+        <section class="min-h-screen bg-[#0B0D10] text-white py-24 sm:py-28 md:py-36 px-5 sm:px-8 md:px-16 lg:px-20 font-sans">
+            <div class="max-w-4xl mx-auto">
 
-                <div class="flex flex-col md:flex-row justify-between items-start mb-16 md:mb-20 gap-6 md:gap-8 pt-6">
-                    <h1 class="text-[clamp(2.8rem,7vw,6rem)] font-bold uppercase leading-none tracking-tighter">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 md:mb-20 gap-6 md:gap-8 pt-6">
+                    <h1 class="text-[clamp(3.5rem,8.5vw,7rem)] font-extrabold uppercase leading-[0.88] tracking-tighter">
                         Let's Work <br> Together
                     </h1>
-                    <div class="text-left md:text-right">
-                        <p class="text-gray-400 text-xs uppercase tracking-widest mb-1">[ Fill the form below ]</p>
-                        <p class="text-sm md:text-base text-gray-300">Let's carve your idea into <br class="hidden md:inline"> something amazing
+                    <div class="text-left md:text-right max-w-sm md:max-w-md">
+                        <p class="text-sm sm:text-base text-zinc-300 leading-relaxed">
+                            I don't want you to fill out a form and wait 2–3 business days for a reply.
+                            <span class="text-[#F5B942] font-semibold">Let's solve the problem and cater to your needs right now.</span>
                         </p>
                     </div>
                 </div>
 
-                <form id="contact-form" class="space-y-8 sm:space-y-12" action="https://formsubmit.co/rubbasyarkhan007@gmail.com" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="New Contact Form Message">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://rubbasyarkhan.netlify.app/">
-                    
-                    <div id="form-feedback" class="hidden rounded-sm p-4 text-sm font-medium transition-all" role="alert" aria-live="polite"></div>
+                <!-- 3 Direct Contact Options -->
+                <div class="space-y-5 sm:space-y-6">
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 sm:gap-y-8">
-
-                        <div class="space-y-3">
-                            <label for="first_name" class="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider cursor-pointer">
-                                <span class="w-2 h-2 bg-[#ef9d71] rounded-full"></span> First Name
-                            </label>
-                            <input id="first_name" type="text" name="first_name" placeholder="RUBBAS" required
-                                class="w-full bg-[#1A1A1A] border-none rounded-sm p-3.5 sm:p-4 text-sm sm:text-base text-gray-300 placeholder:text-gray-600 focus:ring-2 focus:ring-[#ef9d71] outline-none transition-all">
-                        </div>
-
-                        <div class="space-y-3">
-                            <label for="last_name" class="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider cursor-pointer">
-                                <span class="w-2 h-2 bg-[#ef9d71] rounded-full"></span> Last Name
-                            </label>
-                            <input id="last_name" type="text" name="last_name" placeholder="YAR KHAN" required
-                                class="w-full bg-[#1A1A1A] border-none rounded-sm p-3.5 sm:p-4 text-sm sm:text-base text-gray-300 placeholder:text-gray-600 focus:ring-2 focus:ring-[#ef9d71] outline-none transition-all">
-                        </div>
-
-                        <div class="space-y-3 md:col-span-2">
-                            <label for="email" class="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider cursor-pointer">
-                                <span class="w-2 h-2 bg-[#ef9d71] rounded-full"></span> How can we reach you
-                            </label>
-                            <input id="email" type="email" name="email" placeholder="rubbasyarkhan007@gmail.com" required
-                                class="w-full bg-[#1A1A1A] border-none rounded-sm p-3.5 sm:p-4 text-sm sm:text-base text-gray-300 placeholder:text-gray-600 focus:ring-2 focus:ring-[#ef9d71] outline-none transition-all">
-                        </div>
-
-                        <div class="space-y-3 md:col-span-2">
-                            <label for="service" class="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider cursor-pointer">
-                                <span class="w-2 h-2 bg-[#ef9d71] rounded-full"></span> Service Required
-                            </label>
-
-                            <div class="relative group">
-                                <select id="service" name="service" required
-                                    class="w-full bg-[#1A1A1A] border-none rounded-sm p-3.5 sm:p-4 text-sm sm:text-base text-gray-300 focus:ring-2 focus:ring-[#ef9d71] outline-none appearance-none cursor-pointer pr-12 transition-all">
-                                    <option value="" disabled selected>Select a service</option>
-                                    <option value="web-design">Web & App Designing</option>
-                                    <option value="web-dev">Web Development</option>
-                                    <option value="app-dev">App Development</option>
-                                    <option value="bookkeeping">Bookkeeping</option>
-                                    <option value="commercial">Commercial Projects</option>
-                                    <option value="other">Other Services</option>
-                                </select>
-
-                                <div
-                                    class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500 group-hover:text-[#ef9d71] transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="m6 9 6 6 6-6" />
-                                    </svg>
+                    <!-- Message on WhatsApp -->
+                    <a href="https://wa.me/923710290861?text=Hi%20Rubbas%2C%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20project!"
+                        target="_blank" rel="noopener noreferrer"
+                        class="card group block relative bg-[#13161B] border border-white/10 hover:border-[#F5B942]/45 rounded-2xl p-6 sm:p-8 md:p-9 transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                            <div class="flex items-start gap-4 sm:gap-6 flex-1">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white/[0.04] border border-white/10 group-hover:border-[#F5B942] group-hover:bg-[#F5B942] flex items-center justify-center text-[#F5B942] group-hover:text-[#0B0D10] transition-colors duration-500 flex-shrink-0 mt-0.5 text-xl">
+                                    <i class="ri-whatsapp-line"></i>
+                                </div>
+                                <div class="space-y-2 flex-1">
+                                    <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-white group-hover:text-[#F5B942] transition-colors duration-300">
+                                        Message on WhatsApp
+                                    </h2>
+                                    <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                                        Reach out directly on WhatsApp for quick discussions or project inquiries.
+                                    </p>
+                                    <p class="text-xs sm:text-sm font-mono text-zinc-200 pt-1">(+92) 371-029-0861</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-end shrink-0">
+                                <div class="inline-flex items-center gap-3.5 pl-6 pr-2 py-2 rounded-full border border-white/15 bg-white/[0.03] group-hover:border-[#F5B942] group-hover:bg-[#F5B942] group-hover:text-[#0B0D10] transition-all duration-500">
+                                    <span class="text-xs sm:text-sm font-bold uppercase tracking-[0.15em] whitespace-nowrap">Start Chat</span>
+                                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 group-hover:bg-[#0B0D10] text-white group-hover:text-[#F5B942] flex items-center justify-center transition-colors duration-500">
+                                        <i class="ri-arrow-right-up-line text-base"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </a>
 
-                        <div class="space-y-3 md:col-span-2">
-                            <label for="message" class="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider cursor-pointer">
-                                <span class="w-2 h-2 bg-[#ef9d71] rounded-full"></span> Message
-                            </label>
-                            <textarea id="message" name="message" rows="5" placeholder="Give us an idea of what you need." required
-                                class="w-full bg-[#1A1A1A] border-none rounded-sm p-3.5 sm:p-4 text-sm sm:text-base text-gray-300 placeholder:text-gray-600 focus:ring-2 focus:ring-[#ef9d71] outline-none transition-all resize-none"></textarea>
+                    <!-- Send a Mail -->
+                    <a href="mailto:rubbasyarkhan007@gmail.com?subject=Project%20Inquiry%20%E2%80%94%20Let's%20Work%20Together"
+                        class="card group block relative bg-[#13161B] border border-white/10 hover:border-[#F5B942]/45 rounded-2xl p-6 sm:p-8 md:p-9 transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                            <div class="flex items-start gap-4 sm:gap-6 flex-1">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white/[0.04] border border-white/10 group-hover:border-[#F5B942] group-hover:bg-[#F5B942] flex items-center justify-center text-[#F5B942] group-hover:text-[#0B0D10] transition-colors duration-500 flex-shrink-0 mt-0.5 text-xl">
+                                    <i class="ri-mail-send-line"></i>
+                                </div>
+                                <div class="space-y-2 flex-1">
+                                    <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-white group-hover:text-[#F5B942] transition-colors duration-300">
+                                        Send a Mail
+                                    </h2>
+                                    <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                                        Send your project details or collaboration ideas straight to my email.
+                                    </p>
+                                    <p class="text-xs sm:text-sm font-mono text-zinc-200 pt-1 break-all">rubbasyarkhan007@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-end shrink-0">
+                                <div class="inline-flex items-center gap-3.5 pl-6 pr-2 py-2 rounded-full border border-white/15 bg-white/[0.03] group-hover:border-[#F5B942] group-hover:bg-[#F5B942] group-hover:text-[#0B0D10] transition-all duration-500">
+                                    <span class="text-xs sm:text-sm font-bold uppercase tracking-[0.15em] whitespace-nowrap">Write Mail</span>
+                                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 group-hover:bg-[#0B0D10] text-white group-hover:text-[#F5B942] flex items-center justify-center transition-colors duration-500">
+                                        <i class="ri-arrow-right-up-line text-base"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <button id="submit-btn" type="submit"
-                        class="w-full bg-[#E5E5E5] text-black font-bold uppercase py-4 mt-6 hover:bg-[#ef9d71] transition-colors duration-300 tracking-wider text-base sm:text-lg rounded-sm disabled:opacity-50 disabled:cursor-not-allowed">
-                        Submit Now
-                    </button>
-                </form>
+                    <!-- Connect on LinkedIn -->
+                    <a href="https://www.linkedin.com/in/rubbas-yar-khan"
+                        target="_blank" rel="noopener noreferrer"
+                        class="card group block relative bg-[#13161B] border border-white/10 hover:border-[#F5B942]/45 rounded-2xl p-6 sm:p-8 md:p-9 transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                            <div class="flex items-start gap-4 sm:gap-6 flex-1">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white/[0.04] border border-white/10 group-hover:border-[#F5B942] group-hover:bg-[#F5B942] flex items-center justify-center text-[#F5B942] group-hover:text-[#0B0D10] transition-colors duration-500 flex-shrink-0 mt-0.5 text-xl">
+                                    <i class="ri-linkedin-box-line"></i>
+                                </div>
+                                <div class="space-y-2 flex-1">
+                                    <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-white group-hover:text-[#F5B942] transition-colors duration-300">
+                                        Connect on LinkedIn
+                                    </h2>
+                                    <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                                        Connect with me on LinkedIn for professional opportunities and networking.
+                                    </p>
+                                    <p class="text-xs sm:text-sm font-mono text-zinc-200 pt-1 break-all">linkedin.com/in/rubbas-yar-khan</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-end shrink-0">
+                                <div class="inline-flex items-center gap-3.5 pl-6 pr-2 py-2 rounded-full border border-white/15 bg-white/[0.03] group-hover:border-[#F5B942] group-hover:bg-[#F5B942] group-hover:text-[#0B0D10] transition-all duration-500">
+                                    <span class="text-xs sm:text-sm font-bold uppercase tracking-[0.15em] whitespace-nowrap">Let's Connect</span>
+                                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 group-hover:bg-[#0B0D10] text-white group-hover:text-[#F5B942] flex items-center justify-center transition-colors duration-500">
+                                        <i class="ri-arrow-right-up-line text-base"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
             </div>
         </section>
     </main>
@@ -383,64 +401,6 @@
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 
     <script src="js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('contact-form');
-            if (!form) return;
-            const feedback = document.getElementById('form-feedback');
-            const submitBtn = document.getElementById('submit-btn');
-
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                if (!form.checkValidity()) {
-                    form.reportValidity();
-                    return;
-                }
-
-                const originalText = submitBtn.textContent;
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
-
-                if (feedback) {
-                    feedback.className = 'hidden';
-                    feedback.textContent = '';
-                }
-
-                try {
-                    const formData = new FormData(form);
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-
-                    if (response.ok) {
-                        form.reset();
-                        if (feedback) {
-                            feedback.className = 'block p-4 rounded-sm text-sm font-semibold bg-emerald-950/80 border border-emerald-500/80 text-emerald-200 text-center';
-                            feedback.innerHTML = '<span class="text-base mr-1">✓</span> Message sent successfully! Thank you for reaching out, I will be in touch shortly.';
-                        }
-                        submitBtn.textContent = 'Message Sent';
-                        setTimeout(() => {
-                            submitBtn.disabled = false;
-                            submitBtn.textContent = originalText;
-                        }, 4000);
-                    } else {
-                        throw new Error('Server returned an error');
-                    }
-                } catch (err) {
-                    if (feedback) {
-                        feedback.className = 'block p-4 rounded-sm text-sm font-semibold bg-red-950/80 border border-red-500/80 text-red-200 text-center';
-                        feedback.textContent = 'Could not send message automatically. Please reach out directly at rubbasyarkhan007@gmail.com.';
-                    }
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = originalText;
-                }
-            });
-        });
-    </script>
     <div class="noise-overlay"></div>
 
 </body>
