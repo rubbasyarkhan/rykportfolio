@@ -202,11 +202,9 @@ export default function ContactView() {
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 md:mb-20 gap-6 md:gap-8 pt-6">
-          <div className="overflow-hidden">
-            <h1 className="contact-header-title text-[clamp(3.5rem,8.5vw,7rem)] font-extrabold uppercase leading-[0.88] tracking-tighter font-sans text-white">
-              Let&apos;s Work <br /> Together
-            </h1>
-          </div>
+          <h1 className="contact-header-title text-[clamp(3.2rem,8vw,6.5rem)] font-extrabold uppercase leading-[0.9] tracking-tighter font-sans text-white">
+            Let&apos;s Work <br /> Together
+          </h1>
 
           <div className="contact-header-sub text-left md:text-right max-w-sm md:max-w-md">
             <p className="text-sm sm:text-base text-zinc-300 font-sans leading-relaxed">
@@ -314,11 +312,11 @@ export default function ContactView() {
                       className="inline-flex items-center gap-3.5 pl-6 pr-2 py-2 rounded-full border border-white/15 bg-white/[0.03] backdrop-blur-md group-hover:border-[#F5B942] group-hover:bg-[#F5B942] group-hover:shadow-[0_0_30px_rgba(245,185,66,0.28)] transition-all duration-500"
                     >
                       {/* Rolling Dual-Layer Text Mask */}
-                      <div className="masker relative h-[1.15rem] overflow-hidden flex flex-col justify-start">
-                        <span className="block text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-white leading-[1.15rem] transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.18,1)] group-hover:-translate-y-full whitespace-nowrap">
+                      <div className="masker relative h-[1.25rem] overflow-hidden">
+                        <span className="block text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-white leading-[1.25rem] transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.18,1)] group-hover:-translate-y-full whitespace-nowrap">
                           {option.ctaLabel}
                         </span>
-                        <span className="block text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-[#0B0D10] leading-[1.15rem] transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.18,1)] group-hover:-translate-y-full whitespace-nowrap">
+                        <span className="absolute left-0 top-0 translate-y-full text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-[#0B0D10] leading-[1.25rem] transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.18,1)] group-hover:translate-y-0 whitespace-nowrap">
                           {option.ctaHoverLabel}
                         </span>
                       </div>
